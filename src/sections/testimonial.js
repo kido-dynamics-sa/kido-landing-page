@@ -108,7 +108,7 @@ export default function TestimonialCard() {
       </Container>
       <Box sx={styles.carouselWrapper}>
         <Carousel {...carouselParams}>
-          {data.map((item) => {
+          {data.map((item) => (
             <Box sx={styles.reviewCard} key={item.id}>
               <Rating rating={item.review}></Rating>
               <Heading as="h3" sx={styles.title}>
@@ -126,8 +126,8 @@ export default function TestimonialCard() {
                   <Text sx={styles.designation}>{item.designation}</Text>
                 </div>
               </div>
-            </Box>;
-          })}
+            </Box>
+          ))}
         </Carousel>
       </Box>
     </section>
