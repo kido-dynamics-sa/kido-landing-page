@@ -3,49 +3,60 @@ import { jsx } from 'theme-ui';
 import { Container, Grid } from 'theme-ui';
 import SectionHeader from '../components/section-header';
 import FeatureCardColumn from 'components/feature-card-column.js';
-import Performance from 'assets/key-feature/performance.svg';
-import Partnership from 'assets/key-feature/partnership.svg';
-import Subscription from 'assets/key-feature/subscription.svg';
+import Tourism from 'assets/key-feature/tourism.svg';
+import Mobility from 'assets/key-feature/mobility.svg';
+import Retail from 'assets/key-feature/retail.svg';
 import Support from 'assets/key-feature/support.svg';
 
 const data = [
   {
     id: 1,
-    imgSrc: Performance,
-    altText: 'Fast Performance',
-    title: 'Fast Performance',
+    imgSrc: Tourism,
+    altText: 'Drive Tourism Growth on yout City',
+    title: 'Drive Tourism Growth on yout City',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Identify opportunities & measure success with insights for your city.',
   },
   {
     id: 2,
-    imgSrc: Partnership,
-    altText: 'Partnership deal',
-    title: 'Partnership deal',
+    imgSrc: Mobility,
+    altText: 'Mobility Patterns Access Easily',
+    title: 'Mobility Patterns Access Easily',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Mobility patterns unveiled seamlessly, accurately, quickly and freshly updated.',
   },
   {
     id: 3,
-    imgSrc: Subscription,
-    altText: 'Pro Subscription',
-    title: 'Pro Subscription',
+    imgSrc: Retail,
+    altText: 'Retail Visitors Analytics',
+    title: 'Retail Visitors Analytics',
     text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
-  },
-  {
-    id: 4,
-    imgSrc: Support,
-    altText: 'Customer Support',
-    title: 'Customer Support',
-    text:
-      'Get your blood tests delivered at home collect a sample from the your blood tests.',
+      'Kido Dynamics breaks down visitation over time, trade area, brand, demographics and more.',
   },
 ];
 
 export default function KeyFeature() {
   return (
-   <h1>Key Feature</h1>
+    <section id="feature" sx={{ variant: 'section.keyFeature' }}>
+      <Container>
+        <SectionHeader
+          slogan="What you can get"
+          title="Meet the features of our product"
+        />
+
+        <Grid sx={styles.grid}>
+          {data.map((item) => (
+            <FeatureCardColumn
+              key={item.id}
+              src={item.imgSrc}
+              alt={item.altText}
+              title={item.title}
+              text={item.text}
+            />
+        ))}
+        </Grid>
+      </Container>
+   </section>
   );
 }
 
@@ -67,7 +78,7 @@ const styles = {
       null,
       'repeat(2,1fr)',
       null,
-      'repeat(4,1fr)',
+      'repeat(3,1fr)',
     ],
   },
 };

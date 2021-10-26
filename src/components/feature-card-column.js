@@ -8,7 +8,13 @@ export default function FeatureCardColumn({
   text,
 }) {
   return (
-    <h1>FeatureCardColumn</h1>
+    <Box sx={styles.card}>
+      <Image src={src} alt={altText} sx={styles.img}/>
+      <Box sx={styles.wrapper}>
+        <Heading sx={styles.wrapper.title}>{title}</Heading>
+        <Text sx={styles.wrapper.subTitle}>{text}</Text>
+      </Box>
+    </Box>
   );
 }
 
@@ -18,14 +24,14 @@ const styles = {
     alignItems: ['center', 'flex-start'],
     flexDirection: 'column',
     mb: -1,
-    textAlign: ['center', null, 'left'],
+    textAlign: 'center',
     px: [4, null, 0],
   },
   img: {
-    mx: ['auto', null, 0],
-    ml: ['auto', null, '-13px'],
-    mb: -2,
-    width: ['80px', null, null, '90px', null, 'auto'],
+    mx: 'auto',
+    ml: 'auto',
+    mb: 4,
+    // width: ['80px', null, null, '90px', null, 'auto'],
   },
   wrapper: {
     width: '100%',

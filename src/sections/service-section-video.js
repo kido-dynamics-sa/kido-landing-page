@@ -14,8 +14,8 @@ import { keyframes } from "@emotion/core";
 import TextFeature from "components/text-feature";
 import { IoIosPlay } from "react-icons/io";
 
-import ServiceThumb from "assets/retailApp.png";
-import shapePattern from "assets/shapeRetailPattern.png";
+import ServiceThumb from "assets/tourismApp.png";
+import shapePattern from "assets/shapeTourismPattern.png";
 
 import Smart from "assets/services/smart.svg";
 import Secure from "assets/services/secure.svg";
@@ -25,8 +25,12 @@ import dynamic from 'next/dynamic';
 const ModalVideo = dynamic(() => import('react-modal-video'), { ssr: false });
 
 const data = {
-  subTitle: "retail app",
+  subTitle: "Tourism App",
   title: "Your Goals Achieved with Data",
+  description:
+    'Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever.',
+  btnName: 'Get Started',
+  btnURL: '#',
   features: [
     {
       id: 1,
@@ -45,7 +49,7 @@ const data = {
   ],
 };
 
-export default function ServiceSection() {
+export default function ServiceSectionVideo() {
   const [videoOpen, setVideoOpen] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();
@@ -54,31 +58,33 @@ export default function ServiceSection() {
   return (
     <section sx={{ variant: "section.services" }}>
       <Container sx={styles.containerBox}>
-        
-      <Box sx={styles.thumbnail}>
-        <Image src={ServiceThumb} alt="Thumbnail" />
-        <Box sx={styles.shapeBox}>
-          <Image src={shapePattern} alt="Shape"/>
+        <Box sx={styles.thumbnail}>
+          <Image
+            src={ServiceThumb}
+            alt="Thumbnail"
+            sx={{ maxWidth: "600px" }}
+          />
+          <Button
+            sx={styles.videoBtn}
+            onClick={handleClick}
+            aria-label="Play Button"
+          >
+            <span>
+              <IoIosPlay />
+            </span>
+          </Button>
+          <Box sx={styles.shapeBox}>
+            <Image src={shapePattern} alt="shape" />
+          </Box>
         </Box>
-      </Box>
 
         <Box sx={styles.contentBox}>
-          <TextFeature subTitle={data.subTitle} title={data.title} color="#00BA88"/>
-          <Grid sx={styles.grid}>
-            {data.features.map((feature) => (
-              <Box sx={styles.card} key={feature.id}>
-                <Image
-                  src={feature.imgSrc}
-                  alt={feature.altText}
-                  sx={styles.icon}
-                />
-                <Box sx={styles.wrapper}>
-                  <Heading sx={styles.wrapper.title}>{feature.title}</Heading>
-                  <Text sx={styles.wrapper.subTitle}>{feature.text}</Text>
-                </Box>
-              </Box>
-            ))}
-          </Grid>
+          <TextFeature 
+          subTitle={data.subTitle}
+          title={data.title}
+          description={data.description}
+          btnName={data.btnName}
+          btnURL={data.btnURL}/>
         </Box>
       </Container>
       <ModalVideo

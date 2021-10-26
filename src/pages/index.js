@@ -7,6 +7,7 @@ import Layout from 'components/layout';
 import Banner from '../sections/banner';
 import KeyFeature from '../sections/key-feature';
 import ServiceSection from '../sections/service-section';
+import ServiceSectionVideo from '../sections/service-section-video';
 import Feature from '../sections/feature';
 import CoreFeature from '../sections/core-feature';
 import WorkFlow from '../sections/workflow';
@@ -21,9 +22,10 @@ export default function IndexPage() {
           <SEO title="NextJS Landing Page" />
           <Banner />
           <KeyFeature />
-          <ServiceSection />
-          <Feature />
+          <ServiceSectionVideo />
           <CoreFeature />
+          <ServiceSection />
+          {/* <Feature /> */}
           <WorkFlow />
           <Package />
           <TeamSection />
