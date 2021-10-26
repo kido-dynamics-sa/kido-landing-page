@@ -266,7 +266,7 @@ export default function Package() {
   };
 
   return (
-    <h1>Package</h1>
+    <h1>Pricing??</h1>
   );
 }
 
