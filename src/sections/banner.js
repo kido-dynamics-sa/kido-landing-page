@@ -93,7 +93,8 @@ export default function Banner() {
       deviceType="desktop"
       responsive={responsive}
       dotListClass="custom-dot"
-      // showDots
+      showDots
+      arrows={false}
       infinite
       autoPlay
       autoPlaySpeed={5000}
