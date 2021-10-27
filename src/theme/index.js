@@ -86,9 +86,9 @@ export default {
   },
   section: {
     keyFeature: {
-      pt: [8, null, 9, null, null, 10],
+      pt: [4, null, 4, null, null, 5],
       pb: ["90px", null, 9, null, null, 10, null, "165px"],
-      mt: [9, 11, '250px', 0, 0, 7, 9],
+      mt: [8, 8, '150px', 0, 0, 0, 0],
     },
     feature: {
       pb: [8, null, 9, null, null, 10, null, "170px"],
@@ -156,8 +156,8 @@ export default {
       fontSize: [
         "32px",
         "36px",
-        "42px",
-        "40px",
+        "36px",
+        "36px",
         "42px",
         "48px",
         "50px",
