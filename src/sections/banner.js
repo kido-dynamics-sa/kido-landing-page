@@ -12,44 +12,46 @@ import tabsIcon from "assets/tabsIcon.svg";
 // import tabsIconRetail from "assets/tabsIconRetail.svg";
 import Carousel from "react-multi-carousel";
 
-const data = [
-  {
-    id: 1,
-    imgSrc: BannerTourism,
-    imgSrcMobile: BannerImgMobile,
-    altText: "Tourism dashboard",
-    heroPrimary: "Municipality",
-    heroSecondary: '"Who is visiting my location?"',
-    heroTerciary:
-      "Visitation Trends provide accurate foot-traffic and dwell-time reports by seasonality and customer segments.",
-    color: "primary",
-    // tabsIcon: tabsIconTourism
-  },
-  {
-    id: 2,
-    imgSrc: BannerMobility,
-    imgSrcMobile: BannerImgMobile,
-    altText: "Mobility dashboard",
-    heroPrimary: "Mobility",
-    heroSecondary: '"How to optimize routes and reduce costs?"',
-    heroTerciary:
-      "Visitation Trends provide accurate foot-traffic and dwell-time reports by seasonality and customer segments.",
-    color: "#1CC8EE",
-    // tabsIcon: tabsIconMobility
-  },
-  {
-    id: 3,
-    imgSrc: BannerRetail,
-    imgSrcMobile: BannerImgMobile,
-    altText: "Retail dashboard",
-    heroPrimary: "Retail",
-    heroSecondary: '"How much has my business target evolved?"',
-    heroTerciary:
-      "Visitation Trends provide accurate foot-traffic and dwell-time reports by seasonality and customer segments.",
-    color: "#00BA88",
-    // tabsIcon: tabsIconRetail
-  },
-];
+import { getStrapiMedia } from "utils/media"
+
+// const data = [
+//   {
+//     id: 1,
+//     imgSrc: BannerTourism,
+//     imgSrcMobile: BannerImgMobile,
+//     altText: "Tourism dashboard",
+//     heroPrimary: "Municipality",
+//     heroSecondary: '"Who is visiting my location?"',
+//     heroTerciary:
+//       "Visitation Trends provide accurate foot-traffic and dwell-time reports by seasonality and customer segments.",
+//     color: "primary",
+//     // tabsIcon: tabsIconTourism
+//   },
+//   {
+//     id: 2,
+//     imgSrc: BannerMobility,
+//     imgSrcMobile: BannerImgMobile,
+//     altText: "Mobility dashboard",
+//     heroPrimary: "Mobility",
+//     heroSecondary: '"How to optimize routes and reduce costs?"',
+//     heroTerciary:
+//       "Visitation Trends provide accurate foot-traffic and dwell-time reports by seasonality and customer segments.",
+//     color: "#1CC8EE",
+//     // tabsIcon: tabsIconMobility
+//   },
+//   {
+//     id: 3,
+//     imgSrc: BannerRetail,
+//     imgSrcMobile: BannerImgMobile,
+//     altText: "Retail dashboard",
+//     heroPrimary: "Retail",
+//     heroSecondary: '"How much has my business target evolved?"',
+//     heroTerciary:
+//       "Visitation Trends provide accurate foot-traffic and dwell-time reports by seasonality and customer segments.",
+//     color: "#00BA88",
+//     // tabsIcon: tabsIconRetail
+//   },
+// ];
 
 const responsive = {
   desktop: {
@@ -69,6 +71,7 @@ const responsive = {
     items: 1,
   },
 };
+
 const gradients = [
   "radial-gradient(circle, rgba(233, 30, 99, 0.5) 20%, rgba(255,255,255,1) 35%)",
   "radial-gradient(circle, rgba(28, 200, 238, 0.5) 20%, rgba(255,255,255,1) 35%)",
@@ -86,7 +89,10 @@ const shadowsHover = [
   "rgb(13 217 164 / 57%) 0px 9px 40px -5px",
 ];
 
-export default function Banner() {
+const Banner = ({ banners }) => {
+  if (!banners) {
+    return <div>error</div>
+  }
   return (
     <Carousel
       ssr
@@ -100,7 +106,7 @@ export default function Banner() {
       autoPlaySpeed={5000}
       minimumTouchDrag={80}
     >
-      {data.map((item, i) => (
+      {banners?.map((item, i) => (
         <section
           sx={{
             ...styles.banner,
@@ -150,7 +156,7 @@ export default function Banner() {
             </Box>
             <Box sx={styles.banner.hero}>
               <Image
-                src={item.imgSrc}
+                src={getStrapiMedia(item.imgSrc.url)}
                 alt={item.altText}
                 sx={{ objectFit: "contain" }}
               />
@@ -160,7 +166,7 @@ export default function Banner() {
       ))}
     </Carousel>
   );
-}
+};
 
 const styles = {
   banner: {
@@ -170,10 +176,10 @@ const styles = {
     pb: [2, null, 0, null, 2, 0, null, 2],
     position: "relative",
     zIndex: 2,
-    ".custom-dot > li > button": {    
-      border: 'none',
-      margin: '10px',
-      outline: 'none',
+    ".custom-dot > li > button": {
+      border: "none",
+      margin: "10px",
+      outline: "none",
     },
     container: {
       minHeight: "inherit",
@@ -197,7 +203,7 @@ const styles = {
       mt: [0, 0, 0, 0, -9, null, -11],
       maxWidth: "800px",
       // width: "100%",
-      height: '100%'
+      height: "100%",
     },
     contentBox: {
       pt: [0, 0, 0, 0, 9, null, 11],
@@ -235,3 +241,5 @@ const styles = {
     },
   },
 };
+
+export default Banner;
