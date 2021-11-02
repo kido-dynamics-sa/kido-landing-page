@@ -93,7 +93,13 @@ const Banner = ({ banners }) => {
   if (!banners) {
     return <div>error</div>;
   }
-
+  const sortedBanners = ['Tourism Banner', 'Mobility Banner', 'Retail Banner']
+  const sortBanners = (banners) => {
+    return sortedBanners.map((labelBanner) => {
+      const newBanner = banners.find(a => a.altText === labelBanner)
+      return {...newBanner}
+    })
+ }
   const getBannerImage = (altText) => {
     switch (altText) {
       case "Tourism Banner":
@@ -120,7 +126,7 @@ const Banner = ({ banners }) => {
       autoPlaySpeed={5000}
       minimumTouchDrag={80}
     >
-      {banners?.map((item, i) => (
+      {sortBanners(banners).map((item, i) => (
         <section
           sx={{
             ...styles.banner,
