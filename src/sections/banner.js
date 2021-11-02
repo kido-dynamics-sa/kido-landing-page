@@ -12,7 +12,7 @@ import tabsIcon from "assets/tabsIcon.svg";
 // import tabsIconRetail from "assets/tabsIconRetail.svg";
 import Carousel from "react-multi-carousel";
 
-import { getStrapiMedia } from "utils/media"
+import { getStrapiMedia } from "utils/media";
 
 // const data = [
 //   {
@@ -91,8 +91,22 @@ const shadowsHover = [
 
 const Banner = ({ banners }) => {
   if (!banners) {
-    return <div>error</div>
+    return <div>error</div>;
   }
+
+  const getBannerImage = (altText) => {
+    switch (altText) {
+      case "Tourism Banner":
+        return BannerTourism;
+      case "Mobility Banner":
+        return BannerMobility;
+      case "Retail Banner":
+        return BannerRetail;
+      default:
+        return BannerTourism;
+    }
+  };
+
   return (
     <Carousel
       ssr
@@ -156,7 +170,8 @@ const Banner = ({ banners }) => {
             </Box>
             <Box sx={styles.banner.hero}>
               <Image
-                src={getStrapiMedia(item.imgSrc.url)}
+                // src={getStrapiMedia(item.imgSrc.url)}
+                src={getBannerImage(item.altText)}
                 alt={item.altText}
                 sx={{ objectFit: "contain" }}
               />
