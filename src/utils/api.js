@@ -31,3 +31,18 @@ export async function getBanners() {
   const banners = await fetchAPI("/banners");
   return banners;
 }
+
+export async function getFeatureCardColumns() {
+  const featureCardColumns = await fetchAPI("/feature-card-columns");
+  return featureCardColumns;
+}
+
+export async function getSections() {
+  const sections = await fetchAPI("/sections");
+  return sections;
+}
+
+export async function getTextFeatures() {
+  const textFeatures = await fetchAPI("/text-features");
+  return textFeatures;
+}

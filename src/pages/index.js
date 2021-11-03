@@ -17,18 +17,18 @@ import TeamSection from "../sections/team-section";
 import TestimonialCard from "../sections/testimonial";
 import SubscribeUs from "../sections/subscribe-us";
 
-import { getBanners } from "utils/api"
+import { getBanners, getFeatureCardColumns, getSections, getTextFeatures } from "utils/api"
 
-export default function IndexPage({ banners }) {
+export default function IndexPage({ banners, sections, featureCardColumns, textFeatures }) {
   return (
     <ThemeProvider theme={theme}>
       <Layout>
-        <SEO title="NextJS Landing Page" />
+        <SEO title="Kido Dynamics Landing Page" />
         <Banner banners={banners} />
-        <KeyFeature />
-        <ServiceSectionVideo />
-        <CoreFeature />
-        <ServiceSection />
+        <KeyFeature featureCardColumns={featureCardColumns} section={sections.find(a => a.name === 'FeatureCardsSection')}/>
+        <ServiceSectionVideo data={textFeatures.find(a => a.name === 'Tourism')}/>
+        <CoreFeature data={textFeatures.find(a => a.name === 'Mobility')}/>
+        <ServiceSection data={textFeatures.find(a => a.name === 'Retail')}/>
         {/* <Feature /> */}
         <WorkFlow />
         {/* <Package /> */}
@@ -43,8 +43,11 @@ export default function IndexPage({ banners }) {
 
 export async function getStaticProps() {
   const banners = await getBanners();
+  const featureCardColumns = await getFeatureCardColumns();
+  const sections = await getSections();
+  const textFeatures = await getTextFeatures();
   return {
-    props: { banners },
+    props: { banners, featureCardColumns, sections, textFeatures },
     revalidate: 60
   };
 }
