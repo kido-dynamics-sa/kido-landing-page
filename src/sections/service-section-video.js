@@ -24,32 +24,32 @@ import Secure from "assets/services/secure.svg";
 import dynamic from 'next/dynamic';
 const ModalVideo = dynamic(() => import('react-modal-video'), { ssr: false });
 
-const data = {
-  subTitle: "Tourism App",
-  title: "Your Goals Achieved with Data",
-  description:
-    'Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever.',
-  btnName: 'Get Started',
-  btnURL: '#',
-  features: [
-    {
-      id: 1,
-      imgSrc: Smart,
-      altText: "Smart Decisions",
-      title: "Smart Decisions",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque duis pulvinar vel odio tortor id vestibulum ac sodales.",
-    },
-    {
-      id: 2,
-      imgSrc: Secure,
-      altText: "Smart Destinations",
-      title: "Secure Destinations",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque duis pulvinar vel odio tortor id vestibulum ac sodales.",
-    },
-  ],
-};
+// const data = {
+//   subTitle: "Tourism App",
+//   title: "Your Goals Achieved with Data",
+//   description:
+//     'Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever.',
+//   btnName: 'Get Started',
+//   btnURL: '#',
+//   features: [
+//     {
+//       id: 1,
+//       imgSrc: Smart,
+//       altText: "Smart Decisions",
+//       title: "Smart Decisions",
+//       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque duis pulvinar vel odio tortor id vestibulum ac sodales.",
+//     },
+//     {
+//       id: 2,
+//       imgSrc: Secure,
+//       altText: "Smart Destinations",
+//       title: "Secure Destinations",
+//       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque duis pulvinar vel odio tortor id vestibulum ac sodales.",
+//     },
+//   ],
+// };
 
-export default function ServiceSectionVideo() {
+export default function ServiceSectionVideo({ data }) {
   const [videoOpen, setVideoOpen] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();

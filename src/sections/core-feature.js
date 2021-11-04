@@ -1,79 +1,127 @@
 /** @jsx jsx */
-import { jsx, Container, Box, Image } from 'theme-ui';
-import TextFeature from 'components/text-feature';
+import { jsx, Container, Box, Image, Grid, Text, Heading } from "theme-ui";
+import TextFeature from "components/text-feature";
 
 import ServiceThumb from "assets/mobilityApp.png";
 import shapePattern from "assets/shapeMobilityPattern.png";
+import Smart from "assets/services/smart.svg";
+import Secure from "assets/services/secure.svg";
 
-const data = {
-  subTitle: 'Mobility App',
-  title: 'Smart Features that you may love this anytime & anywhere',
-  description:
-    'Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever.',
-  btnName: 'Get Started',
-  btnURL: '#',
-};
+const features = [
+  {
+    id: 1,
+    imgSrc: Smart,
+    altText: "Smart Decisions",
+    title: "Smart Decisions",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque duis pulvinar vel odio tortor id vestibulum ac sodales.",
+  },
+  {
+    id: 2,
+    imgSrc: Secure,
+    altText: "Smart Destinations",
+    title: "Secure Destinations",
+    text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque duis pulvinar vel odio tortor id vestibulum ac sodales.",
+  },
+];
 
-export default function CoreFeature() {
+export default function CoreFeature({ data }) {
   return (
-   <section sx={{variant: 'section.coreFeature'}}>
-    <Container sx={styles.containerBox}>
-      <Box sx={styles.contentBox}>
-        <TextFeature 
-          subTitle={data.subTitle}
-          title={data.title}
-          description={data.description}
-          btnName={data.btnName}
-            btnURL={data.btnURL}
+    <section sx={{ variant: "section.coreFeature" }}>
+      <Container sx={styles.containerBox}>
+        <Box sx={styles.contentBox}>
+          <TextFeature
+            subTitle={data.subTitle}
+            title={data.title}
+            // description={data.description}
+            // btnName={data.btnName}
+            //   btnURL={data.btnURL}
             color="#1CC8EE"
-        />
-      </Box>
-      <Box sx={styles.thumbnail}>
-        <Image src={ServiceThumb} alt="Thumbnail" />
-        <Box sx={styles.shapeBox}>
-          <Image src={shapePattern} alt="Shape"/>
+            shadow="rgb(28 200 238 / 57%) 0px 9px 20px -5px"
+            shadowHover="rgb(28 200 238 / 57%) 0px 9px 40px -5px"
+          />
+          <Grid sx={styles.grid}>
+            {features.map((feature) => (
+              <Box sx={styles.card} key={feature.id}>
+                <Image
+                  src={feature.imgSrc}
+                  alt={feature.altText}
+                  sx={styles.icon}
+                />
+                <Box sx={styles.wrapper}>
+                  <Heading sx={styles.wrapper.title}>{feature.title}</Heading>
+                  <Text sx={styles.wrapper.subTitle}>{feature.text}</Text>
+                </Box>
+              </Box>
+            ))}
+          </Grid>
         </Box>
-      </Box>
-    </Container>
-   </section>
+        <Box sx={styles.thumbnail}>
+          <Image src={ServiceThumb} alt="Thumbnail" />
+          <Box sx={styles.shapeBox}>
+            <Image src={shapePattern} alt="Shape" />
+          </Box>
+        </Box>
+      </Container>
+    </section>
   );
 }
 
 const styles = {
   containerBox: {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    flexWrap: ['wrap', null, null, 'nowrap'],
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    flexWrap: ["wrap", null, null, "nowrap"],
     pb: [0, 7, 0, null, 7],
   },
   contentBox: {
     flexShrink: 0,
-    px: [0, null, '30px', 0],
-    textAlign: ['center', null, null, 'left'],
-    width: ['100%', '80%', null, 340, 400, 430, null, 485],
-    pb: ['50px', '60px', null, 0],
-    mx: ['auto', null, null, 0],
-    '.description': {
+    px: [0, null, "30px", 0],
+    textAlign: ["center", null, null, "left"],
+    width: ["100%", "80%", null, 340, 400, 430, null, 485],
+    pb: ["50px", "60px", null, 0],
+    mx: ["auto", null, null, 0],
+    ".description": {
       pr: [0, null, 6, 7, 6],
     },
   },
   thumbnail: {
-    display: 'inline-flex',
-    position: 'relative',
-    mr: 'auto',
-    ml: ['auto', null, null, null, 7],
-    '> img': {
-      position: 'relative',
+    display: "inline-flex",
+    position: "relative",
+    mr: "auto",
+    ml: ["auto", null, null, null, 7],
+    "> img": {
+      position: "relative",
       zIndex: 1,
-      height: [310, 'auto'],
+      height: [310, "auto"],
     },
   },
   shapeBox: {
-    position: 'absolute',
-    bottom: '-45%',
-    width: '800px',
+    position: "absolute",
+    bottom: "-45%",
+    width: "800px",
     zIndex: -1,
     display: ["none", null, null, null, null, "inline-block"],
+  },
+
+  wrapper: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    textAlign: "left",
+    mt: "-5px",
+    title: {
+      fontSize: 3,
+      color: "heading_secondary",
+      lineHeight: 1.4,
+      fontWeight: 700,
+      mb: [2, null, 3, 2, 3],
+    },
+
+    subTitle: {
+      fontSize: [1, null, null, "14px", 1],
+      fontWeight: 400,
+      lineHeight: 1.9,
+    },
   },
 };

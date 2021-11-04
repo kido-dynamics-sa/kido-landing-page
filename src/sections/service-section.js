@@ -1,80 +1,39 @@
-import React, { useState } from "react";
 /** @jsx jsx */
 import {
   jsx,
   Container,
   Box,
-  Grid,
-  Text,
-  Heading,
-  Button,
   Image,
 } from "theme-ui";
-import { keyframes } from "@emotion/core";
 import TextFeature from "components/text-feature";
-import { IoIosPlay } from "react-icons/io";
 
 import ServiceThumb from "assets/retailApp.png";
 import shapePattern from "assets/shapeRetailPattern.png";
 
-import Smart from "assets/services/smart.svg";
-import Secure from "assets/services/secure.svg";
 
-// import ModalVideo from "react-modal-video";
-import dynamic from 'next/dynamic';
-const ModalVideo = dynamic(() => import('react-modal-video'), { ssr: false });
-
-const data = {
-  subTitle: "retail app",
-  title: "Your Goals Achieved with Data",
-  features: [
-    {
-      id: 1,
-      imgSrc: Smart,
-      altText: "Smart Decisions",
-      title: "Smart Decisions",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque duis pulvinar vel odio tortor id vestibulum ac sodales.",
-    },
-    {
-      id: 2,
-      imgSrc: Secure,
-      altText: "Smart Destinations",
-      title: "Secure Destinations",
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque duis pulvinar vel odio tortor id vestibulum ac sodales.",
-    },
-  ],
-};
-
-export default function ServiceSection() {
-  const [videoOpen, setVideoOpen] = useState(false);
+export default function ServiceSection({ data }) {
   return (
     <section sx={{ variant: "section.services" }}>
       <Container sx={styles.containerBox}>
-        
-      <Box sx={styles.thumbnail}>
-        <Image src={ServiceThumb} alt="Thumbnail" />
-        <Box sx={styles.shapeBox}>
-          <Image src={shapePattern} alt="Shape"/>
+        <Box sx={styles.thumbnail}>
+          <Image src={ServiceThumb} alt="Thumbnail" />
+          <Box sx={styles.shapeBox}>
+            <Image src={shapePattern} alt="Shape" />
+          </Box>
         </Box>
-      </Box>
 
         <Box sx={styles.contentBox}>
-          <TextFeature subTitle={data.subTitle} title={data.title} color="#00BA88"/>
-          <Grid sx={styles.grid}>
-            {data.features.map((feature) => (
-              <Box sx={styles.card} key={feature.id}>
-                <Image
-                  src={feature.imgSrc}
-                  alt={feature.altText}
-                  sx={styles.icon}
-                />
-                <Box sx={styles.wrapper}>
-                  <Heading sx={styles.wrapper.title}>{feature.title}</Heading>
-                  <Text sx={styles.wrapper.subTitle}>{feature.text}</Text>
-                </Box>
-              </Box>
-            ))}
-          </Grid>
+          <TextFeature
+            subTitle={data.subTitle}
+            title={data.title}
+            description={data.description}
+            btnName={data.btnName}
+            btnURL={data.btnURL}
+            color="#00BA88"
+            shadow="rgb(13 217 164 / 57%) 0px 9px 20px -5px"
+            shadowHover="rgb(13 217 164 / 57%) 0px 9px 40px -5px"
+          />
+
         </Box>
       </Container>
     </section>
@@ -139,42 +98,5 @@ const styles = {
     height: "auto",
     flexShrink: 0,
     mr: [3, null, null, null, 4],
-  },
-  wrapper: {
-    width: "100%",
-    display: "flex",
-    flexDirection: "column",
-    textAlign: "left",
-    mt: "-5px",
-    title: {
-      fontSize: 3,
-      color: "heading_secondary",
-      lineHeight: 1.4,
-      fontWeight: 700,
-      mb: [2, null, 3, 2, 3],
-    },
-
-    subTitle: {
-      fontSize: [1, null, null, "14px", 1],
-      fontWeight: 400,
-      lineHeight: 1.9,
-    },
-  },
-  videoWrapper: {
-    maxWidth: "100%",
-    position: "relative",
-    width: "900px",
-    "&:before": {
-      content: '""',
-      display: "block",
-      paddingTop: "56.25%",
-    },
-    iframe: {
-      width: "100%",
-      height: "100%",
-      position: "absolute",
-      top: 0,
-      left: 0,
-    },
   },
 };

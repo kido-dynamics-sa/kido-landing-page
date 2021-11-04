@@ -12,47 +12,6 @@ import tabsIcon from "assets/tabsIcon.svg";
 // import tabsIconRetail from "assets/tabsIconRetail.svg";
 import Carousel from "react-multi-carousel";
 
-import { getStrapiMedia } from "utils/media";
-
-// const data = [
-//   {
-//     id: 1,
-//     imgSrc: BannerTourism,
-//     imgSrcMobile: BannerImgMobile,
-//     altText: "Tourism dashboard",
-//     heroPrimary: "Municipality",
-//     heroSecondary: '"Who is visiting my location?"',
-//     heroTerciary:
-//       "Visitation Trends provide accurate foot-traffic and dwell-time reports by seasonality and customer segments.",
-//     color: "primary",
-//     // tabsIcon: tabsIconTourism
-//   },
-//   {
-//     id: 2,
-//     imgSrc: BannerMobility,
-//     imgSrcMobile: BannerImgMobile,
-//     altText: "Mobility dashboard",
-//     heroPrimary: "Mobility",
-//     heroSecondary: '"How to optimize routes and reduce costs?"',
-//     heroTerciary:
-//       "Visitation Trends provide accurate foot-traffic and dwell-time reports by seasonality and customer segments.",
-//     color: "#1CC8EE",
-//     // tabsIcon: tabsIconMobility
-//   },
-//   {
-//     id: 3,
-//     imgSrc: BannerRetail,
-//     imgSrcMobile: BannerImgMobile,
-//     altText: "Retail dashboard",
-//     heroPrimary: "Retail",
-//     heroSecondary: '"How much has my business target evolved?"',
-//     heroTerciary:
-//       "Visitation Trends provide accurate foot-traffic and dwell-time reports by seasonality and customer segments.",
-//     color: "#00BA88",
-//     // tabsIcon: tabsIconRetail
-//   },
-// ];
-
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1619 },
@@ -83,6 +42,7 @@ const shadows = [
   "rgb(28 200 238 / 57%) 0px 9px 20px -5px",
   "rgb(13 217 164 / 57%) 0px 9px 20px -5px",
 ];
+
 const shadowsHover = [
   "rgb(233 76 84 / 57%) 0px 9px 40px -5px",
   "rgb(28 200 238 / 57%) 0px 9px 40px -5px",

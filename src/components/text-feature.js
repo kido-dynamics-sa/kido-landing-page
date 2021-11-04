@@ -7,12 +7,14 @@ export default function TextFeature({
   description,
   btnName,
   btnURL = "#",
-  color = 'primary'
+  color = "primary",
+  shadow = "rgb(233 76 84 / 57%) 0px 9px 20px -5px",
+  shadowHover = "rgb(233 76 84 / 57%) 0px 9px 40px -5px"
 }) {
   return (
     <Box sx={styles.card}>
       <Box sx={styles.wrapper}>
-        <Text as="p" sx={{...styles.wrapper.subTitle, color: color}}>
+        <Text as="p" sx={{ ...styles.wrapper.subTitle, color: color }}>
           {subTitle}
         </Text>
         <Heading as="h2" sx={styles.wrapper.title}>
@@ -26,7 +28,17 @@ export default function TextFeature({
       )}
       {btnName && (
         <Link href={btnURL} variant="default">
-          <Button variant="primary" aria-label={btnName} sx={{bg: color}}>
+          <Button
+            variant="primary"
+            aria-label={btnName}
+            sx={{
+              bg: color,
+              boxShadow: shadow,
+              "&:hover": {
+                boxShadow: shadowHover,
+              },
+            }}
+          >
             {btnName}
           </Button>
         </Link>
