@@ -27,6 +27,8 @@ const SubscribeUs = () => {
             isWhite={true}
           />
           <Formik
+            validateOnBlur={false}
+            validateOnChange={false}
             initialValues={{ email: "" }}
             validationSchema={LeadSchema}
             onSubmit={async (values, { setSubmitting, setErrors }) => {

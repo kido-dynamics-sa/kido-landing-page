@@ -1,3 +1,4 @@
+import React, {useEffect} from 'react';
 /** @jsx jsx */
 import {
   jsx,
@@ -10,17 +11,31 @@ import TextFeature from "components/text-feature";
 import ServiceThumb from "assets/retailApp.png";
 import shapePattern from "assets/shapeRetailPattern.png";
 
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+let AnimatedBox = motion.custom(Box);
+
+const animationProps = {
+  initial: { opacity: 0, scale: 0.75 },
+  transition: { ease: "easeOut", duration: .75 },
+};
 
 export default function ServiceSection({ data }) {
+
+  const { ref, inView } = useInView({
+    threshold: 0.25
+  })
+  
   return (
-    <section sx={{ variant: "section.services" }}>
+    <section ref={ref} sx={{ variant: "section.services" }}>
       <Container sx={styles.containerBox}>
-        <Box sx={styles.thumbnail}>
+        <AnimatedBox {...animationProps} sx={styles.thumbnail} animate={ inView ? { opacity: 1, scale: 1 } : ''}>
           <Image src={ServiceThumb} alt="Thumbnail" />
           <Box sx={styles.shapeBox}>
             <Image src={shapePattern} alt="Shape" />
           </Box>
-        </Box>
+        </AnimatedBox>
 
         <Box sx={styles.contentBox}>
           <TextFeature

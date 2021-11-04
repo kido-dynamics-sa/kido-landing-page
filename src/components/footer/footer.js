@@ -21,7 +21,7 @@ export default function Footer() {
             </Link>
             <Text sx={styles.footer.description}>{footer.description}</Text>
             <Text sx={styles.footer.copyright}>
-              Copyright by {new Date().getFullYear()} Kido Dynamics
+            © {new Date().getFullYear()} Kido Dynamics. All rights reserved
             </Text>
           </Flex>
 

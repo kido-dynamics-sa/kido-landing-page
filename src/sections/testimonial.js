@@ -9,7 +9,6 @@ import Avatar1 from "assets/testimonial/avatar1.png";
 import Avatar2 from "assets/testimonial/avatar2.png";
 import Avatar3 from "assets/testimonial/avatar3.png";
 import Avatar4 from "assets/testimonial/avatar4.png";
-import { Grid } from "@theme-ui/components";
 
 const data = [
   {

@@ -17,48 +17,38 @@ import { IoIosPlay } from "react-icons/io";
 import ServiceThumb from "assets/tourismApp.png";
 import shapePattern from "assets/shapeTourismPattern.png";
 
-import Smart from "assets/services/smart.svg";
-import Secure from "assets/services/secure.svg";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+let AnimatedBox = motion.custom(Box);
+
+const animationProps = {
+  initial: { opacity: 0, scale: 0.75 },
+  transition: { ease: "easeOut", duration: .75 },
+};
 
 // import ModalVideo from "react-modal-video";
-import dynamic from 'next/dynamic';
-const ModalVideo = dynamic(() => import('react-modal-video'), { ssr: false });
-
-// const data = {
-//   subTitle: "Tourism App",
-//   title: "Your Goals Achieved with Data",
-//   description:
-//     'Get your tests delivered at let home collect sample from the victory of the managements that supplies best design system guidelines ever.',
-//   btnName: 'Get Started',
-//   btnURL: '#',
-//   features: [
-//     {
-//       id: 1,
-//       imgSrc: Smart,
-//       altText: "Smart Decisions",
-//       title: "Smart Decisions",
-//       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque duis pulvinar vel odio tortor id vestibulum ac sodales.",
-//     },
-//     {
-//       id: 2,
-//       imgSrc: Secure,
-//       altText: "Smart Destinations",
-//       title: "Secure Destinations",
-//       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque duis pulvinar vel odio tortor id vestibulum ac sodales.",
-//     },
-//   ],
-// };
+import dynamic from "next/dynamic";
+const ModalVideo = dynamic(() => import("react-modal-video"), { ssr: false });
 
 export default function ServiceSectionVideo({ data }) {
+  const { ref, inView } = useInView({
+    threshold: 0.25,
+  });
+
   const [videoOpen, setVideoOpen] = useState(false);
   const handleClick = (e) => {
     e.preventDefault();
     setVideoOpen(true);
   };
   return (
-    <section sx={{ variant: "section.services" }}>
+    <section ref={ref} sx={{ variant: "section.services" }}>
       <Container sx={styles.containerBox}>
-        <Box sx={styles.thumbnail}>
+        <AnimatedBox
+          {...animationProps}
+          sx={styles.thumbnail}
+          animate={inView ? { opacity: 1, scale: 1 } : ""}
+        >
           <Image
             src={ServiceThumb}
             alt="Thumbnail"
@@ -76,15 +66,16 @@ export default function ServiceSectionVideo({ data }) {
           <Box sx={styles.shapeBox}>
             <Image src={shapePattern} alt="shape" />
           </Box>
-        </Box>
+        </AnimatedBox>
 
         <Box sx={styles.contentBox}>
-          <TextFeature 
-          subTitle={data.subTitle}
-          title={data.title}
-          description={data.description}
-          btnName={data.btnName}
-          btnURL={data.btnURL}/>
+          <TextFeature
+            subTitle={data.subTitle}
+            title={data.title}
+            description={data.description}
+            btnName={data.btnName}
+            btnURL={data.btnURL}
+          />
         </Box>
       </Container>
       <ModalVideo

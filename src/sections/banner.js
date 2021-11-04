@@ -12,6 +12,16 @@ import tabsIcon from "assets/tabsIcon.svg";
 // import tabsIconRetail from "assets/tabsIconRetail.svg";
 import Carousel from "react-multi-carousel";
 
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+let AnimatedBox = motion.custom(Box);
+
+const animationProps = {
+  initial: { opacity: 0, x: 100 },
+  transition: { ease: "easeOut", duration: 0.75 },
+};
+
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1619 },
@@ -50,16 +60,18 @@ const shadowsHover = [
 ];
 
 const Banner = ({ banners }) => {
-  if (!banners) {
-    return <div>error</div>;
-  }
-  const sortedBanners = ['Tourism Banner', 'Mobility Banner', 'Retail Banner']
+
+  const { ref, inView } = useInView({
+    threshold: 0,
+  });
+
+  const sortedBanners = ["Tourism Banner", "Mobility Banner", "Retail Banner"];
   const sortBanners = (banners) => {
     return sortedBanners.map((labelBanner) => {
-      const newBanner = banners.find(a => a.altText === labelBanner)
-      return {...newBanner}
-    })
- }
+      const newBanner = banners.find((a) => a.altText === labelBanner);
+      return { ...newBanner };
+    });
+  };
   const getBannerImage = (altText) => {
     switch (altText) {
       case "Tourism Banner":
@@ -73,7 +85,12 @@ const Banner = ({ banners }) => {
     }
   };
 
+  if (!banners) {
+    return <div>error</div>;
+  }
+
   return (
+    <div ref={ref}>
     <Carousel
       ssr
       deviceType="desktop"
@@ -134,18 +151,25 @@ const Banner = ({ banners }) => {
                 Are you ready to see more stats?
               </Button>
             </Box>
-            <Box sx={styles.banner.hero}>
+            <AnimatedBox
+              {...animationProps}
+              sx={styles.banner.hero}
+              animate={inView ? { opacity: 1,  x: 0 } : ""}
+            >
+              {/* <Box sx={styles.banner.hero}> */}
               <Image
                 // src={getStrapiMedia(item.imgSrc.url)}
                 src={getBannerImage(item.altText)}
                 alt={item.altText}
                 sx={{ objectFit: "contain" }}
               />
-            </Box>
+            </AnimatedBox>
           </Container>
         </section>
       ))}
     </Carousel>
+
+    </div>
   );
 };
 

@@ -7,6 +7,16 @@ import shapePattern from "assets/shapeMobilityPattern.png";
 import Smart from "assets/services/smart.svg";
 import Secure from "assets/services/secure.svg";
 
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+let AnimatedBox = motion.custom(Box);
+
+const animationProps = {
+  initial: { opacity: 0, scale: 0.75 },
+  transition: { ease: "easeOut", duration: 0.75 },
+};
+
 const features = [
   {
     id: 1,
@@ -25,8 +35,12 @@ const features = [
 ];
 
 export default function CoreFeature({ data }) {
+  const { ref, inView } = useInView({
+    threshold: 0.25,
+  });
+
   return (
-    <section sx={{ variant: "section.coreFeature" }}>
+    <section ref={ref} sx={{ variant: "section.coreFeature" }}>
       <Container sx={styles.containerBox}>
         <Box sx={styles.contentBox}>
           <TextFeature
@@ -54,13 +68,17 @@ export default function CoreFeature({ data }) {
               </Box>
             ))}
           </Grid>
-        </Box>
-        <Box sx={styles.thumbnail}>
+        </Box>{" "}
+        <AnimatedBox
+          {...animationProps}
+          sx={styles.thumbnail}
+          animate={inView ? { opacity: 1, scale: 1 } : ""}
+        >
           <Image src={ServiceThumb} alt="Thumbnail" />
           <Box sx={styles.shapeBox}>
             <Image src={shapePattern} alt="Shape" />
           </Box>
-        </Box>
+        </AnimatedBox>
       </Container>
     </section>
   );
@@ -95,7 +113,7 @@ const styles = {
     gridGap: ["35px 0", null, null, null, "50px 0"],
     gridTemplateColumns: ["repeat(1,1fr)"],
   },
-    card: {
+  card: {
     display: "flex",
     alignItems: "flex-start",
     transition: "all 0.3s",
