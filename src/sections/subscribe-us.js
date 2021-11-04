@@ -18,7 +18,7 @@ const SubscribeUs = () => {
   });
 
   return (
-    <Box as="section" sx={styles.section} variant="section.subscribe">
+    <Box as="section" sx={styles.section} variant="section.subscribe" id="contact">
       <Container>
         <Box sx={styles.contentWrapper}>
           <SectionHeader
@@ -108,6 +108,7 @@ export default SubscribeUs;
 
 const styles = {
   section: {
+    height:'50vh',
     pt: [6, null, null, null, 6],
     pb: [8, null, null, 9, 9],
   },
