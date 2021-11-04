@@ -78,25 +78,5 @@ const styles = {
     mb: [7, null, 60, 0],
     textAlign: ["center", null, null, "left"],
   },
-  grid: {
-    pr: [2, 0, null, null, 6, "70px"],
-    pl: [2, 0],
-    pt: [2, null, null, null, 3],
-    mx: "auto",
-    width: ["100%", 370, 420, "100%"],
-    gridGap: ["35px 0", null, null, null, "50px 0"],
-    gridTemplateColumns: ["repeat(1,1fr)"],
-  },
-  card: {
-    display: "flex",
-    alignItems: "flex-start",
-    transition: "all 0.3s",
-  },
 
-  icon: {
-    width: ["45px", null, null, null, "55px"],
-    height: "auto",
-    flexShrink: 0,
-    mr: [3, null, null, null, 4],
-  },
 };
