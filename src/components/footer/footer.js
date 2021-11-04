@@ -1,30 +1,78 @@
 /** @jsx jsx */
-import { jsx, Box, Container, Image, Text } from "theme-ui";
+import { jsx, Box, Container, Image, Text, Flex } from "theme-ui";
 import { Link } from "components/link";
 import data from "./footer.data";
 import FooterLogo from "assets/logoWhite.svg";
+import { Heading } from "@theme-ui/components";
+
+const footer = {
+  description:
+    "Kido Dynamics is dedicated to generating deep knowledge about the mobility behaviour of millions of people through machine learning technologies leveraged by the science of social physics.",
+};
 
 export default function Footer() {
   return (
     <footer sx={styles.footer}>
       <Container>
         <Box sx={styles.footer.footerBottomArea}>
-          <Link path="/">
-            <Image src={FooterLogo} alt="Logo" />
-          </Link>
-          <Box sx={styles.footer.menus}>
-            <nav>
-              {data.menuItem.map((item, i) => (
-                <Link
-                  path={item.path}
-                  key={i}
-                  label={item.label}
-                  sx={styles.footer.link}
-                />
+          <Flex sx={{ flexDirection: "column" }}>
+            <Link path="/">
+              <Image src={FooterLogo} alt="Logo" />
+            </Link>
+            <Text sx={styles.footer.description}>{footer.description}</Text>
+            <Text sx={styles.footer.copyright}>
+              Copyright by {new Date().getFullYear()} Kido Dynamics
+            </Text>
+          </Flex>
+
+          <Flex sx={{ flexDirection: "column" }}>
+            <Heading sx={{ color: "white", letterSpacing: "0.5px" }}>
+              Services
+            </Heading>
+            <Box sx={styles.footer.menus}>
+              <nav>
+                {data.menuItem.map((item, i) => (
+                  <Link
+                    path={item.path}
+                    key={i}
+                    label={item.label}
+                    sx={styles.footer.link}
+                  />
+                ))}
+              </nav>
+            </Box>
+          </Flex>
+
+          <Flex sx={{ flexDirection: "column" }}>
+            <Heading sx={{ color: "white", letterSpacing: "0.5px" }}>
+              Company
+            </Heading>
+            <Box sx={styles.footer.menus}>
+              <nav>
+                {data.company.map((item, i) => (
+                  <Link
+                    path={item.path}
+                    key={i}
+                    label={item.label}
+                    sx={styles.footer.link}
+                  />
+                ))}
+              </nav>
+            </Box>
+          </Flex>
+
+          <Flex sx={{ flexDirection: "column" }}>
+            <Heading sx={{ color: "white", letterSpacing: "0.5px" }}>
+              Social Media
+            </Heading>
+            <Box sx={styles.footer.social}>
+              {data.social.map((socialItem, i) => (
+                <Box as="span" key={i} sx={styles.footer.social.icon}>
+                  <Link to={socialItem.path}>{socialItem.icon}</Link>
+                </Box>
               ))}
-            </nav>
-          </Box>
-          <Text sx={styles.footer.copyright}>Copyright by {new Date().getFullYear()} Kido Dynamics</Text>
+            </Box>
+          </Flex>
         </Box>
       </Container>
     </footer>
@@ -33,25 +81,36 @@ export default function Footer() {
 
 const styles = {
   footer: {
-    background: "linear-gradient(132.35deg, #2AA6DA 0.55%, #1B7B77 115.49%), linear-gradient(141.17deg, #000066 -18.88%, #0342BF 173.25%)",
-    color: 'white',
+    background:
+      "linear-gradient(132.35deg, #2AA6DA 0.55%, #1B7B77 115.49%), linear-gradient(141.17deg, #000066 -18.88%, #0342BF 173.25%)",
+    color: "white",
     footerBottomArea: {
       borderTop: "1px solid",
       borderTopColor: "border_color",
       display: "flex",
       pt: [7, null, 8],
       pb: ["40px", null, "100px"],
-      textAlign: "center",
-      flexDirection: "column", },
+      textAlign: ["center", "center", "center", "left", "left", "left"],
+      flexDirection: ["column", "column", "column", "row", "row", "row"],
+      justifyContent: "space-between",
+    },
     menus: {
       mt: [3, 4],
       mb: 2,
       nav: {
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexWrap: "wrap",
+        flexDirection: "column",
+        // alignItems: "center",
+        // justifyContent: "center",
+        // flexWrap: "wrap",
       },
+    },
+    description: {
+      maxWidth: "385px",
+      mt: [3, 4],
+      mb: 2,
+      fontWeight: 100,
+      mx: 'auto'
     },
 
     link: {
@@ -64,14 +123,51 @@ const styles = {
       display: "block",
       textDecoration: "none",
       lineHeight: [1.5, null, 1.8],
-      px: [2, null, 4],
+      // px: [2, null, 4],
       ":hover": {
         color: "text",
       },
     },
     copyright: {
+      mt: [3, 4],
+      mb: 2,
       fontSize: [1, "15px"],
       width: "100%",
+    },
+
+    menuFooter: {
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+    },
+
+    social: {
+      width: "100%",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+
+      mt: [3, 4],
+      mb: 2,
+
+      icon: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        color: "white",
+        borderRadius: "50%",
+        fontSize: 16,
+        mr: "16px",
+        transition: "all 0.25s",
+        cursor: "pointer",
+        ":last-child": {
+          mr: "0",
+        },
+        "&:hover": {
+          color: "text",
+        },
+      },
     },
   },
 };

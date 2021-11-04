@@ -1,24 +1,63 @@
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaGithubAlt,
+  FaDribbble,
+} from "react-icons/fa";
+
 export default {
   menuItem: [
     {
-      path: '/',
+      path: 'home',
       label: 'Home',
     },
     {
-      path: '/',
-      label: 'Adversite',
+      path: 'tourism',
+      label: 'Tourism',
     },
     {
-      path: '/',
-      label: 'Supports',
+      path: 'mobility',
+      label: 'Mobility',
     },
     {
-      path: '/',
-      label: 'Marketing',
-    },
-    {
-      path: '/',
-      label: 'Contact',
+      path: 'retail',
+      label: 'Retail',
     },
   ],
+  company: [
+    {
+      path: 'about',
+      label: 'About',
+    },
+    {
+      path: 'terms',
+      label: 'Terms',
+    },
+    {
+      path: 'privacy',
+      label: 'Privacy Policy',
+    },
+    {
+      path: 'blog',
+      label: 'Blog',
+    },
+  ],
+  social: [
+    {
+      path: "/",
+      icon: <FaFacebookF />,
+    },
+    {
+      path: "/",
+      icon: <FaTwitter />,
+    },
+    {
+      path: "/",
+      icon: <FaGithubAlt />,
+    },
+    {
+      path: "/",
+      icon: <FaDribbble />,
+    },
+  ]
 };
