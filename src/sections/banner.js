@@ -126,7 +126,7 @@ const Banner = ({ banners }) => {
           <Container sx={styles.banner.container} key={item.id}>
             <Box sx={styles.banner.contentBox}>
               <Heading as="h1" variant="heroPrimary">
-                Get Insights About Your{" "}
+              {item.title}{' '}
                 <span sx={{ color: item.color }}>{item.heroPrimary}</span>
               </Heading>
               {/* <Box sx={styles.banner.tabsIcons}>
