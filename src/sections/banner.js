@@ -164,6 +164,7 @@ const Banner = ({ banners }) => {
                 src={getBannerImage(item.altText)}
                 alt={item.altText}
                 sx={{ objectFit: "contain" }}
+                priority
               />
             </AnimatedBox>
           </Container>

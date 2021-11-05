@@ -6,7 +6,7 @@ import Sticky from 'react-stickynode';
 import Header from './header/header';
 import Footer from './footer/footer';
 
-export default function Layout({ children }) {
+export default function Layout({ children, pageContext }) {
   const [isSticky, setIsSticky] = useState(false);
 
   const handleStateChange = (status) => {
@@ -20,7 +20,7 @@ export default function Layout({ children }) {
   return (
     <React.Fragment>
       <Sticky innerZ={1001} top={0} onStateChange={handleStateChange}>
-        <Header className={`${isSticky ? 'sticky' : 'unSticky'}`} />
+        <Header className={`${isSticky ? 'sticky' : 'unSticky'}`} pageContext={pageContext}/>
       </Sticky>
       <main id="content" sx={{ variant: 'layout.main', }} >
         {children}

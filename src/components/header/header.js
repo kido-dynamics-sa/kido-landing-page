@@ -7,8 +7,9 @@ import Logo from "components/logo";
 import LogoDark from "../../../public/assets/logo.svg";
 import MobileDrawer from "./mobile-drawer";
 import menuItems from "./header.data";
+import LocaleSwitch from "./locale-switch";
 
-export default function Header({ className }) {
+export default function Header({ className, pageContext }) {
   return (
     <header sx={styles.header} className={className} id="header">
       <Container sx={styles.container}>
@@ -23,15 +24,27 @@ export default function Header({ className }) {
               offset={-100}
               duration={500}
               key={i}
+              style={{ overflow: 'hidden', whiteSpace: 'nowrap'}}
             >
               {menuItem.label}
             </Link>
           ))}
         </Flex>
-        <Button className="donate__btn" variant="secondary" aria-label="Get started">
+
+        {/* Locale Switch Desktop */}
+        {pageContext.locales && (
+          <div>
+            <LocaleSwitch pageContext={pageContext} />
+          </div>
+        )}
+        <Button
+          className="donate__btn"
+          variant="secondary"
+          aria-label="Get started"
+        >
           Get Started
         </Button>
-        <MobileDrawer></MobileDrawer>
+        <MobileDrawer />
       </Container>
     </header>
   );

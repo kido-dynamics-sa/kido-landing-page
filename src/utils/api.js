@@ -26,8 +26,8 @@ export async function fetchAPI(path, options = {}) {
   return data;
 }
 
-export async function getBanners() {
-  const banners = await fetchAPI("/banners");
+export async function getBanners(locale) {
+  const banners = await fetchAPI(`/banners?_locale=${locale}`);
   return banners;
 }
 

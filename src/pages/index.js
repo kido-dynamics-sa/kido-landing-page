@@ -19,10 +19,10 @@ import SubscribeUs from "../sections/subscribe-us";
 
 import { getBanners, getFeatureCardColumns, getSections, getTextFeatures } from "utils/api"
 
-export default function IndexPage({ banners, sections, featureCardColumns, textFeatures }) {
+export default function IndexPage({ banners, sections, featureCardColumns, textFeatures, pageContext }) {
   return (
     <ThemeProvider theme={theme}>
-      <Layout>
+      <Layout pageContext={pageContext}>
         <SEO title="Kido Dynamics Landing Page" />
         <Banner banners={banners} />
         <KeyFeature featureCardColumns={featureCardColumns} section={sections.find(a => a.name === 'FeatureCardsSection')}/>
@@ -50,14 +50,13 @@ export async function getStaticProps(context) {
     locales,
     defaultLocale,
   }
-   console.log("context", context)
 
-  const banners = await getBanners();
+  const banners = await getBanners(locale);
   const featureCardColumns = await getFeatureCardColumns();
   const sections = await getSections();
   const textFeatures = await getTextFeatures();
   return {
-    props: { banners, featureCardColumns, sections, textFeatures },
+    props: { banners, featureCardColumns, sections, textFeatures, pageContext },
     revalidate: 60
   };
 }

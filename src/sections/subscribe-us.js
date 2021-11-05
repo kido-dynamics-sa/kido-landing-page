@@ -80,7 +80,7 @@ const SubscribeUs = () => {
                         variant="secondary"
                         sx={{ bg: "white", borderColor: "white" }}
                         disabled={isSubmitting}
-                        loading={loading}
+                        disabled={loading}
                       >
                         Subscribe
                       </Button>
