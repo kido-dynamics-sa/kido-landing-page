@@ -1,4 +1,5 @@
 /** @jsxRuntime classic */
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Input as InputField } from 'theme-ui';
 import { rgba } from 'polished';

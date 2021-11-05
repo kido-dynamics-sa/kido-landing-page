@@ -1,15 +1,17 @@
 import React, {useEffect} from 'react';
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import {
   jsx,
   Container,
   Box,
-  Image,
 } from "theme-ui";
 import TextFeature from "components/text-feature";
 
-import ServiceThumb from "assets/retailApp.png";
-import shapePattern from "assets/shapeRetailPattern.png";
+import Image from "next/image";
+
+import ServiceThumb from "../../public/assets/retailApp.png";
+import shapePattern from "../../public/assets/shapeRetailPattern.png";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";

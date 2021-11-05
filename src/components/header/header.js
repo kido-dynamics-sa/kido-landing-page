@@ -1,9 +1,10 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Container, Flex, Button } from "theme-ui";
-import { keyframes } from "@emotion/core";
+import { keyframes } from "@emotion/react";
 import { Link } from "react-scroll";
 import Logo from "components/logo";
-import LogoDark from "assets/logo.svg";
+import LogoDark from "../../../public/assets/logo.svg";
 import MobileDrawer from "./mobile-drawer";
 import menuItems from "./header.data";
 

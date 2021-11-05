@@ -1,15 +1,17 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Container, Box, Heading, Text, Image, Button } from "theme-ui";
-// import BannerImg from "assets/banner-thumb.png";
-import BannerImgMobile from "assets/heroBannerNoRotate.png";
-import BannerTourism from "assets/heroTourism.png";
-import BannerRetail from "assets/heroRetail.png";
-import BannerMobility from "assets/heroMobility.png";
-import tabsIcon from "assets/tabsIcon.svg";
-// import tabsIconTourism from "assets/tabsIconTourism.svg";
-// import tabsIconMobility from "assets/tabsIconMobility.svg";
-// import tabsIconRetail from "assets/tabsIconRetail.svg";
+import { Container, Box, Heading, Text, Button } from "theme-ui";
+import Image from 'next/image'
+// import BannerImg from "../../../public/assets/banner-thumb.png";
+// import BannerImgMobile from "../../../public/assets/heroBannerNoRotate.png";
+import BannerTourism from "../../public/assets/heroTourism.png";
+import BannerRetail from "../../public/assets/heroRetail.png";
+import BannerMobility from "../../public/assets/heroMobility.png";
+// import tabsIcon from "../../../public/assets/tabsIcon.svg";
+// import tabsIconTourism from "../../../public/assets/tabsIconTourism.svg";
+// import tabsIconMobility from "../../../public/assets/tabsIconMobility.svg";
+// import tabsIconRetail from "../../../public/assets/tabsIconRetail.svg";
 import Carousel from "react-multi-carousel";
 
 import { motion } from "framer-motion";

@@ -1,11 +1,14 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Container, Box, Image, Grid, Text, Heading } from "theme-ui";
+import { jsx, Container, Box, Grid, Text, Heading } from "theme-ui";
+
+import Image from "next/image";
 import TextFeature from "components/text-feature";
 
-import ServiceThumb from "assets/mobilityApp.png";
-import shapePattern from "assets/shapeMobilityPattern.png";
-import Smart from "assets/services/smart.svg";
-import Secure from "assets/services/secure.svg";
+import ServiceThumb from "../../public/assets/mobilityApp.png";
+import shapePattern from "../../public/assets/shapeMobilityPattern.png";
+import Smart from "../../public/assets/services/smart.svg";
+import Secure from "../../public/assets/services/secure.svg";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -56,11 +59,9 @@ export default function CoreFeature({ data }) {
           <Grid sx={styles.grid}>
             {features.map((feature) => (
               <Box sx={styles.card} key={feature.id}>
-                <Image
-                  src={feature.imgSrc}
-                  alt={feature.altText}
-                  sx={styles.icon}
-                />
+                <div sx={styles.icon}>
+                  <Image src={feature.imgSrc} alt={feature.altText} />
+                </div>
                 <Box sx={styles.wrapper}>
                   <Heading sx={styles.wrapper.title}>{feature.title}</Heading>
                   <Text sx={styles.wrapper.subTitle}>{feature.text}</Text>

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import {
   jsx,
@@ -8,17 +9,18 @@ import {
   Text,
   Heading,
   Button,
-  Image,
 } from "theme-ui";
-import { keyframes } from "@emotion/core";
+import { keyframes } from "@emotion/react";
 import TextFeature from "components/text-feature";
 import { IoIosPlay } from "react-icons/io";
 
-import ServiceThumb from "assets/tourismApp.png";
-import shapePattern from "assets/shapeTourismPattern.png";
+import ServiceThumb from "../../public/assets/tourismApp.png";
+import shapePattern from "../../public/assets/shapeTourismPattern.png";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+
+import Image from "next/image";
 
 let AnimatedBox = motion.custom(Box);
 
@@ -49,11 +51,13 @@ export default function ServiceSectionVideo({ data }) {
           sx={styles.thumbnail}
           animate={inView ? { opacity: 1, scale: 1 } : ""}
         >
-          <Image
-            src={ServiceThumb}
-            alt="Thumbnail"
-            sx={{ maxWidth: "600px" }}
-          />
+          <div 
+            sx={{ maxWidth: "600px" }}>
+            <Image
+              src={ServiceThumb}
+              alt="Thumbnail"
+            />
+          </div>
           <Button
             sx={styles.videoBtn}
             onClick={handleClick}

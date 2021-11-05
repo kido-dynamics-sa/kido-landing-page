@@ -1,12 +1,13 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Container, Grid } from "theme-ui";
 import SectionHeader from "../components/section-header";
 import FeatureCardColumn from "components/feature-card-column.js";
-import Tourism from "assets/key-feature/tourism.svg";
-import Mobility from "assets/key-feature/mobility.svg";
-import Retail from "assets/key-feature/retail.svg";
-import Support from "assets/key-feature/support.svg";
+import Tourism from "../../public/assets/key-feature/tourism.svg";
+import Mobility from "../../public/assets/key-feature/mobility.svg";
+import Retail from "../../public/assets/key-feature/retail.svg";
+import Support from "../../public/assets/key-feature/support.svg";
 
 
 export default function KeyFeature({featureCardColumns, section}) {

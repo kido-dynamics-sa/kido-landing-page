@@ -1,5 +1,7 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Image, Box, Heading, Text } from 'theme-ui';
+import { jsx, Box, Heading, Text } from 'theme-ui';
+import Image from 'next/image'
 
 export default function FeatureCard({
   src,
@@ -10,7 +12,9 @@ export default function FeatureCard({
   return (
     
     <Box sx={styles.card}>
-      <Image src={src} alt={altText} sx={styles.img}/>
+      <div sx={styles.img}>
+        <Image src={src} alt={altText} />
+      </div>
       <Box sx={styles.wrapper}>
         <Heading sx={styles.wrapper.title}>{title}</Heading>
         <Text sx={styles.wrapper.subTitle}>{text}</Text>

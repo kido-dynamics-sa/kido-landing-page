@@ -1,8 +1,11 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Container, Box, Image } from "theme-ui";
+import { Container, Box } from "theme-ui";
+
+import Image from "next/image";
 import SectionHeader from "components/section-header";
-import Map from "assets/map.png";
+import Map from "../../public/assets/map.png";
 
 
 export default function InternationalPresence() {

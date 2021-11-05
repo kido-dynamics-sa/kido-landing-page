@@ -1,8 +1,10 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Box, Container, Image, Text, Flex } from "theme-ui";
+import { jsx, Box, Container, Text, Flex } from "theme-ui";
+import Image from 'next/image'
 import { Link } from "components/link";
 import data from "./footer.data";
-import FooterLogo from "assets/logoWhite.svg";
+import FooterLogo from "../../../public/assets/logoWhite.svg";
 import { Heading } from "@theme-ui/components";
 
 const footer = {

@@ -1,11 +1,16 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx } from "theme-ui";
-import { Text, Heading, Image, Box, Link } from "theme-ui";
+import { Text, Heading, Box, Link } from "theme-ui";
+
+import Image from "next/image";
 
 export default function TeamCard({ src, altText, title, designation, social }) {
   return (
     <Box sx={styles.card}>
-      <Image src={src} alt={altText} sx={styles.memberThumb} />
+      <div sx={styles.memberThumb}>
+        <Image src={src} alt={altText} />
+      </div>
       <Box sx={styles.infoWrapper}>
         <Heading className="info__name" sx={styles.infoWrapper.name}>
           {title}
@@ -16,7 +21,9 @@ export default function TeamCard({ src, altText, title, designation, social }) {
       </Box>
       <Box sx={styles.socialShare} className="social__share">
         {social.map((item) => (
-          <Link key={item.id} href={item.path} className={item.name}>{item.icon}</Link>
+          <Link key={item.id} href={item.path} className={item.name}>
+            {item.icon}
+          </Link>
         ))}
       </Box>
     </Box>

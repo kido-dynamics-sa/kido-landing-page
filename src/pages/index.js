@@ -41,7 +41,17 @@ export default function IndexPage({ banners, sections, featureCardColumns, textF
   );
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
+
+  const { params, locale, locales, defaultLocale, preview = null } = context
+
+  const pageContext = {
+    locale,
+    locales,
+    defaultLocale,
+  }
+   console.log("context", context)
+
   const banners = await getBanners();
   const featureCardColumns = await getFeatureCardColumns();
   const sections = await getSections();

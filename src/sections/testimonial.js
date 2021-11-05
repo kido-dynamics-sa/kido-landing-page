@@ -1,14 +1,17 @@
+/** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Container, Heading, Text, Box, Image } from "theme-ui";
+import { jsx, Container, Heading, Text, Box } from "theme-ui";
+
+import Image from "next/image";
 import SectionHeader from "components/section-header";
 import Rating from "components/rating";
 import ButtonGroup from "components/button-group";
 import Carousel from "react-multi-carousel";
 
-import Avatar1 from "assets/testimonial/avatar1.png";
-import Avatar2 from "assets/testimonial/avatar2.png";
-import Avatar3 from "assets/testimonial/avatar3.png";
-import Avatar4 from "assets/testimonial/avatar4.png";
+import Avatar1 from "../../public/assets/testimonial/avatar1.png";
+import Avatar2 from "../../public/assets/testimonial/avatar2.png";
+import Avatar3 from "../../public/assets/testimonial/avatar3.png";
+import Avatar4 from "../../public/assets/testimonial/avatar4.png";
 
 const data = [
   {
