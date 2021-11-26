@@ -8,12 +8,14 @@ import LogoDark from "../../../public/assets/logo.svg";
 import MobileDrawer from "./mobile-drawer";
 import menuItems from "./header.data";
 import LocaleSwitch from "./locale-switch";
+import { Fragment } from "react";
 
-export default function Header({ className, pageContext }) {
+export default function Header({ className, pageContext, onlyLogo }) {
   return (
     <header sx={styles.header} className={className} id="header">
       <Container sx={styles.container}>
         <Logo src={LogoDark} />
+        {!onlyLogo && <Fragment>
         <Flex as="nav" sx={styles.nav}>
           {menuItems.map((menuItem, i) => (
             <Link
@@ -45,6 +47,7 @@ export default function Header({ className, pageContext }) {
           Get Started
         </Button>
         <MobileDrawer />
+        </Fragment>}
       </Container>
     </header>
   );

@@ -10,7 +10,8 @@ export default function TextFeature({
   btnURL = "#",
   color = "primary",
   shadow = "rgb(233 76 84 / 57%) 0px 9px 20px -5px",
-  shadowHover = "rgb(233 76 84 / 57%) 0px 9px 40px -5px"
+  shadowHover = "rgb(233 76 84 / 57%) 0px 9px 40px -5px",
+  maxWidth,
 }) {
   return (
     <Box sx={styles.card}>
@@ -23,7 +24,12 @@ export default function TextFeature({
         </Heading>
       </Box>
       {description && (
-        <Text as="p" className="description" sx={styles.description}>
+        <Text
+          as="p"
+          className="description"
+          sx={styles.description}
+          style={{ width: maxWidth ? "750px" : "100%" }}
+        >
           {description}
         </Text>
       )}
@@ -51,7 +57,7 @@ export default function TextFeature({
 const styles = {
   card: {
     display: "flex",
-    alignItems: "flex-start",
+    alignItems: "center",
     flexDirection: "column",
     flexShrink: 0,
     a: {
