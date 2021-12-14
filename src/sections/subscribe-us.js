@@ -121,8 +121,9 @@ const styles = {
     pb: [8, null, null, 9, 9],
   },
   contentWrapper: {
-    background:
-      "linear-gradient(136.82deg, rgba(237, 46, 126, 0.27) -28.85%, #EC3683 169.19%),linear-gradient(0deg, #021639, #021639)",
+    backgroundColor: "primary",
+    // background:
+    //   "linear-gradient(111deg, rgba(226,72,124,1) 0%, rgba(98,127,255,1) 61%, rgba(57,118,239,1) 100%)",
     borderRadius: "12px",
     p: ["40px", "40px", "40px 110px 50px", "50px 50px", "40px"],
     gap: ["25px", "25px", "50px", "50px", "50px"],

@@ -113,11 +113,11 @@ export default function KeyFeature({ section }) {
         <Box sx={{ position: "relative" }}>
           <div
             sx={{
-              background: "linear-gradient(180deg,#f2f4ff,#fff)",
+              background: "radial-gradient(circle,#f2f4ff,#fff)",
               height: "100%",
               width: "120%",
               position: "absolute",
-              top: 0,
+              top: '10%',
               left: "-10%",
               zIndex: -1,
             }}
@@ -224,7 +224,7 @@ const styles = {
     mt: -1,
     subTitle: {
       fontSize: [0, null, 1],
-      color: "primary",
+      color: "#ED2E7E",
       textTransform: "uppercase",
       fontWeight: "700",
       mb: [2, 3],

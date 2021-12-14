@@ -80,8 +80,8 @@ export default function Footer({ footer }) {
 
 const styles = {
   footer: {
-    background:
-      "linear-gradient(132.35deg, #2AA6DA 0.55%, #1B7B77 115.49%), linear-gradient(141.17deg, #000066 -18.88%, #0342BF 173.25%)",
+    background: 'rgb(226,72,124)',
+    background: 'linear-gradient(111deg, rgba(226,72,124,1) 0%, rgba(98,127,255,1) 61%, rgba(57,118,239,1) 100%)',
     color: "white",
     footerBottomArea: {
       borderTop: "1px solid",

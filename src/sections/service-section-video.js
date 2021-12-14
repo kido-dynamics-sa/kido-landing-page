@@ -79,6 +79,7 @@ export default function ServiceSectionVideo({ data }) {
             description={data.description}
             btnName={data.btnName}
             btnURL={data.btnURL}
+            color="#ED2E7E"
           />
         </Box>
       </Container>
@@ -156,7 +157,7 @@ const styles = {
       display: "block",
       width: ["60px", null, "80px", null, "100px"],
       height: ["60px", null, "80px", null, "100px"],
-      backgroundColor: "primary",
+      backgroundColor: "#ED2E7E",
       borderRadius: "50%",
       animation: `${playPluse} 1.5s ease-out infinite`,
       opacity: 0.5,
