@@ -10,7 +10,7 @@ import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import { fetchAPI } from "utils/api";
 
-const SubscribeUs = () => {
+const SubscribeUs = ({ section }) => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -19,12 +19,17 @@ const SubscribeUs = () => {
   });
 
   return (
-    <Box as="section" sx={styles.section} variant="section.subscribe" id="contact">
+    <Box
+      as="section"
+      sx={styles.section}
+      variant="section.subscribe"
+      id="contact"
+    >
       <Container>
         <Box sx={styles.contentWrapper}>
           <SectionHeader
-            slogan="unveil powerful insight since now"
-            title="Like our service? Contact us!"
+            slogan={section.slogan}
+            title={section.title}
             isWhite={true}
           />
           <Formik
@@ -111,7 +116,7 @@ export default SubscribeUs;
 
 const styles = {
   section: {
-    height:'50vh',
+    height: "50vh",
     pt: [6, null, null, null, 6],
     pb: [8, null, null, 9, 9],
   },

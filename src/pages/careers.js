@@ -4,30 +4,17 @@ import theme from "theme";
 
 import SEO from "components/seo";
 import Layout from "components/layout";
-import Banner from "../sections/banner";
 import KeyFeature from "../sections/careers/key-feature";
-import ServiceSection from "../sections/service-section";
-import ServiceSectionVideo from "../sections/service-section-video";
-import Feature from "../sections/feature";
-import InternationalPresence from "../sections/international-presence";
-import CoreFeature from "../sections/core-feature";
-import WorkFlow from "../sections/workflow";
-import Package from "../sections/package";
-import TeamSection from "../sections/team-section";
-import TestimonialCard from "../sections/testimonial";
-import SubscribeUs from "../sections/subscribe-us";
 
-import {
-  getBanners,
-  getFeatureCardColumns,
-  getSections,
-  getTextFeatures,
-} from "utils/api";
 
-export default function IndexPage({ pageContext }) {
+import { getFooter } from "utils/api"
+
+
+
+export default function IndexPage({ footer, pageContext }) {
   return (
     <ThemeProvider theme={theme}>
-      <Layout pageContext={pageContext}>
+      <Layout pageContext={pageContext} footer={footer[0]} onlyLogo>
         <SEO title="Kido Dynamics Landing Page" />
         <KeyFeature />
       </Layout>
@@ -38,6 +25,8 @@ export default function IndexPage({ pageContext }) {
 export async function getStaticProps(context) {
   const { params, locale, locales, defaultLocale, preview = null } = context;
 
+  const footer = await getFooter();
+
   const pageContext = {
     locale,
     locales,
@@ -45,7 +34,7 @@ export async function getStaticProps(context) {
   };
 
   return {
-    props: { pageContext },
+    props: { footer, pageContext },
     revalidate: 60,
   };
 }

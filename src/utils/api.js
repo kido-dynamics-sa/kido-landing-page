@@ -45,3 +45,18 @@ export async function getTextFeatures() {
   const textFeatures = await fetchAPI("/text-features");
   return textFeatures;
 }
+
+export async function getWorkFlowItems() {
+  const workFlowItems = await fetchAPI("/work-flow-items");
+  return workFlowItems;
+}
+
+export async function getTestimonialItems() {
+  const testimonialItems = await fetchAPI("/testimonial-items");
+  return testimonialItems;
+}
+
+export async function getFooter() {
+  const footer = await fetchAPI("/footers");
+  return footer;
+}

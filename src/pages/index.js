@@ -17,12 +17,12 @@ import TeamSection from "../sections/team-section";
 import TestimonialCard from "../sections/testimonial";
 import SubscribeUs from "../sections/subscribe-us";
 
-import { getBanners, getFeatureCardColumns, getSections, getTextFeatures } from "utils/api"
+import { getBanners, getFeatureCardColumns, getSections, getTextFeatures, getWorkFlowItems, getTestimonialItems, getFooter } from "utils/api"
 
-export default function IndexPage({ banners, sections, featureCardColumns, textFeatures, pageContext }) {
+export default function IndexPage({ banners, sections, featureCardColumns, textFeatures, workFlowItems, testimonialItems, footer, pageContext }) {
   return (
     <ThemeProvider theme={theme}>
-      <Layout pageContext={pageContext}>
+      <Layout pageContext={pageContext} footer={footer[0]}>
         <SEO title="Kido Dynamics Landing Page" />
         <Banner banners={banners} />
         <KeyFeature featureCardColumns={featureCardColumns} section={sections.find(a => a.name === 'FeatureCardsSection')}/>
@@ -30,12 +30,12 @@ export default function IndexPage({ banners, sections, featureCardColumns, textF
         <CoreFeature data={textFeatures.find(a => a.name === 'Mobility')}/>
         <ServiceSection data={textFeatures.find(a => a.name === 'Retail')}/>
         {/* <Feature /> */}
-        <WorkFlow />
+        <WorkFlow workFlowItems={workFlowItems} section={sections.find(a => a.name === 'WorkFlowSection')}/>
         {/* <Package /> */}
-        <InternationalPresence />
-        <TeamSection />
-        <TestimonialCard />
-        <SubscribeUs />
+        <InternationalPresence section={sections.find(a => a.name === 'InternationalPresenceSection')}/>
+        <TeamSection section={sections.find(a => a.name === 'TeamSection')}/>
+        <TestimonialCard testimonialItems={testimonialItems} section={sections.find(a => a.name === 'TestimonialSection')}/>
+        <SubscribeUs section={sections.find(a => a.name === 'SubscribeUsSection')}/>
       </Layout>
     </ThemeProvider>
   );
@@ -55,8 +55,12 @@ export async function getStaticProps(context) {
   const featureCardColumns = await getFeatureCardColumns();
   const sections = await getSections();
   const textFeatures = await getTextFeatures();
+  const workFlowItems = await getWorkFlowItems();
+  const testimonialItems = await getTestimonialItems();
+  const footer = await getFooter();
+
   return {
-    props: { banners, featureCardColumns, sections, textFeatures, pageContext },
+    props: { banners, featureCardColumns, sections, textFeatures, workFlowItems, testimonialItems, footer, pageContext },
     revalidate: 60
   };
 }

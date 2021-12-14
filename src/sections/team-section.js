@@ -367,13 +367,13 @@ const data = [
   },
 ];
 
-export default function TeamSection() {
+export default function TeamSection({ section }) {
   return (
-    <section sx={{mt: 10}}>
+    <section sx={{mt: 6}}>
       <Container>
         <SectionHeader
-          slogan="Our team"
-          title="The most qualified and talented individuals"
+          slogan={section.slogan}
+          title={section.title}
         />
         <Grid sx={styles.grid}>
           {data.map((item) => (

@@ -7,12 +7,9 @@ import data from "./footer.data";
 import FooterLogo from "../../../public/assets/logoWhite.svg";
 import { Heading } from "@theme-ui/components";
 
-const footer = {
-  description:
-    "Kido Dynamics is dedicated to generating deep knowledge about the mobility behaviour of millions of people through machine learning technologies leveraged by the science of social physics.",
-};
 
-export default function Footer() {
+export default function Footer({ footer }) {
+
   return (
     <footer sx={styles.footer}>
       <Container>
