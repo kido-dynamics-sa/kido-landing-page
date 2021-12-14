@@ -80,6 +80,8 @@ export default function ServiceSectionVideo({ data }) {
             btnName={data.btnName}
             btnURL={data.btnURL}
             color="#ED2E7E"
+            shadow="rgb(233 76 84 / 57%) 0px 9px 20px -5px"
+            shadowHover="rgb(233 76 84 / 57%) 0px 9px 40px -5px"
           />
         </Box>
       </Container>
