@@ -9,8 +9,8 @@ export default function TextFeature({
   btnName,
   btnURL = "#",
   color = "primary",
-  shadow = "rgb(233 76 84 / 57%) 0px 9px 20px -5px",
-  shadowHover = "rgb(233 76 84 / 57%) 0px 9px 40px -5px",
+  shadow = "rgb(57 118 239 / 57%) 0px 9px 20px -5px",
+  shadowHover = "rgb(57 118 239 / 57%) 0px 9px 40px -5px",
   maxWidth,
 }) {
   return (

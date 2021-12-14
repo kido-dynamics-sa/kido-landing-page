@@ -164,7 +164,7 @@ export default function KeyFeature({ section }) {
                     cursor: "pointer",
                     "&:hover": {
                       div: {
-                        background: "#ED2E7E",
+                        backgroundColor: "primary",
                       },
                       p: {
                         color: "#fff",
@@ -224,7 +224,7 @@ const styles = {
     mt: -1,
     subTitle: {
       fontSize: [0, null, 1],
-      color: "#ED2E7E",
+      color: "primary",
       textTransform: "uppercase",
       fontWeight: "700",
       mb: [2, 3],
