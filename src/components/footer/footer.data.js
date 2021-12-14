@@ -12,29 +12,29 @@ export default {
       label: 'Home',
     },
     {
-      path: 'tourism',
+      path: '#tourism',
       label: 'Tourism',
     },
     {
-      path: 'mobility',
+      path: '#mobility',
       label: 'Mobility',
     },
     {
-      path: 'retail',
+      path: '#retail',
       label: 'Retail',
     },
   ],
   company: [
     {
-      path: 'about',
+      path: '/',
       label: 'About',
     },
     {
-      path: 'terms',
+      path: '/',
       label: 'Terms',
     },
     {
-      path: 'privacy',
+      path: '/',
       label: 'Privacy Policy',
     },
     {
