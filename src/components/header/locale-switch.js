@@ -77,10 +77,10 @@ const LocaleSwitch = ({ pageContext }) => {
           bg: "transparent",
           border: "0 solid",
           "&:hover": {
-            bg: "#ffebfa",
+            bg: "#d8e5ff",
           },
           "&:focus": {
-            bg: "#ffebfa",
+            bg: "#d8e5ff",
           },
         }}
       >
@@ -94,7 +94,7 @@ const LocaleSwitch = ({ pageContext }) => {
             },
 
             "&:focus": {
-              bg: "#ffebfa",
+              bg: "#d8e5ff",
             },
           }}
         >
@@ -138,10 +138,10 @@ const LocaleSwitch = ({ pageContext }) => {
                     m: 0,
 
                     "&:hover": {
-                      bg: "#ffebfa",
+                      bg: "#d8e5ff",
                     },
                     "&:focus": {
-                      bg: "#ffebfa",
+                      bg: "#d8e5ff",
                     },
                   }}
                 >

@@ -75,7 +75,7 @@ const SubscribeUs = ({ section }) => {
                             type="email"
                             {...field}
                             className="email-input"
-                            placeholder="Enter Email address"
+                            placeholder="Enter Your Email Address"
                           />
                         )}
                       </Field>
@@ -87,7 +87,7 @@ const SubscribeUs = ({ section }) => {
                         disabled={isSubmitting}
                         disabled={loading}
                       >
-                        Subscribe
+                        Contact Us
                       </Button>
                     </Flex>
                   </Form>
