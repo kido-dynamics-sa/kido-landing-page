@@ -5,19 +5,32 @@ import { Container, Box, Text } from "theme-ui";
 import TextFeature from "components/text-feature";
 import Map from "../../../public/assets/team_countries.png";
 import Image from "next/image";
-import SectionHeader from "components/section-header";
-import FeatureCardColumn from "components/feature-card-column.js";
 import Check from "../../../public/assets/check.svg";
 import Link from "next/link";
-import Mobility from "../../../public/assets/key-feature/mobility.svg";
-import Retail from "../../../public/assets/key-feature/retail.svg";
-import Support from "../../../public/assets/key-feature/support.svg";
+
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+let AnimatedBox = motion.custom(Box);
+
+const animationProps = {
+  initial: { opacity: 0, scale: 0.75 },
+  transition: { ease: "easeOut", duration: 0.75 },
+};
 
 export default function KeyFeature({ section }) {
+  const { ref, inView } = useInView({
+    threshold: 0.25,
+  });
   return (
-    <section id="feature" sx={styles.banner}>
+    <section ref={ref} id="feature" sx={styles.banner}>
       <Container>
-        <Box sx={styles.contentBox}>
+        <AnimatedBox
+          {...animationProps}
+          sx={styles.contentBox}
+          animate={inView ? { opacity: 1, scale: 1 } : ""}
+        >
+          {/* <Box sx={styles.contentBox}> */}
           <TextFeature
             subTitle={"careers"}
             title={"Come to work with us at Kido Dynamics"}
@@ -28,10 +41,15 @@ export default function KeyFeature({ section }) {
             btnURL={"#open-positions"}
             maxWidth
           />
-        </Box>
-        <Box sx={{ mx: 6, my: 8 }}>
+        </AnimatedBox>
+
+        <AnimatedBox
+          {...animationProps}
+          sx={{ mx: 6, my: 8 }}
+          animate={inView ? { opacity: 1, scale: 1 } : ""}
+        >
           <Image src={Map} alt="worlwilde presence map" />
-        </Box>
+        </AnimatedBox>
         <Box sx={{ position: "relative", mx: "auto", maxWidth: "1200px" }}>
           <Container
             sx={{
@@ -117,7 +135,7 @@ export default function KeyFeature({ section }) {
               height: "100%",
               width: "120%",
               position: "absolute",
-              top: '10%',
+              top: "10%",
               left: "-10%",
               zIndex: -1,
             }}

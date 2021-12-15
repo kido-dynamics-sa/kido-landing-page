@@ -2,7 +2,7 @@ import {
   FaFacebookF,
   FaTwitter,
   FaGithubAlt,
-  FaDribbble,
+  FaLinkedin,
 } from "react-icons/fa";
 
 export default {
@@ -44,16 +44,12 @@ export default {
   ],
   social: [
     {
-      path: "/",
-      icon: <FaFacebookF />,
+      path: "https://www.linkedin.com/company/kido-dynamics/",
+      icon: <FaLinkedin />,
     },
     {
-      path: "/",
+      path: "https://twitter.com/kidodynamics",
       icon: <FaTwitter />,
-    },
-    {
-      path: "/",
-      icon: <FaGithubAlt />,
     },
   ]
 };
