@@ -10,7 +10,7 @@ import { Formik, Form, Field } from "formik";
 import * as yup from "yup";
 import { fetchAPI } from "utils/api";
 
-const SubscribeUs = ({ section }) => {
+const SubscribeUs = ({ subscribeUsData, section }) => {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
 
@@ -75,7 +75,7 @@ const SubscribeUs = ({ section }) => {
                             type="email"
                             {...field}
                             className="email-input"
-                            placeholder="Enter Your Email Address"
+                            placeholder={subscribeUsData.placeholder}
                           />
                         )}
                       </Field>
@@ -87,7 +87,7 @@ const SubscribeUs = ({ section }) => {
                         disabled={isSubmitting}
                         disabled={loading}
                       >
-                        Contact Us
+                        {subscribeUsData.button}
                       </Button>
                     </Flex>
                   </Form>

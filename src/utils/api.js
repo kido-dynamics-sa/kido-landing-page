@@ -60,3 +60,8 @@ export async function getFooter() {
   const footer = await fetchAPI("/footers");
   return footer;
 }
+
+export async function getSubscribeUs() {
+  const subscribeUsData = await fetchAPI("/suscribe-us");
+  return subscribeUsData;
+}
