@@ -13,7 +13,6 @@ import Avatar2 from "../../public/assets/testimonial/avatar2.png";
 import Avatar3 from "../../public/assets/testimonial/avatar3.png";
 import Avatar4 from "../../public/assets/testimonial/avatar4.png";
 
-
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1619 },
@@ -61,7 +60,12 @@ const carouselParams = {
 };
 
 export default function TestimonialCard({ testimonialItems, section }) {
-  const avatarDict = { "Avatar1": Avatar1, "Avatar2": Avatar2, "Avatar3": Avatar3, "Avatar4": Avatar4,}
+  const avatarDict = {
+    Avatar1: Avatar1,
+    Avatar2: Avatar2,
+    Avatar3: Avatar3,
+    Avatar4: Avatar4,
+  };
 
   return (
     <section id="testimonial" sx={{ variant: "section.testimonial" }}>
@@ -70,26 +74,28 @@ export default function TestimonialCard({ testimonialItems, section }) {
       </Container>
       <Box sx={styles.carouselWrapper}>
         <Carousel {...carouselParams}>
-          {testimonialItems.sort((a,b) => a.id < b.id).map((item) => (
-            <Box sx={styles.reviewCard} key={item.id}>
-              <Rating rating={item.review}></Rating>
-              <Heading as="h3" sx={styles.title}>
-                {item.title}
-              </Heading>
-              <Text sx={styles.description}>{item.description}</Text>
-              <div className="card-footer">
-                <div className="image">
-                  <Image src={avatarDict[item.avatar]} alt="Client image" />
+          {testimonialItems
+            .sort((a, b) => a.id < b.id)
+            .map((item) => (
+              <Box sx={styles.reviewCard} key={item.id}>
+                <Rating rating={item.review}></Rating>
+                <Heading as="h3" sx={styles.title}>
+                  {item.title}
+                </Heading>
+                <Text sx={styles.description}>{item.description}</Text>
+                <div className="card-footer">
+                  <div className="image">
+                    <Image src={avatarDict[item.avatar]} alt="Client image" />
+                  </div>
+                  <div className="reviewer-info">
+                    <Heading as="h4" sx={styles.heading}>
+                      {item.name}
+                    </Heading>
+                    <Text sx={styles.designation}>{item.designation}</Text>
+                  </div>
                 </div>
-                <div className="reviewer-info">
-                  <Heading as="h4" sx={styles.heading}>
-                    {item.name}
-                  </Heading>
-                  <Text sx={styles.designation}>{item.designation}</Text>
-                </div>
-              </div>
-            </Box>
-          ))}
+              </Box>
+            ))}
         </Carousel>
       </Box>
     </section>
