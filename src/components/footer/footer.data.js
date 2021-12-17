@@ -34,7 +34,7 @@ export default {
       label: 'Terms',
     },
     {
-      path: '/',
+      path: '/https://app.kido-es.kidodynamics.com/PSI.pdf',
       label: 'Privacy Policy',
     },
     {
