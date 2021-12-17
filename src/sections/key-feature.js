@@ -9,19 +9,21 @@ import Mobility from "../../public/assets/key-feature/mobility.svg";
 import Retail from "../../public/assets/key-feature/retail.svg";
 import Support from "../../public/assets/key-feature/support.svg";
 
+export default function KeyFeature({ featureCardColumns, section }) {
 
-export default function KeyFeature({featureCardColumns, section}) {
   const sortedFeatures = [
     "Tourism General Feature",
     "Mobility General Feature",
     "Retail General Feature",
   ];
+
   const sortFeatures = (features) => {
     return sortedFeatures.map((labelBanner) => {
       const newBanner = features.find((a) => a.altText === labelBanner);
       return { ...newBanner };
     });
   };
+  
   const getFeatureImage = (altText) => {
     switch (altText) {
       case "Tourism General Feature":

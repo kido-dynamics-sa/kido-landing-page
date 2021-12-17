@@ -27,6 +27,7 @@ import {
   getFooter,
   getSubscribeUs,
 } from "utils/api";
+import Partners from "sections/partners";
 
 export default function IndexPage({
   banners,
@@ -44,6 +45,7 @@ export default function IndexPage({
       <Layout pageContext={pageContext} footer={footer[0]}>
         <SEO title="Kido Dynamics Landing Page" />
         <Banner banners={banners} />
+        <Partners />
         <KeyFeature
           featureCardColumns={featureCardColumns}
           section={sections.find((a) => a.name === "FeatureCardsSection")}
