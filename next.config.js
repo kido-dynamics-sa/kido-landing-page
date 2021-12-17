@@ -4,5 +4,8 @@ module.exports = {
     locales: ["en"],
     defaultLocale: "en",
     localeDetection: false,
-  }
+  },
+  images: {
+    domains: ['www.placer.ai'],
+},
 }

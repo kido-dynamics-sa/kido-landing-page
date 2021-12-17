@@ -41,6 +41,10 @@ export default {
       path: '/careers',
       label: 'Careers',
     },
+    {
+      path: '/news',
+      label: 'Press',
+    },
   ],
   social: [
     {

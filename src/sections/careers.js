@@ -2,10 +2,12 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Container, Box, Text } from "theme-ui";
+
 import TextFeature from "components/text-feature";
-import Map from "../../../public/assets/team_countries.png";
+import Map from "../../public/assets/team_countries.png";
+import Check from "../../public/assets/check.svg";
+
 import Image from "next/image";
-import Check from "../../../public/assets/check.svg";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
@@ -18,12 +20,12 @@ const animationProps = {
   transition: { ease: "easeOut", duration: 0.75 },
 };
 
-export default function KeyFeature({ section }) {
+export default function Careers({ section }) {
   const { ref, inView } = useInView({
     threshold: 0.25,
   });
   return (
-    <section ref={ref} id="feature" sx={styles.banner}>
+    <section ref={ref} id="careers" sx={styles.banner}>
       <Container>
         <AnimatedBox
           {...animationProps}
