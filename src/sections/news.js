@@ -86,10 +86,16 @@ export default function Careers({ section }) {
           animate={inView ? { opacity: 1, scale: 1 } : ""}
         >
           <TextFeature
-            subTitle={"press"}
-            title={"Kido in the News"}
-            description={"Press releases, news, information & resources."}
-            maxWidth
+            subTitle={"kido dynamics newsroom"}
+            title={
+              "Seven years after last venture investment, Kido Dynamics scores $200M Series C"
+            }
+            description={
+              "Seven years after last venture investment, Kido Dynamics scores $200M Series C"
+            }
+            btnName="Read Story"
+            btnURL="https://techcrunch.com/2021/11/15/seven-years-after-last-venture-investment-mixpanel-scores-200m-series-c/?tpcc=tcplustwitter"
+            
           />
         </AnimatedBox>
 
@@ -142,7 +148,7 @@ const styles = {
     pb: [2, null, 0, null, 2, 0, null, 2],
     position: "relative",
     zIndex: 2,
-        background: "radial-gradient(circle,#d8e5ff,#fff)",
+    background: "radial-gradient(circle,#d8e5ff,#fff)",
     // backgroundColor: '#d8e5ff'
   },
 
@@ -150,7 +156,7 @@ const styles = {
     mt: "15%",
     flexShrink: 0,
     px: [0, null, "30px", 0],
-    width: ["100%", "80%", null, 340, 400, 430, null, 500],
+    width: ["100%", "80%", null, 340, 400, 700, null, 700],
     pb: ["50px", "60px", null, 0],
     mx: "auto",
     textAlign: "center",
@@ -167,8 +173,9 @@ const styles = {
       "repeat(2,1fr)",
       null,
       "repeat(3,1fr)",
-      ],
-    mb: 8
+    ],
+    mb: 8,
+    mt: 8,
   },
 
   reviewCard: {
