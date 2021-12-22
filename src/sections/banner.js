@@ -2,7 +2,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Container, Box, Heading, Text, Button } from "theme-ui";
-import Image from 'next/image'
+import Image from "next/image";
 // import BannerImg from "../../../public/assets/banner-thumb.png";
 // import BannerImgMobile from "../../../public/assets/heroBannerNoRotate.png";
 import BannerTourism from "../../public/assets/heroTourism.png";
@@ -61,8 +61,38 @@ const shadowsHover = [
   "rgb(13 217 164 / 57%) 0px 9px 40px -5px",
 ];
 
-const Banner = ({ banners }) => {
+const CustomDot = ({ onMove, index, onClick, active }) => {
+  // onMove means if dragging or swiping in progress.
+  // active is provided by this lib for checking if the item is active or not.
+  return (
+    <li
+      onClick={() => onClick()}
+      dataIndex={index}
+      key={index}
+    >
+      <button
+        aria-label={`Go to slide ${index}`}
+        sx={{
+          display: "inline-block",
+          width: "10px",
+          height: "10px",
+          borderRadius: "50%",
+          opacity: 1,
+          boxShadow: "none",
+          transition: "background .5s",
+          border: "1px solid #c2c4c590",
+          padding: 0,
+          margin: "0 6px 0 0",
+          outline: 0,
+          cursor: "pointer",
+          background: active ? "#b9bbbd" : "inherit"
+        }}
+      ></button>
+    </li>
+  );
+};
 
+const Banner = ({ banners }) => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
@@ -93,85 +123,85 @@ const Banner = ({ banners }) => {
 
   return (
     <div ref={ref}>
-    <Carousel
-      ssr
-      deviceType="desktop"
-      responsive={responsive}
-      dotListClass="custom-dot"
-      showDots
-      arrows={false}
-      infinite
-      autoPlay
-      autoPlaySpeed={5000}
-      minimumTouchDrag={80}
-    >
-      {sortBanners(banners).map((item, i) => (
-        <section
-          sx={{
-            ...styles.banner,
-            "&::before": {
-              position: "absolute",
-              content: '""',
-              top: "-200%",
-              left: "-100%",
-              height: "300%",
-              width: "200%",
-              zIndex: -1,
-              background: gradients[i],
-            },
-          }}
-          id="home"
-          key={item.id}
-        >
-          <Container sx={styles.banner.container} key={item.id}>
-            <Box sx={styles.banner.contentBox}>
-              <Heading as="h1" variant="heroPrimary">
-              {item.title}{' '}
-                <span sx={{ color: item.color }}>{item.heroPrimary}</span>
-              </Heading>
-              {/* <Box sx={styles.banner.tabsIcons}>
+      <Carousel
+        ssr
+        deviceType="desktop"
+        responsive={responsive}
+        dotListClass="custom-dot"
+        showDots
+        arrows={false}
+        infinite
+        autoPlay
+        autoPlaySpeed={5000}
+        minimumTouchDrag={80}
+        customDot={<CustomDot />}
+      >
+        {sortBanners(banners).map((item, i) => (
+          <section
+            sx={{
+              ...styles.banner,
+              "&::before": {
+                position: "absolute",
+                content: '""',
+                top: "-200%",
+                left: "-100%",
+                height: "300%",
+                width: "200%",
+                zIndex: -1,
+                background: gradients[i],
+              },
+            }}
+            id="home"
+            key={item.id}
+          >
+            <Container sx={styles.banner.container} key={item.id}>
+              <Box sx={styles.banner.contentBox}>
+                <Heading as="h1" variant="heroPrimary">
+                  {item.title}{" "}
+                  <span sx={{ color: item.color }}>{item.heroPrimary}</span>
+                </Heading>
+                {/* <Box sx={styles.banner.tabsIcons}>
                 <Image src={i === 0 ?  item.tabsIcon : tabsIcon} alt="tabs icon 1" />
                 <Image src={i === 1 ?  item.tabsIcon : tabsIcon} alt="tabs icon 2" />
                 <Image src={i === 2 ?  item.tabsIcon : tabsIcon} alt="tabs icon 3" />
               </Box> */}
-              <Text as="p" variant="heroSecondary">
-                {item.heroSecondary}
-              </Text>
-              <Text as="p" variant="heroTerciary">
-                {item.heroTerciary}
-              </Text>
-              <Button
-                variant="primary"
-                sx={{
-                  bg: item.color,
-                  boxShadow: shadows[i],
-                  "&:hover": {
-                    boxShadow: shadowsHover[i],
-                  },
-                }}
+                <Text as="p" variant="heroSecondary">
+                  {item.heroSecondary}
+                </Text>
+                <Text as="p" variant="heroTerciary">
+                  {item.heroTerciary}
+                </Text>
+                <Button
+                  variant="primary"
+                  sx={{
+                    bg: item.color,
+                    boxShadow: shadows[i],
+                    "&:hover": {
+                      boxShadow: shadowsHover[i],
+                    },
+                  }}
+                >
+                  Are you ready to see more stats?
+                </Button>
+              </Box>
+              <AnimatedBox
+                {...animationProps}
+                sx={styles.banner.hero}
+                animate={inView ? { opacity: 1, x: 0 } : ""}
               >
-                Are you ready to see more stats?
-              </Button>
-            </Box>
-            <AnimatedBox
-              {...animationProps}
-              sx={styles.banner.hero}
-              animate={inView ? { opacity: 1,  x: 0 } : ""}
-            >
-              {/* <Box sx={styles.banner.hero}> */}
-              <Image
-                // src={getStrapiMedia(item.imgSrc.url)}
-                src={getBannerImage(item.altText)}
-                alt={item.altText}
-                sx={{ objectFit: "contain" }}
-                priority={true}
-              />
-            </AnimatedBox>
-          </Container>
-        </section>
-      ))}
-    </Carousel>
-
+                {/* <Box sx={styles.banner.hero}> */}
+                <Image
+                  // src={getStrapiMedia(item.imgSrc.url)}
+                  src={getBannerImage(item.altText)}
+                  alt={item.altText}
+                  sx={{ objectFit: "contain" }}
+                  priority={true}
+                />
+              </AnimatedBox>
+            </Container>
+          </section>
+        ))}
+      </Carousel>
     </div>
   );
 };
