@@ -13,6 +13,7 @@ import CoreFeature from "../sections/core-feature";
 import WorkFlow from "../sections/workflow";
 import TeamSection from "../sections/team-section";
 import TestimonialCard from "../sections/testimonial";
+import MainNews from "../sections/mainNews";
 import SubscribeUs from "../sections/subscribe-us";
 
 import {
@@ -64,10 +65,14 @@ export default function IndexPage({
             (a) => a.name === "InternationalPresenceSection"
           )}
         />
-        <TeamSection section={sections.find((a) => a.name === "TeamSection")} />
         <TestimonialCard
           testimonialItems={testimonialItems}
           section={sections.find((a) => a.name === "TestimonialSection")}
+        />
+        <TeamSection section={sections.find((a) => a.name === "TeamSection")} />
+        <MainNews
+          // newsItems={newsItems}
+          // section={sections.find((a) => a.name === "MainNews")}
         />
         <SubscribeUs
           subscribeUsData={subscribeUsData}

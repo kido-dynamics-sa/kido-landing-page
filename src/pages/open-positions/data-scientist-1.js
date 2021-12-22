@@ -103,16 +103,16 @@ export default function OpenPosition({ pageContext }) {
               <Heading as="h4" sx={{ mb: 3 }}>
                 📌 What we need?
               </Heading>
-              <Text as="p">
+              <Text as="p" sx={{ mt: 2 }}>
                 <strong>Position: </strong> Senior Data Scientist / Engineer
               </Text>
-              <Text as="p">
+              <Text as="p" sx={{ mt: 2 }}>
                 <strong>Location: </strong> Spain, Portugal or LATAM
               </Text>
-              <Text as="p">
+              <Text as="p" sx={{ mt: 2 }}>
                 <strong>Languages: </strong> Spanish and English
               </Text>
-              <Text as="p">
+              <Text as="p" sx={{ mt: 2 }}>
                 <strong>Requirements: </strong>
               </Text>
               <Text as="p">- Full familiar with python</Text>
@@ -144,9 +144,48 @@ export default function OpenPosition({ pageContext }) {
               </Text>
               <Text as="p">
                 - Optional: familiar with distributed computation (py-Spark)
-                Expected responsibilities:{" "}
+              </Text>
+              <Text as="p" sx={{mt: 2}}>
+                <strong>Expected responsibilities: </strong>
               </Text>
               <Text as="p">- Developing internal tools for data analysis</Text>
+              <Text as="p">
+                - Contributing in the continuous integration and development of
+                the production data pipeline
+              </Text>
+
+              <Text as="p">- Developing new models and metrics</Text>
+
+              <Text as="p">- Contributing to write and complete our wiki</Text>
+
+              <Text as="p">- Developing internal tools for data analysis</Text>
+
+              <Text as="p">
+                - Analysing data and writing white papers, articles, posts, etc
+                about interesting results worth sharing
+              </Text>
+
+              <Text as="p">
+                {" "}
+                - Supporting our VP of Data Science and Technology and our CTO
+                in their daily data-related issues and discussions
+              </Text>
+
+              <Text as="p">
+                {" "}
+                - Optional: supporting our sales team in their negotiations
+              </Text>
+
+              <Text as="p">
+                {" "}
+                - Optional: managing and organizing work packages and projects
+              </Text>
+
+              <Text as="p">
+                {" "}
+                - Optional: meeting with data providers (network operators) to
+                optimize data flows
+              </Text>
             </Box>
 
             <Box sx={{ mt: 7 }}>
@@ -155,10 +194,12 @@ export default function OpenPosition({ pageContext }) {
               </Heading>
               <Text as="p">
                 If you check in all these requirements,{" "}
-                <strong>write us to ahernando@kidodynamics.com</strong> and you
-                make the questions: Ask us anything you consider important, we
-                want to know more about you and you will want to know more about
-                us!
+                <strong sx={{ userSelect: 'none' }}>
+                  write us to ahernando@kidodynamics.com
+                </strong>{" "}
+                and you make the questions: Ask us anything you consider
+                important, we want to know more about you and you will want to
+                know more about us!
               </Text>
               <Text as="p">
                 If our response makes sense to you and want to continue, we will
@@ -172,7 +213,9 @@ export default function OpenPosition({ pageContext }) {
             </Box>
 
             <Box sx={{ width: "100%", mx: "auto", my: 6, textAlign: "center" }}>
-              <Heading as="h4" sx={{mb: 3}}>We hope to see you soon!</Heading>
+              <Heading as="h4" sx={{ mb: 3 }}>
+                We hope to see you soon!
+              </Heading>
               <Text sx={styles.copyright}>
                 © {new Date().getFullYear()} Kido Dynamics. All rights reserved
               </Text>

@@ -6,6 +6,7 @@ import { Container, Box, Text } from "theme-ui";
 import TextFeature from "components/text-feature";
 import Map from "../../public/assets/team_countries.png";
 import Check from "../../public/assets/check.svg";
+// import Hiring from "../../../public/assets/hiring.png";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -26,191 +27,206 @@ export default function Careers({ section }) {
   });
   return (
     <section ref={ref} id="careers" sx={styles.banner}>
-      <Container>
+    <Container>
         <AnimatedBox
           {...animationProps}
           sx={styles.contentBox}
           animate={inView ? { opacity: 1, scale: 1 } : ""}
         >
-          {/* <Box sx={styles.contentBox}> */}
-          <TextFeature
-            subTitle={"careers"}
-            title={"Come to work with us at Kido Dynamics"}
-            description={
-              "Kido Dynamics is dedicated to generating deep knowledge about the mobility behaviour of millions of people."
-            }
-            btnName={"See open positions"}
-            btnURL={"#open-positions"}
-            maxWidth
-          />
-        </AnimatedBox>
-
+        <TextFeature
+          subTitle={"careers"}
+          title={"Come to work with us at Kido Dynamics"}
+          description={
+            "Kido Dynamics is dedicated to generating deep knowledge about the mobility behaviour of millions of people."
+          }
+          btnName={"See open positions"}
+          btnURL={"#open-positions"}
+          maxWidth
+        />
+      </AnimatedBox>
         <AnimatedBox
           {...animationProps}
           sx={{ mx: 6, my: 8 }}
           animate={inView ? { opacity: 1, scale: 1 } : ""}
         >
-          <Image src={Map} alt="worlwilde presence map" />
-        </AnimatedBox>
-        <Box sx={{ position: "relative", mx: "auto", maxWidth: "1200px" }}>
-          <Container
-            sx={{
-              mt: 10,
-              mb: 10,
-              display: "grid",
-              gridTemplateColumns: "repeat(2,1fr)",
-              p: 7,
-              gap: 6,
-              backgroundColor: "#f6fafe",
-              border: "1px solid #eaf2fa",
-              borderRadius: "10px",
-              width: "100%",
-            }}
-          >
-            <Box>
-              <Text
-                as="p"
-                sx={{ ...styles.wrapper.subTitle, color: "primary" }}
-              >
-                Our culture
-              </Text>
-              <Text as="p" className="description" sx={styles.description}>
-                We are building a technology made to stay for years, defining
-                future standards and solving challenging problems. Please note
-                that what we do is not easy! We are goal-based, ambitious, and
-                open to creative solutions.
-              </Text>
-            </Box>
-            <Box>
-              <Text
-                as="p"
-                sx={{ ...styles.wrapper.subTitle, color: "primary" }}
-              >
-                Our values
-              </Text>
-              <Box
-                sx={{
-                  textAlign: "left",
-                  display: "grid",
-                  gridTemplateColumns: "repeat(2, 1fr)",
-                  gap: 4,
-                }}
-              >
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <Image src={Check} alt={"check_value"} />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    Genuine Humility 👂
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <Image src={Check} alt={"check_value"} />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    Active Care 👐
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <Image src={Check} alt={"check_value"} />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    Rational Transparency 👁
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <Image src={Check} alt={"check_value"} />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    Proactive Responsability 🤝
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <Image src={Check} alt={"check_value"} />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    Controlled Ambition 🚀
-                  </Text>
-                </li>
-              </Box>
-            </Box>
-          </Container>
-        </Box>
-        <Box sx={{ position: "relative" }}>
-          <div
-            sx={{
-              background: "radial-gradient(circle,#f2f4ff,#fff)",
-              height: "100%",
-              width: "120%",
-              position: "absolute",
-              top: "10%",
-              left: "-10%",
-              zIndex: -1,
-            }}
-          ></div>
-          <div sx={{ pt: 4 }} id="open-positions">
-            <Box sx={styles.contentBox}>
-              <TextFeature
-                subTitle={"join the team"}
-                title={"Our open positions"}
-                description={
-                  "If you work remotely, are tired of repetitive tasks, love intellectual challenges and out-of-the-box approaches, combine individual with team work, want to contribute to the future and grow together with the company, this is your place."
-                }
-                maxWidth
-              />
-            </Box>
+        <Image src={Map} alt="worlwilde presence map" />
+        {/* <div sx={{display: 'none'}}><Image src={Hiring} alt="hiring"/></div> */}
+      </AnimatedBox>
+      <Box sx={{ position: "relative", mx: "auto", maxWidth: "1200px" }}>
+        <Container
+          sx={{
+            mt: 10,
+            mb: 10,
+            display: "grid",
+            gridTemplateColumns: [
+              "repeat(1, 1fr)",
+              "repeat(1, 1fr)",
+              "repeat(1, 1fr)",
+              "repeat(2, 1fr)",
+            ],
+            p: 7,
+            gap: 6,
+            backgroundColor: "#f6fafe",
+            border: "1px solid #eaf2fa",
+            borderRadius: "10px",
+            width: "100%",
+          }}
+        >
+          <Box>
+            <Text
+              as="p"
+              sx={{ ...styles.wrapper.subTitle, color: "primary" }}
+            >
+              Our culture
+            </Text>
+            <Text as="p" className="description" sx={styles.description}>
+              We are building a technology made to stay for years, defining
+              future standards and solving challenging problems. Please note
+              that what we do is not easy! We are goal-based, ambitious, and
+              open to creative solutions.
+            </Text>
+          </Box>
+          <Box>
+            <Text
+              as="p"
+              sx={{ ...styles.wrapper.subTitle, color: "primary" }}
+            >
+              Our values
+            </Text>
             <Box
               sx={{
-                my: 6,
-                px: 5,
+                textAlign: "left",
                 display: "grid",
-                gridTemplateColumns: "repeat(2,1fr)",
-                gap: 2,
-                maxWidth: "1080px",
+                gridTemplateColumns: [
+                  "repeat(1, 1fr)",
+                  "repeat(1, 1fr)",
+                  "repeat(1, 1fr)",
+                  "repeat(2, 1fr)",
+                ],
+                gap: 4,
               }}
             >
-              <li
-                key={"data-scientist-1"}
-                sx={{
-                  opacity: 1,
-                  visibility: "inherit",
-                  display: "flex",
-                  alignItems: "center",
-                  flexWrap: "wrap",
-                  justifyContent: "center",
-                }}
-              >
-                <div
-                  sx={{
-                    position: "relative",
-                    display: "inline-block",
-                    backgroundColor: "#fff",
-                    maxWidth: "500px",
-                    width: "100%",
-                    cursor: "pointer",
-                    "&:hover": {
-                      div: {
-                        backgroundColor: "primary",
-                      },
-                      p: {
-                        color: "#fff",
-                      },
-                    },
-                  }}
-                >
-                  <div sx={styles.itemBackground}></div>
-
-                  <Link href="/open-positions/data-scientist-1">
-                    <a sx={styles.itemText}>
-                      <p sx={{ fontWeight: 600, fontSize: 3 }}>
-                        Senior Data Scientist/Engineer
-                      </p>
-                      <p>
-                        <span>Full-time</span>{" "}
-                        <span>📍 Remote | Spain, Portugal or LATAM</span>
-                      </p>
-                    </a>
-                  </Link>
-                </div>
+              <li sx={{ display: "flex", alignItems: "center" }}>
+                <Image src={Check} alt={"check_value"} />
+                <Text as="p" sx={{ ml: 3 }}>
+                  Curiosity 🔎
+                </Text>
+              </li>
+              <li sx={{ display: "flex", alignItems: "center" }}>
+                <Image src={Check} alt={"check_value"} />
+                <Text as="p" sx={{ ml: 3 }}>
+                  Passion ❤️
+                </Text>
+              </li>
+              <li sx={{ display: "flex", alignItems: "center" }}>
+                <Image src={Check} alt={"check_value"} />
+                <Text as="p" sx={{ ml: 3 }}>
+                  Continuous Learning 👁
+                </Text>
+              </li>
+              <li sx={{ display: "flex", alignItems: "center" }}>
+                <Image src={Check} alt={"check_value"} />
+                <Text as="p" sx={{ ml: 3 }}>
+                  Responsability 🤝
+                </Text>
+              </li>
+              <li sx={{ display: "flex", alignItems: "center" }}>
+                <Image src={Check} alt={"check_value"} />
+                <Text as="p" sx={{ ml: 3 }}>
+                  Ownership 🚩
+                </Text>
               </li>
             </Box>
-          </div>
-        </Box>
-      </Container>
+          </Box>
+        </Container>
+      </Box>
+      <Box sx={{ position: "relative" }}>
+        <div
+          sx={{
+            background: "linear-gradient(180deg,#f2f4ff,#fff)",
+            height: "100%",
+            width: "120%",
+            position: "absolute",
+            top: 0,
+            left: "-10%",
+            zIndex: -1,
+          }}
+        ></div>
+        <div sx={{ pt: 4 }} id="open-positions">
+          <Box sx={styles.contentBox}>
+            <TextFeature
+              subTitle={"join the team"}
+              title={"Our open positions"}
+              description={
+                "If you work remotely, are tired of repetitive tasks, love intellectual challenges and out-of-the-box approaches, combine individual with team work, want to contribute to the future and grow together with the company, this is your place."
+              }
+              maxWidth
+            />
+          </Box>
+          <Box
+            sx={{
+              mt: 6,
+              mb: 10,
+              px: 5,
+              display: "grid",
+              gridTemplateColumns: [
+                "repeat(1, 1fr)",
+                "repeat(1, 1fr)",
+                "repeat(1, 1fr)",
+                "repeat(2, 1fr)",
+              ],
+              gap: 2,
+              maxWidth: "1080px",
+            }}
+          >
+            <li
+              key={"data-scientist-1"}
+              sx={{
+                opacity: 1,
+                visibility: "inherit",
+                display: "flex",
+                alignItems: "center",
+                flexWrap: "wrap",
+                justifyContent: "center",
+              }}
+            >
+              <div
+                sx={{
+                  position: "relative",
+                  display: "inline-block",
+                  backgroundColor: "#fff",
+                  maxWidth: "500px",
+                  width: "100%",
+                  cursor: "pointer",
+                  "&:hover": {
+                    div: {
+                      background: "#ED2E7E",
+                    },
+                    p: {
+                      color: "#fff",
+                    },
+                  },
+                }}
+              >
+                <div sx={styles.itemBackground}></div>
+
+                <Link href="/open-positions/data-scientist-1">
+                  <a sx={styles.itemText}>
+                    <p sx={{ fontWeight: 600, fontSize: 3 }}>
+                      Senior Data Scientist/Engineer
+                    </p>
+                    <p>
+                      <span>Full-time</span>{" "}
+                      <span>📍 Remote | Spain, Portugal or LATAM</span>
+                    </p>
+                  </a>
+                </Link>
+              </div>
+            </li>
+          </Box>
+        </div>
+      </Box>
+    </Container>
     </section>
   );
 }
