@@ -12,7 +12,7 @@ export default function Articles({ articles }) {
       <div sx={styles.articles}>
         <div sx={styles.articles.grid}>
           <div sx={styles.articles.hero}>
-            <Link as="li" href={`/article/${heroArticle["Slug"]}`}>
+            <Link href={`/article/${heroArticle["Slug"]}`}>
               <div sx={styles.heroCard}>
                 <a
                   sx={styles.heroCard.coverImage}
