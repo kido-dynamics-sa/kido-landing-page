@@ -38,6 +38,10 @@ export default {
       label: 'Privacy Policy',
     },
     {
+      path: '/blog',
+      label: 'Blog',
+    },
+    {
       path: '/careers',
       label: 'Careers',
     },
