@@ -35,8 +35,8 @@ export async function getStaticProps(context) {
   const footer = await getFooter();
   // Run API calls in parallel
   const [articles, categories] = await Promise.all([
-    fetchAPI("/articles", { populate: "*" }),
-    fetchAPI("/categories", { populate: "*" }),
+    fetchAPI("/articles"),
+    fetchAPI("/categories"),
     // fetchAPIBlog("/homepage", {
     //   populate: {
     //     hero: "*",

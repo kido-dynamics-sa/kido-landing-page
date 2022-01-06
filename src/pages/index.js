@@ -16,16 +16,7 @@ import TestimonialCard from "../sections/testimonial";
 import MainNews from "../sections/mainNews";
 import SubscribeUs from "../sections/subscribe-us";
 
-import {
-  getBanners,
-  getFeatureCardColumns,
-  getSections,
-  getTextFeatures,
-  getWorkFlowItems,
-  getTestimonialItems,
-  getFooter,
-  getSubscribeUs,
-} from "utils/api";
+import { fetchAPI } from "utils/api";
 import Partners from "sections/partners";
 
 export default function IndexPage({
@@ -71,8 +62,8 @@ export default function IndexPage({
         />
         <TeamSection section={sections.find((a) => a.name === "TeamSection")} />
         <MainNews
-          // newsItems={newsItems}
-          // section={sections.find((a) => a.name === "MainNews")}
+        // newsItems={newsItems}
+        // section={sections.find((a) => a.name === "MainNews")}
         />
         <SubscribeUs
           subscribeUsData={subscribeUsData}
@@ -92,14 +83,40 @@ export async function getStaticProps(context) {
     defaultLocale,
   };
 
-  const banners = await getBanners(locale);
-  const featureCardColumns = await getFeatureCardColumns();
-  const sections = await getSections();
-  const textFeatures = await getTextFeatures();
-  const workFlowItems = await getWorkFlowItems();
-  const testimonialItems = await getTestimonialItems();
-  const footer = await getFooter();
-  const subscribeUsData = await getSubscribeUs();
+  const [
+    banners,
+    featureCardColumns,
+    sections,
+    textFeatures,
+    workFlowItems,
+    testimonialItems,
+    footer,
+    subscribeUsData,
+  ] = await Promise.all([
+    fetchAPI(`/banners?_locale=${locale}`),
+    fetchAPI("/feature-card-columns"),
+    fetchAPI("/sections"),
+    fetchAPI("/text-features"),
+    fetchAPI("/work-flow-items"),
+    fetchAPI("/testimonial-items"),
+    fetchAPI("/footers"),
+    fetchAPI("/suscribe-us"),
+    // fetchAPIBlog("/homepage", {
+    //   populate: {
+    //     hero: "*",
+    //     seo: { populate: "*" },
+    //   },
+    // }),
+  ]);
+
+  // const banners = await getBanners(locale);
+  // const featureCardColumns = await getFeatureCardColumns();
+  // const sections = await getSections();
+  // const textFeatures = await getTextFeatures();
+  // const workFlowItems = await getWorkFlowItems();
+  // const testimonialItems = await getTestimonialItems();
+  // const footer = await getFooter();
+  // const subscribeUsData = await getSubscribeUs();
 
   return {
     props: {
