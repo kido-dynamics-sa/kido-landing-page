@@ -4435,6 +4435,13 @@
   "resolved" "https://registry.npmjs.org/q/-/q-1.5.1.tgz"
   "version" "1.5.1"
 
+"qs@^6.10.2":
+  "integrity" "sha512-mSIdjzqznWgfd4pMii7sHtaYF8rx8861hBO80SraY5GT0XQibWZWJSid0avzHGkDIZLImux2S5mXO0Hfct2QCw=="
+  "resolved" "https://registry.npmjs.org/qs/-/qs-6.10.2.tgz"
+  "version" "6.10.2"
+  dependencies:
+    "side-channel" "^1.0.4"
+
 "query-string@^5.0.1":
   "integrity" "sha512-gjWOsm2SoGlgLEdAGt7a6slVOk9mGiXmPFMqrEhLQ68rhQuBnpfs3+EmlvqKyxnCo9/PPlF+9MtY02S1aFg+Jw=="
   "resolved" "https://registry.npmjs.org/query-string/-/query-string-5.1.1.tgz"

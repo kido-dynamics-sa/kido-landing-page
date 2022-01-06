@@ -106,48 +106,14 @@ export default function Article({ article, pageContext, footer, categories }) {
           </div>
           <div sx={{ width: '100%', mb: 10}}><ReactMarkdown children={article["Content"]} /></div>
         </div>
-        {/* <div
-        id="banner"
-        className="uk-height-medium uk-flex uk-flex-center uk-flex-middle uk-background-cover uk-light uk-padding uk-margin"
-        data-src={imageUrl}
-        data-srcset={imageUrl}
-        data-uk-img
-      >
-        <h1>{article.attributes.title}</h1>
-      </div> */}
-        {/* <div className="uk-section">
-        <div className="uk-container uk-container-small">
-          <ReactMarkdown
-            source={article.attributes.content}
-            escapeHtml={false}
-          />
-          <hr className="uk-divider-small" />
-          <div className="uk-grid-small uk-flex-left" data-uk-grid="true">
-            <div>
-              {article.attributes.author.picture && (
-                <NextImage image={article.attributes.author.picture} />
-              )}
-            </div>
-            <div className="uk-width-expand">
-              <p className="uk-margin-remove-bottom">
-                By {article.attributes.author.name}
-              </p>
-              <p className="uk-text-meta uk-margin-remove-top">
-                <Moment format="MMM Do YYYY">
-                  {article.attributes.published_at}
-                </Moment>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div> */}
+        
       </Layout>
     </ThemeProvider>
   );
 }
 
 export async function getStaticPaths() {
-  const articlesRes = await fetchAPI("/articles", { fields: ["Slug"] });
+  const articlesRes = await fetchAPI("/articles");
 
   return {
     paths: articlesRes.map((article) => ({
@@ -169,12 +135,7 @@ export async function getStaticProps(context) {
   };
 
   const footer = await getFooter();
-  const articlesRes = await fetchAPI("/articles", {
-    filters: {
-      Slug: params.slug,
-    },
-    populate: "*",
-  });
+  const articlesRes = await fetchAPI(`/articles?Slug=${params.slug}`);
   const categories = await fetchAPI("/categories");
 
   return {

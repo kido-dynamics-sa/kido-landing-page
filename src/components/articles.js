@@ -5,8 +5,9 @@ import Card from "./card";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Articles({ articles }) {
+export default function Articles({ articles, ...rest }) {
   const heroArticle = articles[0];
+  const category = rest.category ? rest.category : heroArticle.category;
   return (
     <div sx={styles.container}>
       <div sx={styles.articles}>
@@ -61,7 +62,11 @@ export default function Articles({ articles }) {
                 </a>
                 <div sx={styles.heroCard.block}>
                   <div sx={{ ...styles.category, mb: 2 }}>
-                    <Link href={`/category/${heroArticle.category["Slug"]}`}>
+                    <Link
+                      href={
+                        category ? `/category/${category["Slug"]}` : "/blog"
+                      }
+                    >
                       <a
                         sx={{
                           "&:after": {
@@ -73,7 +78,7 @@ export default function Articles({ articles }) {
                           },
                         }}
                       >
-                        {heroArticle.category["Name"]}
+                        {category && category["Name"]}
                       </a>
                     </Link>
                     <span sx={{ color: "#5e709d", fontWeight: "600" }}>
@@ -81,7 +86,7 @@ export default function Articles({ articles }) {
                     </span>
                   </div>
 
-                  <Link href={`/category/${heroArticle.category["Slug"]}`}>
+                  <Link href={`/article/${heroArticle["Slug"]}`}>
                     <Heading sx={styles.title}>{heroArticle["Title"]}</Heading>
                   </Link>
                   <Text sx={styles.subTitle}>{heroArticle["Description"]}</Text>
@@ -94,6 +99,11 @@ export default function Articles({ articles }) {
               return (
                 <Card
                   article={article}
+                  category={
+                    article.category && article.category["Slug"]
+                      ? article.category
+                      : category
+                  }
                   key={`article__${article["Slug"]}`}
                 />
               );
@@ -142,19 +152,19 @@ const styles = {
       mb: 10,
     },
     others: {
-        width: ["100%", "80%", "100%"],
-        mx: "auto",
-        justifyContent: "center",
-        gridGap: ["35px 0", null, "30px 30px", "20px", "20px", "20px", "20px"],
-        gridTemplateColumns: [
-          "repeat(1,1fr)",
-          null,
-          "repeat(2,1fr)",
-          null,
-          "repeat(3,1fr)",
-        ],
-        mb: 8,
-        mt: 8,
+      width: ["100%", "80%", "100%"],
+      mx: "auto",
+      justifyContent: "center",
+      gridGap: ["35px 0", null, "30px 30px", "20px", "20px", "20px", "20px"],
+      gridTemplateColumns: [
+        "repeat(1,1fr)",
+        null,
+        "repeat(2,1fr)",
+        null,
+        "repeat(3,1fr)",
+      ],
+      mb: 8,
+      mt: 8,
     },
   },
   heroCard: {

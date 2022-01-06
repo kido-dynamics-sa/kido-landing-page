@@ -1,4 +1,6 @@
-export function getStrapiURL(path) {
+import qs from "qs"
+
+export function getStrapiURL(path = "") {
   return `${
     process.env.NEXT_PUBLIC_STRAPI_API_URL || "http://localhost:1337"
   }${path}`;
@@ -25,6 +27,7 @@ export async function fetchAPI(path, options = {}) {
   const data = await response.json();
   return data;
 }
+
 
 export async function getBanners(locale) {
   const banners = await fetchAPI(`/banners?_locale=${locale}`);

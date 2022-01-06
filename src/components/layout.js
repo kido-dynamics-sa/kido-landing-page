@@ -14,6 +14,7 @@ export default function Layout({
   onlyLogo,
   isBlog,
   categories = [],
+  category = null,
 }) {
   const [isSticky, setIsSticky] = useState(false);
 
@@ -42,6 +43,7 @@ export default function Layout({
           <BlogNav
             className={`${isSticky ? "sticky" : "unSticky"}`}
             categories={categories}
+            category={category}
           />
         </Sticky>
       ) : (

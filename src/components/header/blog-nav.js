@@ -5,7 +5,7 @@ import { keyframes } from "@emotion/react";
 import { Fragment } from "react";
 import Link from "next/link";
 
-export default function BlogNav({ categories, className }) {
+export default function BlogNav({ categories, className, category }) {
   return (
     <header sx={styles.header} className={className} id="header">
       <div sx={styles.container}>
@@ -39,19 +39,23 @@ export default function BlogNav({ categories, className }) {
               <Link href={"/blog"}>
                 <a
                   sx={{
-                    color: "#3976EF !important",
-                    fontWeight: "600 !important",
+                    color: !category && "#3976EF !important",
+                    fontWeight: !category && "600 !important",
                   }}
                 >
                   LATEST ARTICLES
                 </a>
               </Link>
             </li>
-            {categories.map((category) => {
+            {categories.map((item) => {
               return (
-                <li key={category.id}>
-                  <Link href={`/category/${category["Slug"]}`}>
-                    <a>{category["Name"]}</a>
+                <li key={item.id} >
+                  <Link href={`/category/${item["Slug"]}`}>
+                    <a 
+                sx={{
+                  color: category && item["Slug"] === category["Slug"] && "#3976EF !important",
+                  fontWeight: category && item["Slug"] === category["Slug"] && "600 !important",
+                }}>{item["Name"]}</a>
                   </Link>
                 </li>
               );

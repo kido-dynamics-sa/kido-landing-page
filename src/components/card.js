@@ -4,8 +4,7 @@ import { jsx, Heading, Text, Box, Flex } from "theme-ui";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Card({ article }) {
-  console.log("article", article);
+export default function Card({ article, category = null }) {
   return (
     <Link href={`/article/${article["Slug"]}`}>
       <Box sx={styles.reviewCard}>
@@ -36,7 +35,7 @@ export default function Card({ article }) {
                   },
                 }}
               >
-                {article.category["Name"]}
+                {category && category["Name"]}
               </a>
             </Link>
             <span sx={{ color: "#5e709d", fontWeight: "600" }}>
@@ -51,15 +50,15 @@ export default function Card({ article }) {
         </Text>
         <Flex sx={{ ...styles.category, textTransform: "none", alignItems: 'center', gap: 2 }}>
           <div sx={styles.avatar}>
-            <Image
+            {article.author["Picture"] && <Image
               src={article.author["Picture"]}
               alt={"press logo"}
               width="48px"
               height="48px"
               layout="fixed"
-            />
+            />}
           </div>
-          <Link href={`/category/${article.category["Slug"]}`}>
+          <Link href={category ? `/category/${category["Slug"]}` : "/blog"}>
             <a
               sx={{
                 position: "relative",
