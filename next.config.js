@@ -6,6 +6,6 @@ module.exports = {
     localeDetection: false,
   },
   images: {
-    domains: ['www.placer.ai', 'media-exp1.licdn.com', 'www.kidodynamics.com'],
+    domains: ['www.placer.ai', 'images.unsplash.com', 'www.kidodynamics.com'],
 },
 }
