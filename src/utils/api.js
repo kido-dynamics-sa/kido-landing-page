@@ -27,3 +27,9 @@ export async function fetchAPI(path, options = {}) {
   const data = await response.json();
   return data;
 }
+
+export async function getFooter() {
+  const footer = await fetchAPI("/footers");
+  return footer;
+}
+
