@@ -26,8 +26,8 @@ export default {
   ],
   company: [
     {
-      path: '/',
-      label: 'About',
+      path: '/about-us',
+      label: 'About Us',
     },
     {
       path: '/',

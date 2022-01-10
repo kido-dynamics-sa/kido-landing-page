@@ -20,59 +20,7 @@ const animationProps = {
   transition: { ease: "easeOut", duration: 0.75 },
 };
 
-const news = [
-  {
-    title:
-      "Kido Dynamics data reveals how three big cities are recovering from the pandemic.",
-    path: "https://chainstoreage.com/placerai-data-reveals-how-three-big-cities-are-recovering-pandemic",
-    date: "29 de Diciembre de 2021",
-    logoURL: "https://www.placer.ai/wp-content/uploads/2020/06/CSAlogo-1.png",
-    id: 1,
-  },
-
-  {
-    title:
-      "Kido Dynamics data reveals how three big cities are recovering from the pandemic.",
-    path: "https://chainstoreage.com/placerai-data-reveals-how-three-big-cities-are-recovering-pandemic",
-    date: "29 de Diciembre de 2021",
-    logoURL: "https://www.placer.ai/wp-content/uploads/2020/06/CSAlogo-1.png",
-    id: 2,
-  },
-  {
-    title:
-      "Kido Dynamics data reveals how three big cities are recovering from the pandemic.",
-    path: "https://chainstoreage.com/placerai-data-reveals-how-three-big-cities-are-recovering-pandemic",
-    date: "29 de Diciembre de 2021",
-    logoURL: "https://www.placer.ai/wp-content/uploads/2020/06/CSAlogo-1.png",
-    id: 3,
-  },
-  {
-    title:
-      "Kido Dynamics data reveals how three big cities are recovering from the pandemic.",
-    path: "https://chainstoreage.com/placerai-data-reveals-how-three-big-cities-are-recovering-pandemic",
-    date: "29 de Diciembre de 2021",
-    logoURL: "https://www.placer.ai/wp-content/uploads/2020/06/CSAlogo-1.png",
-    id: 4,
-  },
-  {
-    title:
-      "Kido Dynamics data reveals how three big cities are recovering from the pandemic.",
-    path: "https://chainstoreage.com/placerai-data-reveals-how-three-big-cities-are-recovering-pandemic",
-    date: "29 de Diciembre de 2021",
-    logoURL: "https://www.placer.ai/wp-content/uploads/2020/06/CSAlogo-1.png",
-    id: 5,
-  },
-  {
-    title:
-      "Kido Dynamics data reveals how three big cities are recovering from the pandemic.",
-    path: "https://chainstoreage.com/placerai-data-reveals-how-three-big-cities-are-recovering-pandemic",
-    date: "29 de Diciembre de 2021",
-    logoURL: "https://www.placer.ai/wp-content/uploads/2020/06/CSAlogo-1.png",
-    id: 6,
-  },
-];
-
-export default function Careers({ section }) {
+export default function News({ mainNew, news }) {
   const { ref, inView } = useInView({
     threshold: 0.25,
   });
@@ -87,15 +35,10 @@ export default function Careers({ section }) {
         >
           <TextFeature
             subTitle={"kido dynamics newsroom"}
-            title={
-              "Seven years after last venture investment, Kido Dynamics scores $200M Series C"
-            }
-            description={
-              "Seven years after last venture investment, Kido Dynamics scores $200M Series C"
-            }
-            btnName="Read Story"
-            btnURL="https://techcrunch.com/2021/11/15/seven-years-after-last-venture-investment-mixpanel-scores-200m-series-c/?tpcc=tcplustwitter"
-            
+            title={mainNew.title}
+            description={mainNew.description}
+            btnName={mainNew.buttonText}
+            btnURL={mainNew.buttonURL}
           />
         </AnimatedBox>
 
@@ -105,7 +48,7 @@ export default function Careers({ section }) {
               <Box sx={styles.reviewCard}>
                 <div sx={styles.img}>
                   <Image
-                    src={item.logoURL}
+                    src={item.imageURL}
                     alt={"press logo"}
                     width="300px"
                     height="176px"

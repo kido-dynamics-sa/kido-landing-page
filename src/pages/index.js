@@ -11,7 +11,6 @@ import ServiceSectionVideo from "../sections/service-section-video";
 import InternationalPresence from "../sections/international-presence";
 import CoreFeature from "../sections/core-feature";
 import WorkFlow from "../sections/workflow";
-import TeamSection from "../sections/team-section";
 import TestimonialCard from "../sections/testimonial";
 import MainNews from "../sections/mainNews";
 import SubscribeUs from "../sections/subscribe-us";
@@ -45,6 +44,11 @@ export default function IndexPage({
         />
         <CoreFeature data={textFeatures.find((a) => a.name === "Mobility")} />
         <ServiceSection data={textFeatures.find((a) => a.name === "Retail")} />
+
+        <MainNews
+        // newsItems={newsItems}
+        // section={sections.find((a) => a.name === "MainNews")}
+        />
         {/* <Feature /> */}
         <WorkFlow
           workFlowItems={workFlowItems}
@@ -59,11 +63,6 @@ export default function IndexPage({
         <TestimonialCard
           testimonialItems={testimonialItems}
           section={sections.find((a) => a.name === "TestimonialSection")}
-        />
-        <TeamSection section={sections.find((a) => a.name === "TeamSection")} />
-        <MainNews
-        // newsItems={newsItems}
-        // section={sections.find((a) => a.name === "MainNews")}
         />
         <SubscribeUs
           subscribeUsData={subscribeUsData}

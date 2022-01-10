@@ -1,13 +1,15 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx } from "theme-ui";
+import { jsx, Text } from "theme-ui";
 import { Container, Grid } from "theme-ui";
 
 export default function Partners() {
   return (
-    <section id="partners" sx={{ mt: 1, mb: 8 }}>
+    <section id="partners" sx={{ mt: 4, mb: 8 }}>
       <Container>
-        <h2>Meet our partners</h2>
+        <Text as="p" sx={{ ...styles.subTitle, color: 'primary' }}>
+        Trusted by Innovative companies
+        </Text>
         <Grid sx={styles.grid}>
           <p sx={{ mx: 'auto' }}>CLARO BRASIL</p>
           <p sx={{ mx: 'auto' }}>CLARO CHILE</p>
@@ -41,5 +43,16 @@ const styles = {
       null,
       "repeat(3,1fr)",
     ],
+  },
+
+  subTitle: {
+    fontSize: [0, null, 1],
+    color: "primary",
+    textTransform: "uppercase",
+    fontWeight: "700",
+    mb: [2, 3],
+    lineHeight: 1.5,
+    letterSpacing: ["1.5px", null, "2px"],
+    textAlign: 'center'
   },
 };

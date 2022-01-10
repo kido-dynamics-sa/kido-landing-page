@@ -15,11 +15,11 @@ export default function TextFeature({
 }) {
   return (
     <Box sx={styles.card}>
-      <Box sx={styles.wrapper}>
+      <Box sx={styles.wrapper} style={{ width: maxWidth ? "700px" : "100%" }}>
         <Text as="p" sx={{ ...styles.wrapper.subTitle, color: color }}>
           {subTitle}
         </Text>
-        <Heading as="h2" sx={styles.wrapper.title}>
+        <Heading as="h2" sx={{ ...styles.wrapper.title }}>
           {title}
         </Heading>
       </Box>

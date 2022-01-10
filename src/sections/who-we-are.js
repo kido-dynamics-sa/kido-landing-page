@@ -20,25 +20,56 @@ const animationProps = {
   transition: { ease: "easeOut", duration: 0.75 },
 };
 
-export default function CoreFeature({ data }) {
+const features = [
+  {
+    id: 1,
+    imgSrc: Secure,
+    altText: "Smart Decisions",
+    title: "Smart Decisions",
+    text: "Companies,   governments   and   public   institutions   can now   make   faster,   smarter   and   better-informed decisions.",
+  },
+  {
+    id: 2,
+    imgSrc: Smart,
+    altText: "User-friendly Platform",
+    title: "User-friendly Platform",
+    text: "Our web-based SaaS and API are  World reference in advanced mobility analytics, offering a scalable and easy to use platform to meet the needs of each client segment",
+  },
+];
+
+export default function WhoWeAre({ data }) {
   const { ref, inView } = useInView({
     threshold: 0.25,
   });
 
   return (
-    <section ref={ref} sx={{ variant: "section.coreFeature" }}>
+    <section ref={ref} sx={{ variant: "section.coreFeature", pt: 10 }}>
       <Container sx={styles.containerBox}>
         <Box sx={styles.contentBox}>
           <TextFeature
-            subTitle={data.subTitle}
-            title={data.title}
-            description={data.description}
-            btnName={data.btnName}
-            btnURL={data.btnURL}
-            color="#1CC8EE"
-            shadow="rgb(28 200 238 / 57%) 0px 9px 20px -5px"
-            shadowHover="rgb(28 200 238 / 57%) 0px 9px 40px -5px"
+            subTitle={data.featureSubtitle}
+            title={data.featureTitle}
           />
+          <Grid sx={styles.grid}>
+              <Box sx={styles.card}>
+                <div sx={styles.icon}>
+                  <Image src={Secure} alt={data.subfield1Title} />
+                </div>
+                <Box sx={styles.wrapper}>
+                  <Heading sx={styles.wrapper.title}>{data.subfield1Title}</Heading>
+                  <Text sx={styles.wrapper.subTitle}>{data.subfield1Description}</Text>
+                </Box>
+              </Box>
+              <Box sx={styles.card}>
+                <div sx={styles.icon}>
+                  <Image src={Smart} alt={data.subfield2Title} />
+                </div>
+                <Box sx={styles.wrapper}>
+                  <Heading sx={styles.wrapper.title}>{data.subfield2Title}</Heading>
+                  <Text sx={styles.wrapper.subTitle}>{data.subfield2Description}</Text>
+                </Box>
+              </Box>
+          </Grid>
         </Box>{" "}
         <AnimatedBox
           {...animationProps}
@@ -61,7 +92,7 @@ const styles = {
     alignItems: "center",
     justifyContent: "space-between",
     flexWrap: ["wrap", null, null, "nowrap"],
-    pb: [0, 7, 0, null, 7],
+    pb: [0, 3, 0, null, 3],
   },
   contentBox: {
     flexShrink: 0,
@@ -110,8 +141,9 @@ const styles = {
   },
   shapeBox: {
     position: "absolute",
-    bottom: "-45%",
-    width: "800px",
+    bottom: "-25%",
+    right: 0,
+    width: "500px",
     zIndex: -1,
     display: ["none", null, null, null, null, "inline-block"],
   },

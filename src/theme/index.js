@@ -106,7 +106,7 @@ export default {
       overflow: "hidden",
     },
     services: {
-      pb: ["90px", null, 9, null, null, 10, null, "150px"],
+      pb: ["90px", null, 9, null, null, 8, null, "145px"],
     },
     pricing: {
       pt: [8, null, 9, null, null, 10, null, "180px"],

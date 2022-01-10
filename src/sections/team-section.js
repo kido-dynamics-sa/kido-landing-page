@@ -369,7 +369,7 @@ const data = [
 
 export default function TeamSection({ section }) {
   return (
-    <section sx={{mt: 6}}>
+    <section sx={{my: 8}}>
       <Container>
         <SectionHeader
           slogan={section.slogan}
