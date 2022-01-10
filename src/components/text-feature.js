@@ -15,7 +15,7 @@ export default function TextFeature({
 }) {
   return (
     <Box sx={styles.card}>
-      <Box sx={styles.wrapper} style={{ width: maxWidth ? "700px" : "100%" }}>
+      <Box sx={{...styles.wrapper, width: maxWidth ? ["100%", "100%", "100%", "750px"] : "100%" }}>
         <Text as="p" sx={{ ...styles.wrapper.subTitle, color: color }}>
           {subTitle}
         </Text>
@@ -27,8 +27,7 @@ export default function TextFeature({
         <Text
           as="p"
           className="description"
-          sx={styles.description}
-          style={{ width: maxWidth ? "750px" : "100%" }}
+          sx={{...styles.description, width: maxWidth ? ["100%", "100%", "100%", "750px"] : "100%" }}
         >
           {description}
         </Text>

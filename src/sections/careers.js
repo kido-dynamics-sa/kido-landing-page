@@ -12,7 +12,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 let AnimatedBox = motion.custom(Box);
 
@@ -22,16 +21,13 @@ const animationProps = {
 };
 
 export default function Careers({ section }) {
-  const { ref, inView } = useInView({
-    threshold: 0.25,
-  });
   return (
-    <section ref={ref} id="careers" sx={styles.banner}>
+    <section id="careers" sx={styles.banner}>
     <Container>
         <AnimatedBox
           {...animationProps}
           sx={styles.contentBox}
-          animate={inView ? { opacity: 1, scale: 1 } : ""}
+          animate={{ opacity: 1, scale: 1 }}
         >
         <TextFeature
           subTitle={"careers"}
@@ -47,7 +43,7 @@ export default function Careers({ section }) {
         <AnimatedBox
           {...animationProps}
           sx={{ mx: 6, my: 8 }}
-          animate={inView ? { opacity: 1, scale: 1 } : ""}
+          animate={{ opacity: 1, scale: 1 }}
         >
         <Image src={Map} alt="worlwilde presence map" />
         {/* <div sx={{display: 'none'}}><Image src={Hiring} alt="hiring"/></div> */}

@@ -14,7 +14,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { motion } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 
 let AnimatedBox = motion.custom(Box);
 
@@ -24,16 +23,13 @@ const animationProps = {
 };
 
 export default function AboutUs({ aboutUs, companyCulture, teamSection }) {
-  const { ref, inView } = useInView({
-    threshold: 0.25,
-  });
   return (
-    <section ref={ref} id="careers" sx={styles.banner}>
+    <section id="careers" sx={styles.banner}>
       <Container>
         <AnimatedBox
           {...animationProps}
           sx={styles.contentBox}
-          animate={inView ? { opacity: 1, scale: 1 } : ""}
+          animate={{ opacity: 1, scale: 1 }}
         >
           <TextFeature
             subTitle={aboutUs.headerSubtitle}
