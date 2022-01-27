@@ -10,7 +10,6 @@ import Retail from "../../public/assets/key-feature/retail.svg";
 import Support from "../../public/assets/key-feature/support.svg";
 
 export default function KeyFeature({ featureCardColumns, section }) {
-
   const sortedFeatures = [
     "Tourism General Feature",
     "Mobility General Feature",
@@ -23,7 +22,7 @@ export default function KeyFeature({ featureCardColumns, section }) {
       return { ...newBanner };
     });
   };
-  
+
   const getFeatureImage = (altText) => {
     switch (altText) {
       case "Tourism General Feature":
@@ -39,7 +38,11 @@ export default function KeyFeature({ featureCardColumns, section }) {
 
   return (
     <section id="feature" sx={{ variant: "section.keyFeature" }}>
-      <Container>
+      <Container
+        sx={{
+          pb: [0, 7, 0, null, 7],
+        }}
+      >
         <SectionHeader
           // slogan="What you can get"
           // title="Meet the features of our product"

@@ -110,7 +110,7 @@ const playPluse = keyframes`
 
 const styles = {
   coreFeature: {
-    py: [0, null, null, 2, null, 7],
+    pb: [0, 7, 0, null, 7],
     position: "relative",
   },
   containerBox: {

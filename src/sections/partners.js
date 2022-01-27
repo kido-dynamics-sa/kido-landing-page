@@ -2,21 +2,38 @@
 /** @jsx jsx */
 import { jsx, Text } from "theme-ui";
 import { Container, Grid } from "theme-ui";
+import OrangeLogo from "../../public/assets/partners/orange.svg";
+import AlticeLogo from "../../public/assets/partners/altice.svg";
+import ClaroLogo from "../../public/assets/partners/claro.svg";
+import OoredooLogo from "../../public/assets/partners/ooredoo.svg";
+import Image from "next/image";
 
 export default function Partners() {
   return (
-    <section id="partners" sx={{ mt: 4, mb: 8 }}>
+    <section id="partners" sx={{ mt: 7, mb: 8 }}>
       <Container>
-        <Text as="p" sx={{ ...styles.subTitle, color: 'primary' }}>
-        Trusted by Innovative companies
+        <Text as="p" sx={{ ...styles.subTitle, color: "primary" }}>
+          Trusted by Innovative companies
         </Text>
         <Grid sx={styles.grid}>
-          <p sx={{ mx: 'auto' }}>CLARO BRASIL</p>
+          <div sx={styles.imageWrapper}>
+            <Image src={OrangeLogo} alt={"ORANGE LOGO"} />
+          </div>
+          <div sx={styles.imageWrapper}>
+            <Image src={AlticeLogo} alt={"ALTICE LOGO"} />
+          </div>
+          <div sx={styles.imageWrapper}>
+            <Image src={ClaroLogo} alt={"CLARO LOGO"} />
+          </div>
+          <div sx={styles.imageWrapper}>
+            <Image src={OoredooLogo} alt={"OOREDOO LOGO"} />
+          </div>
+          {/* <p sx={{ mx: 'auto' }}>CLARO BRASIL</p>
           <p sx={{ mx: 'auto' }}>CLARO CHILE</p>
           <p sx={{ mx: 'auto' }}>ALTICE</p>
           <p sx={{ mx: 'auto' }}>OOREDOO</p>
           <p sx={{ mx: 'auto' }}>ORANGE</p>
-          <p sx={{ mx: 'auto' }}>DIGI</p>
+          <p sx={{ mx: 'auto' }}>DIGI</p> */}
         </Grid>
       </Container>
     </section>
@@ -41,8 +58,19 @@ const styles = {
       null,
       "repeat(2,1fr)",
       null,
-      "repeat(3,1fr)",
+      "repeat(4,1fr)",
     ],
+  },
+  imageWrapper: {
+    position: "relative",
+    textAlign: "left",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    maxWidth: '148px',
+    justifyContent: "center",
+    padding: "20px 15px",
+    mx: 'auto'
   },
 
   subTitle: {
@@ -53,6 +81,6 @@ const styles = {
     mb: [2, 3],
     lineHeight: 1.5,
     letterSpacing: ["1.5px", null, "2px"],
-    textAlign: 'center'
+    textAlign: "center",
   },
 };

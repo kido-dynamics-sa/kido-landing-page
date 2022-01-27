@@ -47,12 +47,13 @@ export default function News({ mainNew, news }) {
             <Link href={item.path} id={item.id}>
               <Box sx={styles.reviewCard}>
                 <div sx={styles.img}>
-                  <Image
-                    src={item.imageURL}
+                  <img
                     alt={"press logo"}
-                    width="300px"
-                    height="176px"
-                    layout="responsive"
+                    src={item.imageURL}
+                    sx={{
+                      maxWidth: '100%',
+                      height: 'auto'
+                    }}
                   />
                 </div>
                 <Text as="p" sx={styles.description}>
@@ -109,16 +110,15 @@ const styles = {
   grid: {
     width: ["100%", "80%", "100%"],
     mx: "auto",
-    gridGap: ["35px 0", null, "40px 40px", "30px", "30px", "30px", "30px"],
+    gridGap: ["35px 0", null, "40px 40px", "16px", "16px", "16px", "16px"],
     gridTemplateColumns: [
       "repeat(1,1fr)",
       null,
       "repeat(2,1fr)",
-      null,
+      "repeat(2,1fr)",
       "repeat(3,1fr)",
     ],
-    mb: 8,
-    mt: 8,
+    my: 8
   },
 
   reviewCard: {
@@ -130,9 +130,9 @@ const styles = {
       "30px 20px 35px",
       "30px 25px 35px",
       "30px 20px 35px",
-      "35px 30px 40px 40px",
+      "35px 35px 40px 40px",
       "30px 30px 35px",
-      "35px 30px 40px 40px",
+      "35px 35px 40px 40px",
     ],
     bg: "white",
     textAlign: "left",
@@ -168,8 +168,9 @@ const styles = {
   },
   img: {
     mx: "auto",
-    ml: "auto",
-    // width: ['80px', null, null, '90px', null, 'auto'],
+    height: '148px',
+    my: 3,
+    borderRadius: "6px",
   },
 
   link: {

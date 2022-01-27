@@ -67,7 +67,7 @@ const CustomDot = ({ onMove, index, onClick, active }) => {
   return (
     <li
       onClick={() => onClick()}
-      dataIndex={index}
+      dataindex={index}
       key={index}
     >
       <button

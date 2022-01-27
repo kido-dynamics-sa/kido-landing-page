@@ -1,11 +1,15 @@
 module.exports = {
-  target: 'serverless',
+  target: "serverless",
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
     localeDetection: false,
   },
   images: {
-    domains: ['www.placer.ai', 'images.unsplash.com', 'www.kidodynamics.com'],
-},
-}
+    domains: [
+      "www.placer.ai",
+      "images.unsplash.com",
+      "www.kidodynamics.com",
+    ],
+  },
+};

@@ -91,14 +91,17 @@ export default {
       mt: [8, 8, '150px', 0, 0, 0, 0],
     },
     feature: {
-      pb: [8, null, 9, null, null, 10, null, "170px"],
+      pt: [4, null, 4, null, null, 5],
+      pb: ["90px", null, 9, null, null, 10, null, "165px"],
+      mt: [8, 8, '150px', 0, 0, 0, 0],
     },
     news: {
       pb: [8, null, 9, null, null, 10, null, "170px"],
     },
     coreFeature: {
-      pb: [8, null, 9, null, null, 10, null, "170px"],
-      overflow: "hidden",
+      pt: [4, null, 4, null, null, 5],
+      pb: ["90px", null, 9, null, null, 10, null, "165px"],
+      mt: [8, 8, '150px', 0, 0, 0, 0],
     },
     testimonial: {
       pt: [8, null, 8, "70px", null, 8, null, "145px"],
@@ -106,7 +109,9 @@ export default {
       overflow: "hidden",
     },
     services: {
-      pb: ["90px", null, 9, null, null, 8, null, "145px"],
+      pt: [4, null, 4, null, null, 5],
+      pb: ["90px", null, 9, null, null, 10, null, "165px"],
+      mt: [8, 8, '150px', 0, 0, 0, 0],
     },
     pricing: {
       pt: [8, null, 9, null, null, 10, null, "180px"],

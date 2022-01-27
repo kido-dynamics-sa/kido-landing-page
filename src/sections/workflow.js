@@ -41,7 +41,8 @@ const styles = {
     backgroundPosition: "center center",
     backgroundSize: "cover",
     position: "relative",
-    py: [8, null, 9, null, null, 10],
+    py: [8, 9, 9, 9, 9, 10],
+    my: [8, 9, 9, 9, 9, 10],
   },
   grid: {
     mb: -1,
