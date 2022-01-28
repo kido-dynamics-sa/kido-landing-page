@@ -240,7 +240,7 @@ export default {
       },
     },
     footer: {
-      display: "block",
+      // display: "block",
       px: 0,
       color: "inherit",
       textDecoration: "none",

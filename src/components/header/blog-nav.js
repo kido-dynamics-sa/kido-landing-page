@@ -87,7 +87,7 @@ const styles = {
     fontWeight: "body",
     width: "100%",
     position: "absolute",
-    top: "57px",
+    top: "80px",
     left: 0,
     backgroundColor: "#d8e5ff",
     transition: "all 0.4s ease",

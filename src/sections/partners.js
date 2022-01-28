@@ -12,16 +12,32 @@ export default function Partners() {
         </Text>
         <Grid sx={styles.grid}>
           <div sx={{ ...styles.imageWrapper, px: 7 }}>
-            <img alt={"ORANGE LOGO"} src={"/assets/partners/orange.svg"} sx={{maxWidth: '100%'}}/>
+            <img
+              alt={"ORANGE LOGO"}
+              src={"/assets/partners/orange.svg"}
+              sx={{ maxWidth: "100%" }}
+            />
           </div>
           <div sx={{ ...styles.imageWrapper, px: "44px" }}>
-            <img alt={"ALTICE LOGO"} src={"/assets/partners/altice.svg"} sx={{maxWidth: '100%'}}/>
+            <img
+              alt={"ALTICE LOGO"}
+              src={"/assets/partners/altice.svg"}
+              sx={{ maxWidth: "100%" }}
+            />
           </div>
           <div sx={styles.imageWrapper}>
-            <img alt={"claro LOGO"} src={"/assets/partners/claro.svg"} sx={{maxWidth: '100%'}}/>
+            <img
+              alt={"claro LOGO"}
+              src={"/assets/partners/claro.svg"}
+              sx={{ maxWidth: "100%" }}
+            />
           </div>
           <div sx={styles.imageWrapper}>
-            <img alt={"OOREDOO LOGO"} src={"/assets/partners/ooredoo.svg"} sx={{maxWidth: '100%'}}/>
+            <img
+              alt={"OOREDOO LOGO"}
+              src={"/assets/partners/ooredoo.svg"}
+              sx={{ maxWidth: "100%" }}
+            />
           </div>
         </Grid>
       </Container>

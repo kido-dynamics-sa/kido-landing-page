@@ -8,19 +8,15 @@ import {
 export default {
   menuItem: [
     {
-      path: 'home',
-      label: 'Home',
-    },
-    {
-      path: '#tourism',
+      path: 'https://app.kido-es.kidodynamics.com/tourism',
       label: 'Tourism',
     },
     {
-      path: '#mobility',
+      path: 'https://app.kido-es.kidodynamics.com/mobility',
       label: 'Mobility',
     },
     {
-      path: '#retail',
+      path: 'https://app.kido-es.kidodynamics.com/retail',
       label: 'Retail',
     },
   ],
@@ -34,7 +30,7 @@ export default {
       label: 'Terms',
     },
     {
-      path: '/https://app.kido-es.kidodynamics.com/PSI.pdf',
+      path: 'https://app.kido-es.kidodynamics.com/PSI.pdf',
       label: 'Privacy Policy',
     },
     {

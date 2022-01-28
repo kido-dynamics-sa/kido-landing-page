@@ -65,10 +65,16 @@ export default function MainNews({ news, section }) {
         <Carousel {...carouselParams}>
           {news
             .sort((a, b) => new Date(b.date) - new Date(a.date))
-            .slice(0, 4)
+            .slice(0, 6)
             .map((item) => (
-              <Link href={item.path} id={item.id}>
-                <Box sx={styles.reviewCard} key={item.id}>
+              <a
+                target="_blank"
+                href={item.path}
+                rel="noopener noreferrer"
+                key={item.id}
+                sx={{ textDecoration: 'none'}}
+              >
+                <Box sx={styles.reviewCard}>
                   <div sx={styles.img}>
                     <img
                       alt={"press logo"}
@@ -76,6 +82,7 @@ export default function MainNews({ news, section }) {
                       sx={{
                         width: "100%",
                         maxHeight: "100%",
+                        objectFit: 'cover',
                       }}
                     />
                   </div>
@@ -98,7 +105,7 @@ export default function MainNews({ news, section }) {
                     />
                   </Text>
                 </Box>
-              </Link>
+              </a>
             ))}
         </Carousel>
       </Box>
@@ -140,6 +147,7 @@ const styles = {
     },
   },
   reviewCard: {
+    height: '90%',
     boxShadow: "0px 0px 1px rgba(38, 78, 118, 0.35)",
     transition: "all 0.3s",
     borderRadius: "6px",

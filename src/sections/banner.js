@@ -102,6 +102,18 @@ const Banner = ({ banners }) => {
         return BannerTourism;
     }
   };
+  const getBannerLink = (altText) => {
+    switch (altText) {
+      case "Tourism Banner":
+        return "https://app.kido-es.kidodynamics.com/tourism";
+      case "Mobility Banner":
+        return "https://app.kido-es.kidodynamics.com/mobility";
+      case "Retail Banner":
+        return "https://app.kido-es.kidodynamics.com/retail";
+      default:
+        return BannerTourism;
+    }
+  };
 
   if (!banners) {
     return <div>error</div>;
@@ -152,18 +164,24 @@ const Banner = ({ banners }) => {
                 <Text as="p" variant="heroTerciary">
                   {item.heroTerciary}
                 </Text>
-                <Button
-                  variant="primary"
-                  sx={{
-                    bg: item.color,
-                    boxShadow: shadows[i],
-                    "&:hover": {
-                      boxShadow: shadowsHover[i],
-                    },
-                  }}
+                <a
+                  target="_blank"
+                  href={getBannerLink(item.altText)}
+                  rel="noopener noreferrer"
                 >
-                  Are you ready to see more stats?
-                </Button>
+                  <Button
+                    variant="primary"
+                    sx={{
+                      bg: item.color,
+                      boxShadow: shadows[i],
+                      "&:hover": {
+                        boxShadow: shadowsHover[i],
+                      },
+                    }}
+                  >
+                    Are you ready to see more stats?
+                  </Button>
+                </a>
               </Box>
               <AnimatedBox
                 {...animationProps}

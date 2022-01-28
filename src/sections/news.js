@@ -21,7 +21,7 @@ const animationProps = {
 
 export default function News({ mainNew, news }) {
   const { ref, inView } = useInView({
-    threshold: 0.05,
+    threshold: 0,
   });
   return (
     <section ref={ref} id="news" sx={styles.banner}>
@@ -30,7 +30,8 @@ export default function News({ mainNew, news }) {
         <AnimatedBox
           {...animationProps}
           sx={styles.contentBox}
-          animate={inView ? { opacity: 1, scale: 1 } : ""}
+          animate={{ opacity: 1, scale: 1 }}
+          // animate={inView ? { opacity: 1, scale: 1 } : ""}
         >
           <TextFeature
             subTitle={"kido dynamics newsroom"}
@@ -45,7 +46,13 @@ export default function News({ mainNew, news }) {
           {news
             .sort((a, b) => new Date(b.date) - new Date(a.date))
             .map((item) => (
-              <Link href={item.path} id={item.id}>
+              <a
+                target="_blank"
+                href={item.path}
+                rel="noopener noreferrer"
+                key={item.id}
+                sx={{ textDecoration: 'none'}}
+              >
                 <Box sx={styles.reviewCard}>
                   <div sx={styles.img}>
                     <img
@@ -54,6 +61,7 @@ export default function News({ mainNew, news }) {
                       sx={{
                         width: "100%",
                         maxHeight: "100%",
+                        objectFit: "cover",
                       }}
                     />
                   </div>
@@ -76,7 +84,7 @@ export default function News({ mainNew, news }) {
                     />
                   </Text>
                 </Box>
-              </Link>
+              </a>
             ))}
         </Grid>
       </Container>
@@ -111,7 +119,7 @@ const styles = {
   grid: {
     width: ["100%", "80%", "100%"],
     mx: "auto",
-    gridGap: ["35px 0", null, "40px 40px", "16px", "16px", "16px", "16px"],
+    gridGap: ["35px 0", null, "40px 40px", 6, 6, 6, 6],
     gridTemplateColumns: [
       "repeat(1,1fr)",
       null,
@@ -123,6 +131,7 @@ const styles = {
   },
 
   reviewCard: {
+    height: '90%',
     cursor: "pointer",
     boxShadow: "0px 0px 1px rgba(38, 78, 118, 0.35)",
     transition: "all 0.3s",
@@ -171,7 +180,7 @@ const styles = {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    height: "200px",
+    height: "150px",
     my: 1,
     borderRadius: "6px",
   },

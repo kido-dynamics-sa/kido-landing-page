@@ -15,17 +15,25 @@ export default function WorkFlow({ workFlowItems, section }) {
         />
         <Grid sx={styles.grid}>
           {workFlowItems
-            // .sort((a, b) => a.id < b.id)
-            .sort((a,b) => (a.order < b.order) ? 1 : (a.order < b.order) ? -1 : 0)
+            // .sort((a, b) => {return parseInt(a.order) - parseInt(b.order)})
+            .sort(function (a, b) {
+              if (parseInt(a.order) > parseInt(b.order)) {
+                return 1;
+              }
+              if (parseInt(a.order) < parseInt(b.order)) {
+                return -1;
+              }
+              return 0;
+            })
             .map((item) => (
-            <Box sx={styles.card} key={item.id}>
-              <Box sx={styles.iconBox}>{`0${item.order}`}</Box>
-              <Box sx={styles.wrapper}>
-                <Heading sx={styles.wrapper.title}>{item.title}</Heading>
-                <Text sx={styles.wrapper.subTitle}>{item.description}</Text>
+              <Box sx={styles.card} key={item.id}>
+                <Box sx={styles.iconBox}>{`0${item.order}`}</Box>
+                <Box sx={styles.wrapper}>
+                  <Heading sx={styles.wrapper.title}>{item.title}</Heading>
+                  <Text sx={styles.wrapper.subTitle}>{item.description}</Text>
+                </Box>
               </Box>
-            </Box>
-          ))}
+            ))}
         </Grid>
       </Container>
     </section>

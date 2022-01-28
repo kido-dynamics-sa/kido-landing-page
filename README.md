@@ -7,13 +7,13 @@ yarn install
 yarn dev
 ```
 
-To deploy on production, first need to build:
+To deploy on production:
 
 ```bash
-yarn build
+yarn build && yarn export
 ```
 
-Then:
+Also, after making build, you can
 
 ```bash
 yarn start

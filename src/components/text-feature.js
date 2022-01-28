@@ -15,7 +15,12 @@ export default function TextFeature({
 }) {
   return (
     <Box sx={styles.card}>
-      <Box sx={{...styles.wrapper, width: maxWidth ? ["100%", "100%", "100%", "750px"] : "100%" }}>
+      <Box
+        sx={{
+          ...styles.wrapper,
+          width: maxWidth ? ["100%", "100%", "100%", "750px"] : "100%",
+        }}
+      >
         <Text as="p" sx={{ ...styles.wrapper.subTitle, color: color }}>
           {subTitle}
         </Text>
@@ -27,13 +32,20 @@ export default function TextFeature({
         <Text
           as="p"
           className="description"
-          sx={{...styles.description, width: maxWidth ? ["100%", "100%", "100%", "750px"] : "100%" }}
+          sx={{
+            ...styles.description,
+            width: maxWidth ? ["100%", "100%", "100%", "750px"] : "100%",
+          }}
         >
           {description}
         </Text>
       )}
       {btnName && (
-        <Link href={btnURL} variant="default">
+        <a
+          target="_blank"
+          href={"https://app.kido-es.kidodynamics.com"}
+          rel="noopener noreferrer"
+        >
           <Button
             variant="primary"
             aria-label={btnName}
@@ -47,7 +59,7 @@ export default function TextFeature({
           >
             {btnName}
           </Button>
-        </Link>
+        </a>
       )}
     </Box>
   );

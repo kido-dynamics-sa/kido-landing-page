@@ -2,43 +2,48 @@
 /** @jsx jsx */
 import { jsx, Container, Flex, Button } from "theme-ui";
 import { keyframes } from "@emotion/react";
-import { Link } from "react-scroll";
 import Logo from "components/logo";
 import MobileDrawer from "./mobile-drawer";
 import menuItems from "./header.data";
-import LocaleSwitch from "./locale-switch";
+// import LocaleSwitch from "./locale-switch";
 import { Fragment } from "react";
+import { Link } from "components/link";
+import ScrollLink from "./ScrollLink";
 
 export default function Header({ className, onlyLogo }) {
   return (
     <header sx={styles.header} className={className} id="header">
       <Container sx={styles.container}>
         <Logo src={"/assets/logo.svg"} />
-        {!onlyLogo && (
-          <Fragment>
-            <Flex as="nav" sx={styles.nav}>
-              {menuItems.map((menuItem, i) => (
-                <Link
-                  activeClass="active"
-                  to={menuItem.path}
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  key={i}
-                  style={{ overflow: "hidden", whiteSpace: "nowrap" }}
-                >
-                  {menuItem.label}
-                </Link>
-              ))}
-            </Flex>
 
-            {/* Locale Switch Desktop */}
-            {/* {pageContext.locales && (
+        <Fragment>
+          <Flex as="nav" sx={styles.nav}>
+            {menuItems.map((menuItem, i) =>
+              menuItem.path === "contact" || menuItem.label === "Product" ? (
+                <ScrollLink key={i} path={menuItem.path} label={menuItem.label} i={i} />
+              ) : (
+                <Link
+                  path={menuItem.path}
+                  key={i}
+                  label={menuItem.label}
+                  variant={"footer"}
+                />
+              )
+            )}
+          </Flex>
+
+          {/* Locale Switch Desktop */}
+          {/* {pageContext.locales && (
               <div>
                 <LocaleSwitch pageContext={pageContext} />
               </div>
             )} */}
+
+          <a
+            target="_blank"
+            href={"https://app.kido-es.kidodynamics.com"}
+            rel="noopener noreferrer"
+          >
             <Button
               className="donate__btn"
               variant="secondary"
@@ -46,9 +51,9 @@ export default function Header({ className, onlyLogo }) {
             >
               Get Started
             </Button>
-            <MobileDrawer />
-          </Fragment>
-        )}
+          </a>
+          <MobileDrawer />
+        </Fragment>
       </Container>
     </header>
   );

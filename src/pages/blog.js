@@ -13,10 +13,8 @@ const Home = ({ articles, categories, footer, pageContext }) => {
         {/* <Seo seo={homepage.attributes.seo} /> */}
         <SEO title="Kido Dynamics Blog" />
         <div>
-          <div>
             {/* <h1>{homepage.attributes.hero.title}</h1> */}
             <Articles articles={articles} />
-          </div>
         </div>
       </Layout>
     </ThemeProvider>

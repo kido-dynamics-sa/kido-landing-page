@@ -58,15 +58,15 @@ export default function Article({ article, pageContext, footer, categories }) {
               }}
             >
               <div sx={styles.avatar}>
-            {" "}
-            <img
-              alt={"press logo"}
-              src={article.author["Picture"]}
-              sx={{
-                width: "100%",
-                maxHeight: "100%",
-              }}
-            />
+                {" "}
+                <img
+                  alt={"press logo"}
+                  src={article.author["Picture"]}
+                  sx={{
+                    width: "100%",
+                    maxHeight: "100%",
+                  }}
+                />
               </div>
               <div sx={{ display: "flex", flexDirection: "column", mt: 1 }}>
                 <p
@@ -162,7 +162,7 @@ const styles = {
     maxWidth: "820px",
     mx: "auto",
     boxSizing: "border-box",
-    px: 2,
+    px: [4, 4, 4, 4, 2, 2, 2, 2],
   },
   header: {
     mb: 8,

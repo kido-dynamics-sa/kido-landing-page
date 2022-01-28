@@ -3,7 +3,6 @@ import { Box } from "theme-ui";
 import { Scrollbars } from "react-custom-scrollbars";
 import Drawer from "components/drawer";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
-import { Link } from "react-scroll";
 import {
   FaFacebookF,
   FaTwitter,
@@ -11,7 +10,8 @@ import {
   FaDribbble,
 } from "react-icons/fa";
 import menuItems from "./header.data";
-import { STATUS_RELEASED } from "react-stickynode";
+import { Link } from "components/link";
+import ScrollLink from "./ScrollLink";
 
 const social = [
   {
@@ -51,19 +51,18 @@ export default function MobileDrawer() {
       <Scrollbars autoHide>
         <Box sx={styles.content}>
           <Box sx={styles.menu}>
-            {menuItems.map((menuItem, i) => (
-              <Link
-                activeClass="active"
-                to={menuItem.path}
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                key={i}
-              >
-                {menuItem.label}
-              </Link>
-            ))}
+            {menuItems.map((menuItem, i) =>
+              menuItem.path === "contact" || menuItem.path === "feature" ? (
+                <ScrollLink key={i} path={menuItem.path} label={menuItem.label} i={i} />
+              ) : (
+                <Link
+                  path={menuItem.path}
+                  key={i}
+                  label={menuItem.label}
+                  variant={"footer"}
+                />
+              )
+            )}
           </Box>
           <Box sx={styles.menuFooter}>
             <Box sx={styles.social}>
