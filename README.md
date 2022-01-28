@@ -3,9 +3,18 @@
 Install the dependencies and run the development server
 
 ```bash
-npm install
-npm run dev
-# or
-yarn
+yarn install
 yarn dev
+```
+
+To deploy on production, first need to build:
+
+```bash
+yarn build
+```
+
+Then:
+
+```bash
+yarn start
 ```
