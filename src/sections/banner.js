@@ -2,16 +2,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Container, Box, Heading, Text, Button } from "theme-ui";
-import Image from "next/image";
-// import BannerImg from "../../../public/assets/banner-thumb.png";
-// import BannerImgMobile from "../../../public/assets/heroBannerNoRotate.png";
-import BannerTourism from "../../public/assets/heroTourism.png";
-import BannerRetail from "../../public/assets/heroRetail.png";
-import BannerMobility from "../../public/assets/heroMobility.png";
-// import tabsIcon from "../../../public/assets/tabsIcon.svg";
-// import tabsIconTourism from "../../../public/assets/tabsIconTourism.svg";
-// import tabsIconMobility from "../../../public/assets/tabsIconMobility.svg";
-// import tabsIconRetail from "../../../public/assets/tabsIconRetail.svg";
 import Carousel from "react-multi-carousel";
 
 import { motion } from "framer-motion";
@@ -65,11 +55,7 @@ const CustomDot = ({ onMove, index, onClick, active }) => {
   // onMove means if dragging or swiping in progress.
   // active is provided by this lib for checking if the item is active or not.
   return (
-    <li
-      onClick={() => onClick()}
-      dataindex={index}
-      key={index}
-    >
+    <li onClick={() => onClick()} dataindex={index} key={index}>
       <button
         aria-label={`Go to slide ${index}`}
         sx={{
@@ -85,7 +71,7 @@ const CustomDot = ({ onMove, index, onClick, active }) => {
           margin: "0 6px 0 0",
           outline: 0,
           cursor: "pointer",
-          background: active ? "#b9bbbd" : "inherit"
+          background: active ? "#b9bbbd" : "inherit",
         }}
       ></button>
     </li>
@@ -107,11 +93,11 @@ const Banner = ({ banners }) => {
   const getBannerImage = (altText) => {
     switch (altText) {
       case "Tourism Banner":
-        return BannerTourism;
+        return "/assets/heroTourism.png";
       case "Mobility Banner":
-        return BannerMobility;
+        return "/assets/heroMobility.png";
       case "Retail Banner":
-        return BannerRetail;
+        return "/assets/heroRetail.png";
       default:
         return BannerTourism;
     }
@@ -160,11 +146,6 @@ const Banner = ({ banners }) => {
                   {item.title}{" "}
                   <span sx={{ color: item.color }}>{item.heroPrimary}</span>
                 </Heading>
-                {/* <Box sx={styles.banner.tabsIcons}>
-                <Image src={i === 0 ?  item.tabsIcon : tabsIcon} alt="tabs icon 1" />
-                <Image src={i === 1 ?  item.tabsIcon : tabsIcon} alt="tabs icon 2" />
-                <Image src={i === 2 ?  item.tabsIcon : tabsIcon} alt="tabs icon 3" />
-              </Box> */}
                 <Text as="p" variant="heroSecondary">
                   {item.heroSecondary}
                 </Text>
@@ -190,12 +171,10 @@ const Banner = ({ banners }) => {
                 animate={inView ? { opacity: 1, x: 0 } : ""}
               >
                 {/* <Box sx={styles.banner.hero}> */}
-                <Image
-                  // src={getStrapiMedia(item.imgSrc.url)}
+                <img
                   src={getBannerImage(item.altText)}
                   alt={item.altText}
-                  sx={{ objectFit: "contain" }}
-                  priority={true}
+                  sx={{ maxWidth: "100%" }}
                 />
               </AnimatedBox>
             </Container>

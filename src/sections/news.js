@@ -21,7 +21,7 @@ const animationProps = {
 
 export default function News({ mainNew, news }) {
   const { ref, inView } = useInView({
-    threshold: 0.1,
+    threshold: 0.05,
   });
   return (
     <section ref={ref} id="news" sx={styles.banner}>

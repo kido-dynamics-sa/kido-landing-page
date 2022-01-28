@@ -24,13 +24,14 @@ const Home = ({ articles, categories, footer, pageContext }) => {
 };
 
 export async function getStaticProps(context) {
-  const { params, locale, locales, defaultLocale, preview = null } = context;
+  // const { params, locale, locales, defaultLocale, preview = null } = context;
 
-  const pageContext = {
-    locale,
-    locales,
-    defaultLocale,
-  };
+  // const pageContext = {
+  //   locale,
+  //   locales,
+  //   defaultLocale,
+  // };
+  const pageContext = context
 
   const footer = await getFooter();
   // Run API calls in parallel
@@ -48,7 +49,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       footer,
-      pageContext,
+      // pageContext,
       articles,
       categories,
     },

@@ -3,7 +3,6 @@
 import { jsx, Heading, Text, Grid } from "theme-ui";
 import Card from "./card";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Articles({ articles, ...rest }) {
   const heroArticle = articles[0];
@@ -31,13 +30,14 @@ export default function Articles({ articles, ...rest }) {
                         overflow: "hidden",
                       }}
                     >
-                      <Image
-                        layout="fill"
+                    <img
                         src={heroArticle["Media"]}
                         alt={`article ${heroArticle["Title"]} image`}
-                        sx={{ objectFit: "cover" }}
-                        priority={true}
-                      />
+                      sx={{
+                        width: "100%",
+                        maxHeight: "100%",
+                      }}
+                    />
                     </div>
                   </div>
                   <svg

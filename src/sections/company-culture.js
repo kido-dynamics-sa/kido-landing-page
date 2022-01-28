@@ -2,17 +2,43 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Text } from "theme-ui";
 
-import Image from "next/image";
-import Check from "../../public/assets/check.svg";
-
 export default function CompanyCulture({ data }) {
-
   return (
     <section sx={{ position: "relative", mx: "auto", maxWidth: "1200px" }}>
-          <Container
+      <Container
+        sx={{
+          mt: 6,
+          mb: 10,
+          display: "grid",
+          gridTemplateColumns: [
+            "repeat(1, 1fr)",
+            "repeat(1, 1fr)",
+            "repeat(1, 1fr)",
+            "repeat(2, 1fr)",
+          ],
+          p: 7,
+          gap: 6,
+          backgroundColor: "#f6fafe",
+          border: "1px solid #eaf2fa",
+          borderRadius: "10px",
+          width: "100%",
+        }}
+      >
+        <Box>
+          <Text as="p" sx={{ ...styles.wrapper.subTitle, color: "primary" }}>
+            Our culture
+          </Text>
+          <Text as="p" className="description" sx={styles.description}>
+            {data.description}
+          </Text>
+        </Box>
+        <Box>
+          <Text as="p" sx={{ ...styles.wrapper.subTitle, color: "primary" }}>
+            Our values
+          </Text>
+          <Box
             sx={{
-              mt: 6,
-              mb: 10,
+              textAlign: "left",
               display: "grid",
               gridTemplateColumns: [
                 "repeat(1, 1fr)",
@@ -20,78 +46,42 @@ export default function CompanyCulture({ data }) {
                 "repeat(1, 1fr)",
                 "repeat(2, 1fr)",
               ],
-              p: 7,
-              gap: 6,
-              backgroundColor: "#f6fafe",
-              border: "1px solid #eaf2fa",
-              borderRadius: "10px",
-              width: "100%",
+              gap: 4,
             }}
           >
-            <Box>
-              <Text
-                as="p"
-                sx={{ ...styles.wrapper.subTitle, color: "primary" }}
-              >
-                Our culture
+            <li sx={{ display: "flex", alignItems: "center" }}>
+              <img src={"/assets/check.svg"} alt="check_value" />
+              <Text as="p" sx={{ ml: 3 }}>
+                {data.value1}
               </Text>
-              <Text as="p" className="description" sx={styles.description}>
-                {data.description}
+            </li>
+            <li sx={{ display: "flex", alignItems: "center" }}>
+              <img src={"/assets/check.svg"} alt="check_value" />
+              <Text as="p" sx={{ ml: 3 }}>
+                {data.value2}
               </Text>
-            </Box>
-            <Box>
-              <Text
-                as="p"
-                sx={{ ...styles.wrapper.subTitle, color: "primary" }}
-              >
-                Our values
+            </li>
+            <li sx={{ display: "flex", alignItems: "center" }}>
+              <img src={"/assets/check.svg"} alt="check_value" />
+              <Text as="p" sx={{ ml: 3 }}>
+                {data.value3}
               </Text>
-              <Box
-                sx={{
-                  textAlign: "left",
-                  display: "grid",
-                  gridTemplateColumns: [
-                    "repeat(1, 1fr)",
-                    "repeat(1, 1fr)",
-                    "repeat(1, 1fr)",
-                    "repeat(2, 1fr)",
-                  ],
-                  gap: 4,
-                }}
-              >
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <Image src={Check} alt={"check_value"} />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    {data.value1}
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <Image src={Check} alt={"check_value"} />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    {data.value2}
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <Image src={Check} alt={"check_value"} />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    {data.value3}
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <Image src={Check} alt={"check_value"} />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    {data.value4}
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <Image src={Check} alt={"check_value"} />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    {data.value5}
-                  </Text>
-                </li>
-              </Box>
-            </Box>
-          </Container>
+            </li>
+            <li sx={{ display: "flex", alignItems: "center" }}>
+              <img src={"/assets/check.svg"} alt="check_value" />
+              <Text as="p" sx={{ ml: 3 }}>
+                {data.value4}
+              </Text>
+            </li>
+            <li sx={{ display: "flex", alignItems: "center" }}>
+              <img src={"/assets/check.svg"} alt="check_value" />
+              <Text as="p" sx={{ ml: 3 }}>
+                {data.value5}
+              </Text>
+            </li>
+          </Box>
+        </Box>
+      </Container>
     </section>
   );
 }

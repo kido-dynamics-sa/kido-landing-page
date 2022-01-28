@@ -1,19 +1,25 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Box, Heading, Text } from 'theme-ui';
-import Image from 'next/image'
+import { jsx, Box, Heading, Text } from "theme-ui";
 
 export default function FeatureCardColumn({
   src,
-  altText = 'default alt text',
+  altText = "default alt text",
   title,
   text,
 }) {
   return (
     <Box sx={styles.card}>
-    <div sx={styles.img}>
-      <Image src={src} alt={altText} />
-    </div>
+      <div sx={styles.img}>
+        <img
+          src={src}
+          alt={altText}
+          sx={{
+            width: "100%",
+            maxHeight: "100%",
+          }}
+        />
+      </div>
       <Box sx={styles.wrapper}>
         <Heading sx={styles.wrapper.title}>{title}</Heading>
         <Text sx={styles.wrapper.subTitle}>{text}</Text>
@@ -24,26 +30,26 @@ export default function FeatureCardColumn({
 
 const styles = {
   card: {
-    display: 'flex',
-    alignItems: ['center', 'flex-start'],
-    flexDirection: 'column',
+    display: "flex",
+    alignItems: ["center", "flex-start"],
+    flexDirection: "column",
     mb: -1,
-    textAlign: 'center',
+    textAlign: "center",
     px: [4, null, 0],
   },
   img: {
-    mx: 'auto',
-    ml: 'auto',
+    mx: "auto",
+    ml: "auto",
     mb: 4,
     // width: ['80px', null, null, '90px', null, 'auto'],
   },
   wrapper: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'column',
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
     title: {
       fontSize: 3,
-      color: 'heading_secondary',
+      color: "heading_secondary",
       lineHeight: 1.4,
       fontWeight: 700,
       mb: [2, null, 3],
@@ -51,7 +57,7 @@ const styles = {
     subTitle: {
       fontSize: 1,
       fontWeight: 400,
-      lineHeight: '1.9',
+      lineHeight: "1.9",
     },
   },
 };

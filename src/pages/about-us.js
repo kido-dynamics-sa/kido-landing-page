@@ -26,21 +26,25 @@ export default function IndexPage({ aboutUs, companyCulture, footer, sections, p
 }
 
 export async function getStaticProps(context) {
-  const { params, locale, locales, defaultLocale, preview = null } = context;
+  // const { params, locale, locales, defaultLocale, preview = null } = context;
+  const pageContext = context;
 
   const footer = await getFooter();
   const sections = await fetchAPI("/sections")
   const aboutUs = await fetchAPI("/about-us")
   const companyCulture = await fetchAPI("/company-culture")
 
-  const pageContext = {
-    locale,
-    locales,
-    defaultLocale,
-  };
+  // const pageContext = {
+  //   locale,
+  //   locales,
+  //   defaultLocale,
+  // };
 
   return {
-    props: { sections, aboutUs, companyCulture, footer, pageContext },
+    props: {
+      sections, aboutUs, companyCulture, footer,
+      // pageContext
+    },
     revalidate: 60,
   };
 }

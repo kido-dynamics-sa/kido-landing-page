@@ -23,18 +23,22 @@ export default function IndexPage({ footer, pageContext }) {
 }
 
 export async function getStaticProps(context) {
-  const { params, locale, locales, defaultLocale, preview = null } = context;
+  // const { params, locale, locales, defaultLocale, preview = null } = context;
+  const pageContext = context
 
   const footer = await getFooter();
 
-  const pageContext = {
-    locale,
-    locales,
-    defaultLocale,
-  };
+  // const pageContext = {
+  //   locale,
+  //   locales,
+  //   defaultLocale,
+  // };
 
   return {
-    props: { footer, pageContext },
+    props: {
+      footer,
+      // pageContext
+    },
     revalidate: 60,
   };
 }

@@ -3,9 +3,7 @@
 import { jsx } from "theme-ui";
 import { Container, Box } from "theme-ui";
 
-import Image from "next/image";
 import SectionHeader from "components/section-header";
-import Map from "../../public/assets/map.png";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -29,7 +27,7 @@ export default function InternationalPresence({ section }) {
           {...animationProps}
           animate={inView ? { opacity: 1, scale: 1 } : ""}
         >
-          <Image src={Map} alt="worlwilde presence map" />
+          <img src={"/assets/map.png"} alt="worlwilde presence map" sx={{maxWidth: '100%'}}/>
         </AnimatedBox>
       </Container>
     </section>

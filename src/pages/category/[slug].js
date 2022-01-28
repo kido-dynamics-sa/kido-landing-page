@@ -35,7 +35,7 @@ const Category = ({ category, categories, footer, pageContext }) => {
   );
 };
 
-export async function getStaticPaths() {
+export async function getStaticPaths(...args) {
   const categories = await fetchAPI("/categories");
 
   return {
@@ -49,13 +49,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const { params, locale, locales, defaultLocale, preview = null } = context;
+  const { params, preview = null } = context;
 
-  const pageContext = {
-    locale,
-    locales,
-    defaultLocale,
-  };
+  // const pageContext = {
+  //   locale,
+  //   locales,
+  //   defaultLocale,
+  // };
 
   const footer = await getFooter();
   const matchingCategories = await fetchAPI(`/categories?Slug=${params.slug}`);
@@ -66,7 +66,7 @@ export async function getStaticProps(context) {
       category: matchingCategories[0],
       categories: allCategories,
       footer,
-      pageContext,
+      // pageContext,
     },
     revalidate: 1,
   };

@@ -3,13 +3,18 @@
 import { jsx } from "theme-ui";
 import { Text, Heading, Box, Link } from "theme-ui";
 
-import Image from "next/image";
-
 export default function TeamCard({ src, altText, title, designation, social }) {
   return (
     <Box sx={styles.card}>
       <div sx={styles.memberThumb}>
-        <Image src={src} alt={altText} />
+        <img
+          src={src}
+          alt={altText}
+          sx={{
+            width: "100%",
+            maxHeight: "100%",
+          }}
+        />
       </div>
       <Box sx={styles.infoWrapper}>
         <Heading className="info__name" sx={styles.infoWrapper.name}>

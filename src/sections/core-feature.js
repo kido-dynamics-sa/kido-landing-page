@@ -2,13 +2,7 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Grid, Text, Heading } from "theme-ui";
 
-import Image from "next/image";
 import TextFeature from "components/text-feature";
-
-import ServiceThumb from "../../public/assets/mobilityApp.png";
-import shapePattern from "../../public/assets/shapeMobilityPattern.png";
-import Smart from "../../public/assets/services/smart.svg";
-import Secure from "../../public/assets/services/secure.svg";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -45,9 +39,9 @@ export default function CoreFeature({ data }) {
           sx={styles.thumbnail}
           animate={inView ? { opacity: 1, scale: 1 } : ""}
         >
-          <Image src={ServiceThumb} alt="Thumbnail" />
+          <img src={"/assets/mobilityApp.png"} alt="check_value" sx={{maxWidth: '100%'}}/>
           <Box sx={styles.shapeBox}>
-            <Image src={shapePattern} alt="Shape" />
+            <img src={"/assets/shapeMobilityPattern.png"} alt="check_value" sx={{maxWidth: '100%'}} />
           </Box>
         </AnimatedBox>
       </Container>

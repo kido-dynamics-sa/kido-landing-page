@@ -2,13 +2,7 @@
 /** @jsx jsx */
 import { jsx, Container, Box, Grid, Text, Heading } from "theme-ui";
 
-import Image from "next/image";
 import TextFeature from "components/text-feature";
-
-import ServiceThumb from "../../public/assets/mobilityApp.png";
-import shapePattern from "../../public/assets/shapeMobilityPattern.png";
-import Smart from "../../public/assets/services/smart.svg";
-import Secure from "../../public/assets/services/secure.svg";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -19,23 +13,6 @@ const animationProps = {
   initial: { opacity: 0, scale: 0.75 },
   transition: { ease: "easeOut", duration: 0.75 },
 };
-
-const features = [
-  {
-    id: 1,
-    imgSrc: Secure,
-    altText: "Smart Decisions",
-    title: "Smart Decisions",
-    text: "Companies,   governments   and   public   institutions   can now   make   faster,   smarter   and   better-informed decisions.",
-  },
-  {
-    id: 2,
-    imgSrc: Smart,
-    altText: "User-friendly Platform",
-    title: "User-friendly Platform",
-    text: "Our web-based SaaS and API are  World reference in advanced mobility analytics, offering a scalable and easy to use platform to meet the needs of each client segment",
-  },
-];
 
 export default function WhoWeAre({ data }) {
   const { ref, inView } = useInView({
@@ -53,7 +30,7 @@ export default function WhoWeAre({ data }) {
           <Grid sx={styles.grid}>
               <Box sx={styles.card}>
                 <div sx={styles.icon}>
-                  <Image src={Secure} alt={data.subfield1Title} />
+                    <img alt={data.subfield1Title} src={"/assets/services/secure.svg"} sx={{maxWidth: '100%'}} />
                 </div>
                 <Box sx={styles.wrapper}>
                   <Heading sx={styles.wrapper.title}>{data.subfield1Title}</Heading>
@@ -62,7 +39,7 @@ export default function WhoWeAre({ data }) {
               </Box>
               <Box sx={styles.card}>
                 <div sx={styles.icon}>
-                  <Image src={Smart} alt={data.subfield2Title} />
+                    <img alt={data.subfield2Title} src={"/assets/services/smart.svg"} sx={{maxWidth: '100%'}} />
                 </div>
                 <Box sx={styles.wrapper}>
                   <Heading sx={styles.wrapper.title}>{data.subfield2Title}</Heading>
@@ -76,9 +53,10 @@ export default function WhoWeAre({ data }) {
           sx={styles.thumbnail}
           animate={inView ? { opacity: 1, scale: 1 } : ""}
         >
-          <Image src={ServiceThumb} alt="Thumbnail" />
+        <img alt={"Thumbnail"} src={"/assets/mobilityApp.png"} sx={{maxWidth: '100%'}} />
           <Box sx={styles.shapeBox}>
-            <Image src={shapePattern} alt="Shape" />
+
+          <img alt={"shape"} src={"/assets/shapeMobilityPattern.png"} sx={{maxWidth: '100%'}} />
           </Box>
         </AnimatedBox>
       </Container>

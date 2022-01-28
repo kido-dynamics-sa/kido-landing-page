@@ -9,7 +9,6 @@ import { ThemeProvider } from "theme-ui";
 import { fetchAPI, getFooter } from "utils/api";
 import theme from "theme";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Article({ article, pageContext, footer, categories }) {
   // const seo = {
@@ -59,13 +58,15 @@ export default function Article({ article, pageContext, footer, categories }) {
               }}
             >
               <div sx={styles.avatar}>
-                <Image
-                  src={article.author["Picture"]}
-                  alt={"press logo"}
-                  width="48px"
-                  height="48px"
-                  layout="fixed"
-                />
+            {" "}
+            <img
+              alt={"press logo"}
+              src={article.author["Picture"]}
+              sx={{
+                width: "100%",
+                maxHeight: "100%",
+              }}
+            />
               </div>
               <div sx={{ display: "flex", flexDirection: "column", mt: 1 }}>
                 <p
@@ -96,17 +97,20 @@ export default function Article({ article, pageContext, footer, categories }) {
             ></div>
           </div>
           <div sx={styles.img}>
-            <Image
-              src={article["Media"]}
+            {" "}
+            <img
               alt={"press logo"}
-              width="300px"
-              height="176px"
-              layout="responsive"
+              src={article["Media"]}
+              sx={{
+                width: "100%",
+                maxHeight: "100%",
+              }}
             />
           </div>
-          <div sx={{ width: '100%', mb: 10}}><ReactMarkdown children={article["Content"]} /></div>
+          <div sx={{ width: "100%", mb: 10 }}>
+            <ReactMarkdown children={article["Content"]} />
+          </div>
         </div>
-        
       </Layout>
     </ThemeProvider>
   );
@@ -126,20 +130,25 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps(context) {
-  const { params, locale, locales, defaultLocale, preview = null } = context;
+  const { params, preview = null } = context;
 
-  const pageContext = {
-    locale,
-    locales,
-    defaultLocale,
-  };
+  // const pageContext = {
+  //   locale,
+  //   locales,
+  //   defaultLocale,
+  // };
 
   const footer = await getFooter();
   const articlesRes = await fetchAPI(`/articles?Slug=${params.slug}`);
   const categories = await fetchAPI("/categories");
 
   return {
-    props: { article: articlesRes[0], categories, footer, pageContext },
+    props: {
+      article: articlesRes[0],
+      categories,
+      footer,
+      // pageContext
+    },
     revalidate: 1,
   };
 }

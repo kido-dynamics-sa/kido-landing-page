@@ -4,36 +4,32 @@ import { jsx } from "theme-ui";
 import { Container, Grid } from "theme-ui";
 import SectionHeader from "components/section-header";
 import FeatureCard from "components/feature-card.js";
-import Performance from "../../public/assets/feature/performance.svg";
-import Partnership from "../../public/assets/feature/partnership.svg";
-import Subscription from "../../public/assets/feature/subscription.svg";
-import Support from "../../public/assets/feature/support.svg";
 
 const data = [
   {
     id: 1,
-    imgSrc: Performance,
+    imgSrc: "/assets/feature/performance.svg",
     altText: "Fast Performance",
     title: "Fast Performance",
     text: "Let’s just get this out of the way - there will always be a kit version of Edu flow. Paid subscriptions allow us to continue helping learners around the world.",
   },
   {
     id: 2,
-    imgSrc: Partnership,
+    imgSrc: "/assets/feature/partnership.svg",
     altText: "Pro Subscription",
     title: "Pro Subscription",
     text: "We believe it’s important for everyone to have access to software – especially when it comes to digital learning be navigated by keyboard and screen readers.",
   },
   {
     id: 3,
-    imgSrc: Subscription,
+    imgSrc: "assets/feature/subscription.svg",
     altText: "Partnership deal",
     title: "Partnership deal",
     text: "Let’s just get this out of the way - there will always be a kit version of Edu flow. Paid subscriptions allow us to continue helping learners around the world.",
   },
   {
     id: 4,
-    imgSrc: Support,
+    imgSrc: "/assets/feature/support.svg",
     altText: "Customer Support",
     title: "Customer Support",
     text: "We believe it’s important for everyone to have access to software – especially when it comes to digital learning be navigated by keyboard and screen readers.",

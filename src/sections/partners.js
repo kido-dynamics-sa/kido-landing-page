@@ -2,11 +2,6 @@
 /** @jsx jsx */
 import { jsx, Text } from "theme-ui";
 import { Container, Grid } from "theme-ui";
-import OrangeLogo from "../../public/assets/partners/orange.svg";
-import AlticeLogo from "../../public/assets/partners/altice.svg";
-import ClaroLogo from "../../public/assets/partners/claro.svg";
-import OoredooLogo from "../../public/assets/partners/ooredoo.svg";
-import Image from "next/image";
 
 export default function Partners() {
   return (
@@ -16,24 +11,18 @@ export default function Partners() {
           Trusted by Innovative companies
         </Text>
         <Grid sx={styles.grid}>
-          <div sx={{...styles.imageWrapper, px: 7}}>
-            <Image src={OrangeLogo} alt={"ORANGE LOGO"} />
+          <div sx={{ ...styles.imageWrapper, px: 7 }}>
+            <img alt={"ORANGE LOGO"} src={"/assets/partners/orange.svg"} sx={{maxWidth: '100%'}}/>
           </div>
-          <div sx={{...styles.imageWrapper, px: '44px'}}>
-            <Image src={AlticeLogo} alt={"ALTICE LOGO"} />
-          </div>
-          <div sx={styles.imageWrapper}>
-            <Image src={ClaroLogo} alt={"CLARO LOGO"} />
+          <div sx={{ ...styles.imageWrapper, px: "44px" }}>
+            <img alt={"ALTICE LOGO"} src={"/assets/partners/altice.svg"} sx={{maxWidth: '100%'}}/>
           </div>
           <div sx={styles.imageWrapper}>
-            <Image src={OoredooLogo} alt={"OOREDOO LOGO"} />
+            <img alt={"claro LOGO"} src={"/assets/partners/claro.svg"} sx={{maxWidth: '100%'}}/>
           </div>
-          {/* <p sx={{ mx: 'auto' }}>CLARO BRASIL</p>
-          <p sx={{ mx: 'auto' }}>CLARO CHILE</p>
-          <p sx={{ mx: 'auto' }}>ALTICE</p>
-          <p sx={{ mx: 'auto' }}>OOREDOO</p>
-          <p sx={{ mx: 'auto' }}>ORANGE</p>
-          <p sx={{ mx: 'auto' }}>DIGI</p> */}
+          <div sx={styles.imageWrapper}>
+            <img alt={"OOREDOO LOGO"} src={"/assets/partners/ooredoo.svg"} sx={{maxWidth: '100%'}}/>
+          </div>
         </Grid>
       </Container>
     </section>
@@ -67,12 +56,12 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    maxWidth: '200px',
-    height: ['150px','150px','150px','250px','250px'],
+    maxWidth: "200px",
+    height: ["150px", "150px", "150px", "250px", "250px"],
     justifyContent: "center",
-    my: [1,1,1,1,2],
+    my: [1, 1, 1, 1, 2],
     // padding: "20px 15px",
-    mx: 'auto'
+    mx: "auto",
   },
 
   subTitle: {

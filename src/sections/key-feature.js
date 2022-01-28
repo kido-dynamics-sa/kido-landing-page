@@ -4,10 +4,6 @@ import { jsx } from "theme-ui";
 import { Container, Grid } from "theme-ui";
 import SectionHeader from "../components/section-header";
 import FeatureCardColumn from "components/feature-card-column.js";
-import Tourism from "../../public/assets/key-feature/tourism.svg";
-import Mobility from "../../public/assets/key-feature/mobility.svg";
-import Retail from "../../public/assets/key-feature/retail.svg";
-import Support from "../../public/assets/key-feature/support.svg";
 
 export default function KeyFeature({ featureCardColumns, section }) {
   const sortedFeatures = [
@@ -26,13 +22,13 @@ export default function KeyFeature({ featureCardColumns, section }) {
   const getFeatureImage = (altText) => {
     switch (altText) {
       case "Tourism General Feature":
-        return Tourism;
+        return "/assets/key-feature/tourism.svg";
       case "Mobility General Feature":
-        return Mobility;
+        return "/assets/key-feature/mobility.svg";
       case "Retail General Feature":
-        return Retail;
+        return "/assets/key-feature/retail.svg";
       default:
-        return Tourism;
+        return "/assets/key-feature/tourism.svg";
     }
   };
 

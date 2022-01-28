@@ -6,17 +6,10 @@ import SectionHeader from "components/section-header";
 import TeamCard from "components/team-card";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
-import Member1 from "../../public/assets/team/member-1.png";
-import Member2 from "../../public/assets/team/member-2.png";
-import Member3 from "../../public/assets/team/member-3.png";
-import Member4 from "../../public/assets/team/member-4.png";
-import Member5 from "../../public/assets/team/member-5.png";
-import Member6 from "../../public/assets/team/member-6.png";
-
 const data = [
   {
     id: 1,
-    imgSrc: Member1,
+    imgSrc: "/assets/team/member-1.png",
     altText: "Ignacio Barrios",
     title: "Ignacio Barrios",
     designation: "CEO & Co-Founder",
@@ -43,7 +36,7 @@ const data = [
   },
   {
     id: 2,
-    imgSrc: Member2,
+    imgSrc: "/assets/team/member-2.png",
     altText: "Dr. Alberto Hernando",
     title: "Dr. Alberto Hernando",
     designation: "CTO & Co-Founder",
@@ -70,7 +63,7 @@ const data = [
   },
   {
     id: 3,
-    imgSrc: Member3,
+    imgSrc: "/assets/team/member-3.png",
     altText: "Bilal Khan",
     title: "Bilal Khan",
     designation: "VP Business Development",
@@ -97,7 +90,7 @@ const data = [
   },
   {
     id: 4,
-    imgSrc: Member4,
+    imgSrc: "/assets/team/member-4.png",
     altText: "Juan C. Sánchez",
     title: "Juan C. Sánchez",
     designation: "Spain Country Manager",
@@ -124,7 +117,7 @@ const data = [
   },
   {
     id: 5,
-    imgSrc: Member5,
+    imgSrc: "/assets/team/member-5.png",
     altText: "Luis Viotti",
     title: "Luis Viotti",
     designation: "Brazil Country Manager",
@@ -151,7 +144,7 @@ const data = [
   },
   {
     id: 6,
-    imgSrc: Member6,
+    imgSrc: "/assets/team/member-6.png",
     altText: "Carlos Roldan",
     title: "Carlos Roldan",
     designation: "Business Development US & LATAM",
@@ -178,7 +171,7 @@ const data = [
   },
   {
     id: 7,
-    imgSrc: Member1,
+    imgSrc: "/assets/team/member-1.png",
     altText: "Antonio Andrade",
     title: "Antonio Andrade",
     designation: "Mobility Analyst",
@@ -205,7 +198,7 @@ const data = [
   },
   {
     id: 8,
-    imgSrc: Member2,
+    imgSrc: "/assets/team/member-2.png",
     altText: "Dr. David Mateo",
     title: "Dr. David Mateo",
     designation: "Head of Product",
@@ -232,7 +225,7 @@ const data = [
   },
   {
     id: 9,
-    imgSrc: Member3,
+    imgSrc: "/assets/team/member-3.png",
     altText: "Agustín Marrone",
     title: "Agustín Marrone",
     designation: "Senior Software Developer",
@@ -259,7 +252,7 @@ const data = [
   },
   {
     id: 10,
-    imgSrc: Member4,
+    imgSrc: "/assets/team/member-4.png",
     altText: "Raúl Vallespin",
     title: "Raúl Vallespin",
     designation: "Full Stack Engineer",
@@ -286,7 +279,7 @@ const data = [
   },
   {
     id: 11,
-    imgSrc: Member5,
+    imgSrc: "/assets/team/member-5.png",
     altText: "Jordi Bayer",
     title: "Jordi Bayer",
     designation: "Data Scientist",
@@ -313,7 +306,7 @@ const data = [
   },
   {
     id: 12,
-    imgSrc: Member6,
+    imgSrc: "/assets/team/member-6.png",
     altText: "Jordi Escrich",
     title: "Jordi Escrich",
     designation: "Data Guy",
@@ -340,7 +333,7 @@ const data = [
   },
   {
     id: 13,
-    imgSrc: Member1,
+    imgSrc: "/assets/team/member-1.png",
     altText: "Sara Cela",
     title: "Sara Cela",
     designation: "Full Stack Engineer",

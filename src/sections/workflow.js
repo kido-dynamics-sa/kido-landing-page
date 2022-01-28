@@ -4,10 +4,6 @@ import { jsx } from "theme-ui";
 import { Container, Grid, Box, Heading, Text } from "theme-ui";
 import SectionHeader from "components/section-header";
 
-import PatternBG from "../../public/assets/patternBG.png";
-import ArrowOdd from "../../public/assets/arrowOdd.svg";
-import ArrowEven from "../../public/assets/arrowEven.svg";
-
 export default function WorkFlow({ workFlowItems, section }) {
   return (
     <section sx={styles.workflow}>
@@ -39,7 +35,7 @@ export default function WorkFlow({ workFlowItems, section }) {
 const styles = {
   workflow: {
     backgroundColor: "primary",
-    backgroundImage: `url(${PatternBG})`,
+    backgroundImage: `url('/assets/patternBG.png')`,
     backgroundRepeat: `no-repeat`,
     backgroundPosition: "center center",
     backgroundSize: "cover",
@@ -90,10 +86,10 @@ const styles = {
       },
     },
     "&:nth-of-type(2n-1)::before": {
-      backgroundImage: `url(${ArrowOdd})`,
+      backgroundImage: `url('/assets/arrowOdd.svg')`,
     },
     "&:nth-of-type(2n)::before": {
-      backgroundImage: `url(${ArrowEven})`,
+      backgroundImage: `url('/assets/arrowOdd.svg')`,
       top: 17,
     },
     "&:last-child::before": {

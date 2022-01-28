@@ -2,45 +2,45 @@
 /** @jsx jsx */
 import { jsx, Heading, Text, Box, Flex } from "theme-ui";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function Card({ article, category = null }) {
   return (
     <Link href={`/article/${article["Slug"]}`}>
       <Box sx={styles.reviewCard}>
-          <div sx={styles.img}>
-            <Image
-              src={article["Media"]}
-              alt={"press logo"}
-              width="300px"
-              height="176px"
-              layout="responsive"
-            />
+        <div sx={styles.img}>
+          <img
+            alt={"press logo"}
+            src={article["Media"]}
+            sx={{
+              width: "100%",
+              maxHeight: "100%",
+            }}
+          />
         </div>
-        
-          <div sx={{ ...styles.category, mb: 2 }}>
-            <Link href={'/blog'}>
-              <a
-                sx={{
-                  position: "relative",
-                  p: 0,
-                  m: 0,
-                  pr: "20px",
-                  "&:after": {
-                    content: '"•"',
-                    position: "absolute",
-                    right: "10px",
-                    transform: "translateX(50%)",
-                    color: "#5e709d",
-                  },
-                }}
-              >
-                {category && category["Name"]}
-              </a>
-            </Link>
-            <span sx={{ color: "#5e709d", fontWeight: "600" }}>
-              {article.published_at.split("T")[0]}
-            </span>
+
+        <div sx={{ ...styles.category, mb: 2 }}>
+          <Link href={"/blog"}>
+            <a
+              sx={{
+                position: "relative",
+                p: 0,
+                m: 0,
+                pr: "20px",
+                "&:after": {
+                  content: '"•"',
+                  position: "absolute",
+                  right: "10px",
+                  transform: "translateX(50%)",
+                  color: "#5e709d",
+                },
+              }}
+            >
+              {category && category["Name"]}
+            </a>
+          </Link>
+          <span sx={{ color: "#5e709d", fontWeight: "600" }}>
+            {article.published_at.split("T")[0]}
+          </span>
         </div>
         <Heading as="h3" sx={styles.title}>
           {article["Title"]}
@@ -48,15 +48,25 @@ export default function Card({ article, category = null }) {
         <Text as="p" sx={styles.description}>
           {article["Description"]}
         </Text>
-        <Flex sx={{ ...styles.category, textTransform: "none", alignItems: 'center', gap: 2 }}>
+        <Flex
+          sx={{
+            ...styles.category,
+            textTransform: "none",
+            alignItems: "center",
+            gap: 2,
+          }}
+        >
           <div sx={styles.avatar}>
-            {article.author["Picture"] && <Image
-              src={article.author["Picture"]}
-              alt={"press logo"}
-              width="48px"
-              height="48px"
-              layout="fixed"
-            />}
+            {article.author["Picture"] && (
+              <img
+                src={article.author["Picture"]}
+                alt={`article ${article["Title"]} image`}
+                sx={{
+                  width: "100%",
+                  maxHeight: "100%",
+                }}
+              />
+            )}
           </div>
           <Link href={category ? `/category/${category["Slug"]}` : "/blog"}>
             <a

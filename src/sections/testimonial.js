@@ -2,16 +2,10 @@
 /** @jsx jsx */
 import { jsx, Container, Heading, Text, Box } from "theme-ui";
 
-import Image from "next/image";
 import SectionHeader from "components/section-header";
 import Rating from "components/rating";
 import ButtonGroup from "components/button-group";
 import Carousel from "react-multi-carousel";
-
-import Avatar1 from "../../public/assets/testimonial/avatar1.png";
-import Avatar2 from "../../public/assets/testimonial/avatar2.png";
-import Avatar3 from "../../public/assets/testimonial/avatar3.png";
-import Avatar4 from "../../public/assets/testimonial/avatar4.png";
 
 const responsive = {
   desktop: {
@@ -61,10 +55,10 @@ const carouselParams = {
 
 export default function TestimonialCard({ testimonialItems, section }) {
   const avatarDict = {
-    Avatar1: Avatar1,
-    Avatar2: Avatar2,
-    Avatar3: Avatar3,
-    Avatar4: Avatar4,
+    Avatar1: "/assets/testimonial/avatar1.png",
+    Avatar2: "/assets/testimonial/avatar2.png",
+    Avatar3: "/assets/testimonial/avatar3.png",
+    Avatar4: "/assets/testimonial/avatar4.png",
   };
 
   return (
@@ -85,7 +79,7 @@ export default function TestimonialCard({ testimonialItems, section }) {
                 <Text sx={styles.description}>{item.description}</Text>
                 <div className="card-footer">
                   <div className="image">
-                    <Image src={avatarDict[item.avatar]} alt="Client image" />
+                    <img alt={"Client image"} src={avatarDict[item.avatar]} />
                   </div>
                   <div className="reviewer-info">
                     <Heading as="h4" sx={styles.heading}>

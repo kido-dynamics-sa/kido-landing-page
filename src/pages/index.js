@@ -75,13 +75,14 @@ export default function IndexPage({
 }
 
 export async function getStaticProps(context) {
-  const { params, locale, locales, defaultLocale, preview = null } = context;
+  // const { params, locale, locales, defaultLocale, preview = null } = context;
+  const pageContext = context;
 
-  const pageContext = {
-    locale,
-    locales,
-    defaultLocale,
-  };
+  // const pageContext = {
+    // locale,
+    // locales,
+    // defaultLocale,
+  // };
 
   const [
     banners,
@@ -94,7 +95,8 @@ export async function getStaticProps(context) {
     subscribeUsData,
     news
   ] = await Promise.all([
-    fetchAPI(`/banners?_locale=${locale}`),
+    // fetchAPI(`/banners?_locale=${locale}`),
+    fetchAPI(`/banners?_locale=en`),
     fetchAPI("/feature-card-columns"),
     fetchAPI("/sections"),
     fetchAPI("/text-features"),
@@ -131,7 +133,7 @@ export async function getStaticProps(context) {
       footer,
       subscribeUsData,
       news,
-      pageContext,
+      // pageContext,
     },
     revalidate: 60,
   };

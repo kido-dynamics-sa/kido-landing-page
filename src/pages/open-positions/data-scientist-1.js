@@ -253,16 +253,17 @@ const styles = {
 };
 
 export async function getStaticProps(context) {
-  const { params, locale, locales, defaultLocale, preview = null } = context;
+  const { params, preview = null } = context;
 
-  const pageContext = {
-    locale,
-    locales,
-    defaultLocale,
-  };
-
+  // const pageContext = {
+  //   locale,
+  //   locales,
+  //   defaultLocale,
+  // };
+  // const pageContext = context
+  
   return {
-    props: { pageContext },
+    props: {  },
     revalidate: 60,
   };
 }

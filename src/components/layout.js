@@ -32,7 +32,7 @@ export default function Layout({
         <Sticky innerZ={1001} top={0} onStateChange={handleStateChange}>
           <Header
             className={`${!isSticky ? "sticky" : "unSticky"}`}
-            pageContext={pageContext}
+            // pageContext={pageContext}
             onlyLogo={onlyLogo}
             sx={{
               // display: isSticky ? "none" : "block",
@@ -50,7 +50,7 @@ export default function Layout({
         <Sticky innerZ={1001} top={0} onStateChange={handleStateChange}>
           <Header
             className={`${isSticky ? "sticky" : "unSticky"}`}
-            pageContext={pageContext}
+            // pageContext={pageContext}
             onlyLogo={onlyLogo}
           />
         </Sticky>

@@ -1,32 +1,19 @@
 import React, { useState } from "react";
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import {
-  jsx,
-  Container,
-  Box,
-  Grid,
-  Text,
-  Heading,
-  Button,
-} from "theme-ui";
+import { jsx, Container, Box, Grid, Text, Heading, Button } from "theme-ui";
 import { keyframes } from "@emotion/react";
 import TextFeature from "components/text-feature";
 import { IoIosPlay } from "react-icons/io";
 
-import ServiceThumb from "../../public/assets/tourismApp.png";
-import shapePattern from "../../public/assets/shapeTourismPattern.png";
-
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-
-import Image from "next/image";
 
 let AnimatedBox = motion.custom(Box);
 
 const animationProps = {
   initial: { opacity: 0, scale: 0.75 },
-  transition: { ease: "easeOut", duration: .75 },
+  transition: { ease: "easeOut", duration: 0.75 },
 };
 
 // import ModalVideo from "react-modal-video";
@@ -51,12 +38,8 @@ export default function ServiceSectionVideo({ data }) {
           sx={styles.thumbnail}
           animate={inView ? { opacity: 1, scale: 1 } : ""}
         >
-          <div 
-            sx={{ maxWidth: "600px" }}>
-            <Image
-              src={ServiceThumb}
-              alt="Thumbnail"
-            />
+          <div sx={{ maxWidth: "600px" }}>
+            <img alt={"Thumbnail"} src={"/assets/tourismApp.png"} sx={{maxWidth: '100%'}}/>
           </div>
           <Button
             sx={styles.videoBtn}
@@ -68,7 +51,7 @@ export default function ServiceSectionVideo({ data }) {
             </span>
           </Button>
           <Box sx={styles.shapeBox}>
-            <Image src={shapePattern} alt="shape" />
+            <img alt={"shape"} src={"/assets/shapeTourismPattern.png"} sx={{maxWidth: '100%'}}/>
           </Box>
         </AnimatedBox>
 

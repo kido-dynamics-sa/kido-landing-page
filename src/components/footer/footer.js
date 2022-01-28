@@ -1,26 +1,28 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
 import { jsx, Box, Container, Text, Flex } from "theme-ui";
-import Image from 'next/image'
 import { Link } from "components/link";
 import data from "./footer.data";
-import FooterLogo from "../../../public/assets/logoWhite.svg";
 import { Heading } from "@theme-ui/components";
 
-
 export default function Footer({ footer }) {
-
   return (
     <footer sx={styles.footer}>
       <Container>
         <Box sx={styles.footer.footerBottomArea}>
           <Flex sx={{ flexDirection: "column" }}>
             <Link path="/">
-              <Image src={FooterLogo} alt="Logo" />
+              <img
+                src={"/assets/logoWhite.svg"}
+                alt="logo"
+                sx={{
+                  maxWidth: "100%",
+                }}
+              />
             </Link>
             <Text sx={styles.footer.description}>{footer.description}</Text>
             <Text sx={styles.footer.copyright}>
-            © {new Date().getFullYear()} Kido Dynamics. All rights reserved
+              © {new Date().getFullYear()} Kido Dynamics. All rights reserved
             </Text>
           </Flex>
 
@@ -80,8 +82,9 @@ export default function Footer({ footer }) {
 
 const styles = {
   footer: {
-    background: 'rgb(226,72,124)',
-    background: 'linear-gradient(111deg, rgba(226,72,124,1) 0%, rgba(98,127,255,1) 61%, rgba(57,118,239,1) 100%)',
+    background: "rgb(226,72,124)",
+    background:
+      "linear-gradient(111deg, rgba(226,72,124,1) 0%, rgba(98,127,255,1) 61%, rgba(57,118,239,1) 100%)",
     color: "white",
     footerBottomArea: {
       borderTop: "1px solid",
@@ -109,7 +112,7 @@ const styles = {
       mt: [3, 4],
       mb: 2,
       fontWeight: 100,
-      mx: 'auto'
+      mx: "auto",
     },
 
     link: {

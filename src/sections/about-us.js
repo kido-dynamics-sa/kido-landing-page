@@ -8,10 +8,6 @@ import TeamSection from "./team-section";
 import CompanyCulture from "./company-culture";
 import Partners from "./partners";
 import WhoWeAre from "./who-we-are";
-// import Hiring from "../../../public/assets/hiring.png";
-
-import Image from "next/image";
-import Link from "next/link";
 
 import { motion } from "framer-motion";
 
