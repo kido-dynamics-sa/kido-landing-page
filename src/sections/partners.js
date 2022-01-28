@@ -16,10 +16,10 @@ export default function Partners() {
           Trusted by Innovative companies
         </Text>
         <Grid sx={styles.grid}>
-          <div sx={styles.imageWrapper}>
+          <div sx={{...styles.imageWrapper, px: 7}}>
             <Image src={OrangeLogo} alt={"ORANGE LOGO"} />
           </div>
-          <div sx={styles.imageWrapper}>
+          <div sx={{...styles.imageWrapper, px: '44px'}}>
             <Image src={AlticeLogo} alt={"ALTICE LOGO"} />
           </div>
           <div sx={styles.imageWrapper}>
@@ -67,9 +67,11 @@ const styles = {
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    maxWidth: '148px',
+    maxWidth: '200px',
+    height: ['150px','150px','150px','250px','250px'],
     justifyContent: "center",
-    padding: "20px 15px",
+    my: [1,1,1,1,2],
+    // padding: "20px 15px",
     mx: 'auto'
   },
 

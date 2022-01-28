@@ -27,6 +27,7 @@ export default function IndexPage({
   testimonialItems,
   footer,
   subscribeUsData,
+  news,
   pageContext,
 }) {
   return (
@@ -46,8 +47,8 @@ export default function IndexPage({
         <ServiceSection data={textFeatures.find((a) => a.name === "Retail")} />
 
         <MainNews
-        // newsItems={newsItems}
-        // section={sections.find((a) => a.name === "MainNews")}
+          news={news}
+          // section={sections.find((a) => a.name === "MainNews")}
         />
         {/* <Feature /> */}
         <WorkFlow
@@ -91,6 +92,7 @@ export async function getStaticProps(context) {
     testimonialItems,
     footer,
     subscribeUsData,
+    news
   ] = await Promise.all([
     fetchAPI(`/banners?_locale=${locale}`),
     fetchAPI("/feature-card-columns"),
@@ -100,6 +102,7 @@ export async function getStaticProps(context) {
     fetchAPI("/testimonial-items"),
     fetchAPI("/footers"),
     fetchAPI("/suscribe-us"),
+    fetchAPI(`/news`)
     // fetchAPIBlog("/homepage", {
     //   populate: {
     //     hero: "*",
@@ -127,6 +130,7 @@ export async function getStaticProps(context) {
       testimonialItems,
       footer,
       subscribeUsData,
+      news,
       pageContext,
     },
     revalidate: 60,

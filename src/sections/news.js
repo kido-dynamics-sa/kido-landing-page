@@ -3,7 +3,6 @@
 import { jsx } from "theme-ui";
 import { Container, Box, Grid, Heading, Text } from "theme-ui";
 
-import Image from "next/image";
 import Link from "next/link";
 
 import TextFeature from "components/text-feature";
@@ -22,7 +21,7 @@ const animationProps = {
 
 export default function News({ mainNew, news }) {
   const { ref, inView } = useInView({
-    threshold: 0.25,
+    threshold: 0.1,
   });
   return (
     <section ref={ref} id="news" sx={styles.banner}>
@@ -43,40 +42,42 @@ export default function News({ mainNew, news }) {
         </AnimatedBox>
 
         <Grid sx={styles.grid}>
-          {news.map((item) => (
-            <Link href={item.path} id={item.id}>
-              <Box sx={styles.reviewCard}>
-                <div sx={styles.img}>
-                  <img
-                    alt={"press logo"}
-                    src={item.imageURL}
-                    sx={{
-                      maxWidth: '100%',
-                      height: 'auto'
-                    }}
-                  />
-                </div>
-                <Text as="p" sx={styles.description}>
-                  {item.date}
-                </Text>
-                <Heading as="h3" sx={styles.title}>
-                  {item.title}
-                </Heading>
-                <Text as="p" sx={styles.link}>
-                  Read more{" "}
-                  <FaArrowRight
-                    sx={{
-                      m: "auto",
-                      verticalAlign: "middle",
-                      ml: 1,
-                      width: "12px",
-                    }}
-                    className="arrow"
-                  />
-                </Text>
-              </Box>
-            </Link>
-          ))}
+          {news
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .map((item) => (
+              <Link href={item.path} id={item.id}>
+                <Box sx={styles.reviewCard}>
+                  <div sx={styles.img}>
+                    <img
+                      alt={"press logo"}
+                      src={item.imageURL}
+                      sx={{
+                        width: "100%",
+                        maxHeight: "100%",
+                      }}
+                    />
+                  </div>
+                  <Text as="p" sx={styles.description}>
+                    {item.date}
+                  </Text>
+                  <Heading as="h3" sx={styles.title}>
+                    {item.title}
+                  </Heading>
+                  <Text as="p" sx={styles.link}>
+                    Read more{" "}
+                    <FaArrowRight
+                      sx={{
+                        m: "auto",
+                        verticalAlign: "middle",
+                        ml: 1,
+                        width: "12px",
+                      }}
+                      className="arrow"
+                    />
+                  </Text>
+                </Box>
+              </Link>
+            ))}
         </Grid>
       </Container>
     </section>
@@ -118,7 +119,7 @@ const styles = {
       "repeat(2,1fr)",
       "repeat(3,1fr)",
     ],
-    my: 8
+    my: 8,
   },
 
   reviewCard: {
@@ -167,9 +168,11 @@ const styles = {
     mb: [3, null, null, "22px"],
   },
   img: {
-    mx: "auto",
-    height: '148px',
-    my: 3,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "200px",
+    my: 1,
     borderRadius: "6px",
   },
 

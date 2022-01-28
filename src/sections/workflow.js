@@ -18,9 +18,12 @@ export default function WorkFlow({ workFlowItems, section }) {
           isWhite={true}
         />
         <Grid sx={styles.grid}>
-          {workFlowItems.sort((a, b) => a.id < b.id).map((item) => (
+          {workFlowItems
+            // .sort((a, b) => a.id < b.id)
+            .sort((a,b) => (a.order < b.order) ? 1 : (a.order < b.order) ? -1 : 0)
+            .map((item) => (
             <Box sx={styles.card} key={item.id}>
-              <Box sx={styles.iconBox}>{`0${item.id}`}</Box>
+              <Box sx={styles.iconBox}>{`0${item.order}`}</Box>
               <Box sx={styles.wrapper}>
                 <Heading sx={styles.wrapper.title}>{item.title}</Heading>
                 <Text sx={styles.wrapper.subTitle}>{item.description}</Text>

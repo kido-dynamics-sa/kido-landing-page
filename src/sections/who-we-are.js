@@ -39,7 +39,7 @@ const features = [
 
 export default function WhoWeAre({ data }) {
   const { ref, inView } = useInView({
-    threshold: 0.25,
+    threshold: 0.15,
   });
 
   return (

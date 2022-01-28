@@ -2,39 +2,11 @@
 /** @jsx jsx */
 import { jsx, Container, Heading, Text, Box } from "theme-ui";
 
-import Image from "next/image";
+import Link from "next/link";
 import SectionHeader from "components/section-header";
 import ButtonGroup from "components/button-group";
 import Carousel from "react-multi-carousel";
 import { FaArrowRight } from "react-icons/fa";
-
-const news = [
-  {
-    title:
-      "Kido Dynamics data reveals how three big cities are recovering from the pandemic.",
-    path: "https://chainstoreage.com/placerai-data-reveals-how-three-big-cities-are-recovering-pandemic",
-    date: "29 de Diciembre de 2021",
-    logoURL: "https://www.placer.ai/wp-content/uploads/2020/06/CSAlogo-1.png",
-    id: 1,
-  },
-
-  {
-    title:
-      "Kido Dynamics data reveals how three big cities are recovering from the pandemic.",
-    path: "https://chainstoreage.com/placerai-data-reveals-how-three-big-cities-are-recovering-pandemic",
-    date: "29 de Diciembre de 2021",
-    logoURL: "https://www.placer.ai/wp-content/uploads/2020/06/CSAlogo-1.png",
-    id: 2,
-  },
-  {
-    title:
-      "Kido Dynamics data reveals how three big cities are recovering from the pandemic.",
-    path: "https://chainstoreage.com/placerai-data-reveals-how-three-big-cities-are-recovering-pandemic",
-    date: "29 de Diciembre de 2021",
-    logoURL: "https://www.placer.ai/wp-content/uploads/2020/06/CSAlogo-1.png",
-    id: 3,
-  },
-]
 
 const responsive = {
   desktop: {
@@ -82,8 +54,7 @@ const carouselParams = {
   slidesToSlide: 1,
 };
 
-
-export default function MainNews({ newsItems, section }) {
+export default function MainNews({ news, section }) {
   return (
     <section id="testimonial" sx={{ variant: "section.testimonial" }}>
       <Container css={{ textAlign: "center" }}>
@@ -93,38 +64,42 @@ export default function MainNews({ newsItems, section }) {
       <Box sx={styles.carouselWrapper}>
         <Carousel {...carouselParams}>
           {news
-            // .slice(0, 4)
+            .sort((a, b) => new Date(b.date) - new Date(a.date))
+            .slice(0, 4)
             .map((item) => (
-            <Box sx={styles.reviewCard} key={item.id}>
-              <div sx={styles.img}>
-                <Image
-                  src={item.logoURL}
-                  alt={"press logo"}
-                  width="300px"
-                  height="176px"
-                  layout="responsive"
-                />
-              </div>
-              <Text as="p" sx={styles.description}>
-                {item.date}
-              </Text>
-              <Heading as="h3" sx={styles.title}>
-                {item.title}
-              </Heading>
-              <Text as="p" sx={styles.link}>
-                Read more{" "}
-                <FaArrowRight
-                  sx={{
-                    m: "auto",
-                    verticalAlign: "middle",
-                    ml: 1,
-                    width: "12px",
-                  }}
-                  className="arrow"
-                />
-              </Text>
-            </Box>
-          ))}
+              <Link href={item.path} id={item.id}>
+                <Box sx={styles.reviewCard} key={item.id}>
+                  <div sx={styles.img}>
+                    <img
+                      alt={"press logo"}
+                      src={item.imageURL}
+                      sx={{
+                        width: "100%",
+                        maxHeight: "100%",
+                      }}
+                    />
+                  </div>
+                  <Text as="p" sx={styles.description}>
+                    {item.date}
+                  </Text>
+                  <Heading as="h3" sx={styles.title}>
+                    {item.title}
+                  </Heading>
+                  <Text as="p" sx={styles.link}>
+                    Read more{" "}
+                    <FaArrowRight
+                      sx={{
+                        m: "auto",
+                        verticalAlign: "middle",
+                        ml: 1,
+                        width: "12px",
+                      }}
+                      className="arrow"
+                    />
+                  </Text>
+                </Box>
+              </Link>
+            ))}
         </Carousel>
       </Box>
     </section>
@@ -245,9 +220,12 @@ const styles = {
   },
 
   img: {
-    mx: "auto",
-    ml: "auto",
-    // width: ['80px', null, null, '90px', null, 'auto'],
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    height: "200px",
+    my: 1,
+    borderRadius: "6px",
   },
 
   link: {
