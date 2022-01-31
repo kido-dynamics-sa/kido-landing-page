@@ -135,7 +135,7 @@ const CountryCard = ({ country, onClose }) => (
       <ReactTooltip place="bottom" type="dark" effect="float" />
     </div>
     {country.platformName !== "Kido Platform" && (
-      <div sx={{ ...styles.subtitle, alignSelf: "center" }}>
+      <div sx={{ ...styles.subtitle, alignSelf: "center", mb: 2 }}>
         <span
           sx={{
             fontSize: "13px",
@@ -146,7 +146,7 @@ const CountryCard = ({ country, onClose }) => (
         </span>
       </div>
     )}
-    <div sx={{ mx: "auto", mt: 3 }}>
+    <div sx={{ mx: "auto", mt: 1}}>
       <a target="_blank" href={country.path} rel="noopener noreferrer">
         <Button
           className="donate__btn"
@@ -271,7 +271,7 @@ const styles = {
     fontWeight: 600,
     py: 3,
     px: 4,
-    my: 1,
+    my: 2,
     mb: 3,
     borderRadius: "4px",
     img: {
