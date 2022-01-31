@@ -52,7 +52,7 @@ export default function MobileDrawer() {
         <Box sx={styles.content}>
           <Box sx={styles.menu}>
             {menuItems.map((menuItem, i) =>
-              menuItem.path === "contact" || menuItem.path === "feature" ? (
+              menuItem.path === "contact" ? (
                 <ScrollLink key={i} path={menuItem.path} label={menuItem.label} i={i} />
               ) : (
                 <Link

@@ -1,11 +1,11 @@
 export default [
   {
-    path: '/about-us',
-    label: 'Company',
+    path: '/',
+    label: 'Product',
   },
   {
-    path: '/#feature',
-    label: 'Product',
+    path: '/about-us',
+    label: 'Company',
   },
   {
     path: '/news',

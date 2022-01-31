@@ -116,9 +116,8 @@ export default SubscribeUs;
 
 const styles = {
   section: {
-    height: "50vh",
-    pt: [6, null, null, null, 6],
-    pb: [8, null, null, 9, 9],
+    height: ["40vh", "40vh", "40vh", "35vh", "35vh"],
+    // pb: 5,
   },
   contentWrapper: {
     backgroundColor: "primary",

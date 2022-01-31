@@ -146,7 +146,7 @@ const CountryCard = ({ country, onClose }) => (
         </span>
       </div>
     )}
-    <div sx={{ mx: "auto", mt: 1}}>
+    <div sx={{ mx: "auto", mt: 1 }}>
       <a target="_blank" href={country.path} rel="noopener noreferrer">
         <Button
           className="donate__btn"
@@ -184,11 +184,11 @@ export default function InternationalPresence({ section }) {
           sx={{
             variant: "text.heroTerciary",
             textAlign: "center",
-            m: 0,
+            mb: [0, 0, 0, 0, 4],
             p: 0,
           }}
         >
-          Click to discover <FaMouse />
+          Click to discover <FaMouse sx={{ ml: 1 }} />
         </Text>
         <AnimatedBox
           {...animationProps}

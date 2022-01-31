@@ -65,7 +65,7 @@ export default function MainNews({ news, section }) {
         <Carousel {...carouselParams}>
           {news
             .sort((a, b) => new Date(b.date) - new Date(a.date))
-            .slice(0, 6)
+            .slice(0, 12)
             .map((item) => (
               <a
                 target="_blank"

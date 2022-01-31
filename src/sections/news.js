@@ -39,6 +39,7 @@ export default function News({ mainNew, news }) {
             description={mainNew.description}
             btnName={mainNew.buttonText}
             btnURL={mainNew.buttonURL}
+            maxWidth
           />
         </AnimatedBox>
 

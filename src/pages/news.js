@@ -4,17 +4,29 @@ import theme from "theme";
 
 import SEO from "components/seo";
 import Layout from "components/layout";
+import SubscribeUs from "../sections/subscribe-us";
 
 import News from "../sections/news";
 
 import { getFooter, fetchAPI } from "utils/api";
 
-export default function IndexPage({ mainNew, news, footer, pageContext }) {
+export default function IndexPage({
+  sections,
+  subscribeUsData,
+  mainNew,
+  news,
+  footer,
+  pageContext,
+}) {
   return (
     <ThemeProvider theme={theme}>
       <Layout pageContext={pageContext} footer={footer[0]} onlyLogo>
         <SEO title="Kido Dynamics Landing Page" />
         <News mainNew={mainNew} news={news} />
+        <SubscribeUs
+          subscribeUsData={subscribeUsData}
+          section={sections.find((a) => a.name === "SubscribeUsSection")}
+        />
       </Layout>
     </ThemeProvider>
   );
@@ -27,6 +39,8 @@ export async function getStaticProps(context) {
   const footer = await getFooter();
   const news = await fetchAPI(`/news`);
   const mainNew = await fetchAPI(`/main-new`);
+  const subscribeUsData = await fetchAPI("/suscribe-us");
+  const sections = await fetchAPI(`/sections`);
 
   // const pageContext = {
   //   locale,
@@ -36,7 +50,11 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      mainNew, news, footer,
+      sections,
+      subscribeUsData,
+      mainNew,
+      news,
+      footer,
       // pageContext
     },
     revalidate: 60,

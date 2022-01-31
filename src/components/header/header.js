@@ -19,7 +19,7 @@ export default function Header({ className, onlyLogo }) {
         <Fragment>
           <Flex as="nav" sx={styles.nav}>
             {menuItems.map((menuItem, i) =>
-              menuItem.path === "contact" || menuItem.label === "Product" ? (
+              menuItem.path === "contact" ? (
                 <ScrollLink key={i} path={menuItem.path} label={menuItem.label} i={i} />
               ) : (
                 <Link

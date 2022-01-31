@@ -5,13 +5,18 @@ import theme from "theme";
 import SEO from "components/seo";
 import Layout from "components/layout";
 import AboutUs from "../sections/about-us";
+import SubscribeUs from "../sections/subscribe-us";
 
+import { getFooter, fetchAPI } from "utils/api";
 
-import { getFooter, fetchAPI } from "utils/api"
-
-
-
-export default function IndexPage({ aboutUs, companyCulture, footer, sections, pageContext }) {
+export default function IndexPage({
+  subscribeUsData,
+  aboutUs,
+  companyCulture,
+  footer,
+  sections,
+  pageContext,
+}) {
   return (
     <ThemeProvider theme={theme}>
       <Layout pageContext={pageContext} footer={footer[0]} onlyLogo>
@@ -19,7 +24,13 @@ export default function IndexPage({ aboutUs, companyCulture, footer, sections, p
         <AboutUs
           aboutUs={aboutUs}
           companyCulture={companyCulture}
-          teamSection={sections.find((a) => a.name === "TeamSection")} />
+          teamSection={sections.find((a) => a.name === "TeamSection")}
+        />
+
+        <SubscribeUs
+          subscribeUsData={subscribeUsData}
+          section={sections.find((a) => a.name === "SubscribeUsSection")}
+        />
       </Layout>
     </ThemeProvider>
   );
@@ -30,9 +41,10 @@ export async function getStaticProps(context) {
   const pageContext = context;
 
   const footer = await getFooter();
-  const sections = await fetchAPI("/sections")
-  const aboutUs = await fetchAPI("/about-us")
-  const companyCulture = await fetchAPI("/company-culture")
+  const sections = await fetchAPI("/sections");
+  const aboutUs = await fetchAPI("/about-us");
+  const companyCulture = await fetchAPI("/company-culture");
+  const subscribeUsData = await fetchAPI("/suscribe-us");
 
   // const pageContext = {
   //   locale,
@@ -42,7 +54,11 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      sections, aboutUs, companyCulture, footer,
+      subscribeUsData,
+      sections,
+      aboutUs,
+      companyCulture,
+      footer,
       // pageContext
     },
     revalidate: 60,
