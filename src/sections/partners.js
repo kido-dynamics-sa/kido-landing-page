@@ -32,7 +32,7 @@ export default function Partners() {
               sx={{ maxWidth: "100%" }}
             />
           </div>
-          <div sx={styles.imageWrapper}>
+          <div sx={{...styles.imageWrapper, px: "28px"}}>
             <img
               alt={"OOREDOO LOGO"}
               src={"/assets/partners/ooredoo.svg"}

@@ -92,7 +92,7 @@ export default {
     },
     feature: {
       pt: [4, null, 4, null, null, 5],
-      pb: ["90px", null, 9, null, null, 10, null, "165px"],
+      pb: ["45px", null, 4, null, null, 5, null, "85px"],
       mt: [8, 8, '150px', 0, 0, 0, 0],
     },
     news: {
@@ -281,7 +281,7 @@ export default {
       color: "white",
       bg: "primary",
       "&:hover": {
-        boxShadow: "rgba(233, 76, 84, 0.57) 0px 9px 20px -5px",
+        boxShadow: "#2563FF57 0px 9px 20px -5px",
       },
     },
     whiteButton: {
