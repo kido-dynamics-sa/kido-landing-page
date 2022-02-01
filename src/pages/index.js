@@ -75,8 +75,8 @@ export default function IndexPage({
 }
 
 export async function getStaticProps(context) {
-  // const { params, locale, locales, defaultLocale, preview = null } = context;
-  const pageContext = context;
+  const { params, preview = null } = context;
+  const pageContext = { params, preview } ;
 
   // const pageContext = {
     // locale,
@@ -113,15 +113,6 @@ export async function getStaticProps(context) {
     // }),
   ]);
 
-  // const banners = await getBanners(locale);
-  // const featureCardColumns = await getFeatureCardColumns();
-  // const sections = await getSections();
-  // const textFeatures = await getTextFeatures();
-  // const workFlowItems = await getWorkFlowItems();
-  // const testimonialItems = await getTestimonialItems();
-  // const footer = await getFooter();
-  // const subscribeUsData = await getSubscribeUs();
-
   return {
     props: {
       banners,
@@ -133,8 +124,8 @@ export async function getStaticProps(context) {
       footer,
       subscribeUsData,
       news,
-      // pageContext,
+      pageContext,
     },
-    revalidate: 60,
+    revalidate: 1,
   };
 }
