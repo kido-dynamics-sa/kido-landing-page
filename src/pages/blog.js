@@ -62,7 +62,7 @@ export async function getStaticProps(context) {
       articles,
       categories,
     },
-    revalidate: 60,
+    revalidate: 1,
   };
 }
 

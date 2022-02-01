@@ -125,6 +125,6 @@ export async function getStaticProps(context) {
       news,
       // pageContext,
     },
-    revalidate: 60,
+    revalidate: 1,
   };
 }

@@ -149,7 +149,7 @@ export async function getStaticProps(context) {
       footer,
       // pageContext
     },
-    revalidate: 60,
+    revalidate: 1,
   };
 }
 
