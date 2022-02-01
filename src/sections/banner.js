@@ -7,6 +7,11 @@ import Carousel from "react-multi-carousel";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+import Image from "next/image";
+import BannerTourism from "../../public/assets/heroTourism.png";
+import BannerRetail from "../../public/assets/heroRetail.png";
+import BannerMobility from "../../public/assets/heroMobility.png";
+
 let AnimatedBox = motion.custom(Box);
 
 const animationProps = {
@@ -90,14 +95,26 @@ const Banner = ({ banners }) => {
       return { ...newBanner };
     });
   };
+  // const getBannerImage = (altText) => {
+  //   switch (altText) {
+  //     case "Tourism Banner":
+  //       return "/assets/heroTourism.png";
+  //     case "Mobility Banner":
+  //       return "/assets/heroMobility.png";
+  //     case "Retail Banner":
+  //       return "/assets/heroRetail.png";
+  //     default:
+  //       return BannerTourism;
+  //   }
+  // };
   const getBannerImage = (altText) => {
     switch (altText) {
       case "Tourism Banner":
-        return "/assets/heroTourism.png";
+        return BannerTourism;
       case "Mobility Banner":
-        return "/assets/heroMobility.png";
+        return BannerMobility;
       case "Retail Banner":
-        return "/assets/heroRetail.png";
+        return BannerRetail;
       default:
         return BannerTourism;
     }
@@ -189,11 +206,19 @@ const Banner = ({ banners }) => {
                 animate={inView ? { opacity: 1, x: 0 } : ""}
               >
                 {/* <Box sx={styles.banner.hero}> */}
-                <img
+                {/* <img
                   src={getBannerImage(item.altText)}
                   alt={item.altText}
                   sx={{ maxWidth: "100%" }}
+                /> */}
+                <Image
+                  // src={getStrapiMedia(item.imgSrc.url)}
+                  src={getBannerImage(item.altText)}
+                  alt={item.altText}
+                  sx={{ objectFit: "contain" }}
+                  priority={true}
                 />
+
               </AnimatedBox>
             </Container>
           </section>
