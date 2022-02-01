@@ -12,32 +12,60 @@ export default function Partners() {
         </Text>
         <Grid sx={styles.grid}>
           <div sx={{ ...styles.imageWrapper, px: 7 }}>
-            <img
-              alt={"ORANGE LOGO"}
-              src={"/assets/partners/orange.svg"}
-              sx={{ maxWidth: "100%" }}
-            />
+            <a
+              target="_blank"
+              href={"https://www.orange.es/"}
+              rel="noopener noreferrer"
+              sx={{ textDecoration: "none" }}
+            >
+              <img
+                alt={"ORANGE LOGO"}
+                src={"/assets/partners/orange.svg"}
+                sx={{ maxWidth: "100%" }}
+              />
+            </a>
           </div>
           <div sx={{ ...styles.imageWrapper, px: "44px" }}>
-            <img
-              alt={"ALTICE LOGO"}
-              src={"/assets/partners/altice.svg"}
-              sx={{ maxWidth: "100%" }}
-            />
+            <a
+              target="_blank"
+              href={"https://www.telecom.pt/pt-pt"}
+              rel="noopener noreferrer"
+              sx={{ textDecoration: "none" }}
+            >
+              <img
+                alt={"ALTICE LOGO"}
+                src={"/assets/partners/altice.svg"}
+                sx={{ maxWidth: "100%" }}
+              />
+            </a>
           </div>
           <div sx={styles.imageWrapper}>
-            <img
-              alt={"claro LOGO"}
-              src={"/assets/partners/claro.svg"}
-              sx={{ maxWidth: "100%" }}
-            />
+            <a
+              target="_blank"
+              href={"https://www.claro.com.co/personas/"}
+              rel="noopener noreferrer"
+              sx={{ textDecoration: "none" }}
+            >
+              <img
+                alt={"claro LOGO"}
+                src={"/assets/partners/claro.svg"}
+                sx={{ maxWidth: "100%" }}
+              />
+            </a>
           </div>
-          <div sx={{...styles.imageWrapper, px: "28px"}}>
-            <img
-              alt={"OOREDOO LOGO"}
-              src={"/assets/partners/ooredoo.svg"}
-              sx={{ maxWidth: "100%" }}
-            />
+          <div sx={{ ...styles.imageWrapper, px: "28px" }}>
+            <a
+              target="_blank"
+              href={"https://www.ooredoo.qa/web/en/"}
+              rel="noopener noreferrer"
+              sx={{ textDecoration: "none" }}
+            >
+              <img
+                alt={"OOREDOO LOGO"}
+                src={"/assets/partners/ooredoo.svg"}
+                sx={{ maxWidth: "100%" }}
+              />
+            </a>
           </div>
         </Grid>
       </Container>
