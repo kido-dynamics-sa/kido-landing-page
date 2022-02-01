@@ -74,8 +74,7 @@ export default function IndexPage({
   );
 }
 
-// export async function getStaticProps(context) {
-  export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const { params, preview = null } = context;
 
   // const pageContext = {
