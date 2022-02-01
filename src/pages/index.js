@@ -76,7 +76,6 @@ export default function IndexPage({
 
 export async function getStaticProps(context) {
   const { params, preview = null } = context;
-  const pageContext = { params, preview } ;
 
   // const pageContext = {
     // locale,
@@ -124,7 +123,7 @@ export async function getStaticProps(context) {
       footer,
       subscribeUsData,
       news,
-      pageContext,
+      // pageContext,
     },
     revalidate: 1,
   };
