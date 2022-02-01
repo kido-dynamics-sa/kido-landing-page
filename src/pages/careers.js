@@ -48,6 +48,6 @@ export async function getStaticProps(context) {
       footer,
       // pageContext
     },
-    revalidate: 15,
+    revalidate: 60,
   };
 }
