@@ -42,16 +42,22 @@ const SubscribeUs = ({ subscribeUsData, section }) => {
 
               try {
                 setErrors({ api: null });
-                await fetchAPI("/lead-form-submissions", {
+                // await fetchAPI("/lead-form-submissions", {
+                //   method: "POST",
+                //   body: JSON.stringify({
+                //     email: values.email,
+                //     location: "whatever",
+                //   }),
+                // });
+                await fetch("/api/contact", {
                   method: "POST",
-                  body: JSON.stringify({
-                    email: values.email,
-                    location: "whatever",
-                  }),
+                  headers: { "content-type": "application/json" },
+                  body: JSON.stringify({ email: values.email }),
                 });
                 setSuccess(true);
               } catch (err) {
                 setErrors({ api: err.message });
+                setSuccess(false);
               }
 
               setLoading(false);
