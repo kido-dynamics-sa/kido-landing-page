@@ -207,7 +207,7 @@ const styles = {
   banner: {
     // height: '90vh',
     overflow: "hidden",
-    pt: ["140px", "145px", "155px", "170px", "80px", null, "60px", "215px"],
+    pt: ["140px", "145px", "155px", "170px", "80px", null, "60px", "170px"],
     pb: [2, null, 0, null, 2, 0, null, 2],
     position: "relative",
     zIndex: 2,
