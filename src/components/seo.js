@@ -8,7 +8,7 @@ export default function SEO({
   title = "Kido Dynamics - Understanding People's Mobility Behaviour",
   keywords = "mobility, big data, insights",
   url = "https://www.kidodynamics.com/",
-  image = "%PUBLIC_URL%/assets/metatag.png",
+  image = "/assets/metatag.png",
 }) {
   const metaData = [
     {

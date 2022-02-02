@@ -34,6 +34,7 @@ export default function IndexPage({
     <ThemeProvider theme={theme}>
       <Layout pageContext={pageContext} footer={footer[0]}>
         <SEO />
+        <h1 style={{display: 'none'}}>Kido Dynamics - Understanding People's Mobility Behaviour</h1>
         <Banner banners={banners} />
         <Partners />
         <KeyFeature
