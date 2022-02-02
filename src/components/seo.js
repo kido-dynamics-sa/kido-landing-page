@@ -6,7 +6,7 @@ export default function SEO({
   author = "Kido Dynamics",
   meta,
   title = "Kido Dynamics - Understanding People's Mobility Behaviour",
-  keywords = [],
+  keywords = "mobility, big data, insights",
   url = "https://www.kidodynamics.com/",
   image = "%PUBLIC_URL%/assets/metatag.png",
 }) {

@@ -33,10 +33,7 @@ export default function IndexPage({
   return (
     <ThemeProvider theme={theme}>
       <Layout pageContext={pageContext} footer={footer[0]}>
-        <SEO
-          title="Kido Dynamics - Understanding People's Mobility Behaviour"
-          
-        />
+        <SEO />
         <Banner banners={banners} />
         <Partners />
         <KeyFeature
