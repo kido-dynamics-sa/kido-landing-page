@@ -122,7 +122,7 @@ export default SubscribeUs;
 
 const styles = {
   section: {
-    height: ["40vh", "40vh", "40vh", "35vh", "35vh"],
+    height: ["60vh", "50vh", "40vh", "40vh", "35vh", "35vh"],
     // pb: 5,
   },
   contentWrapper: {

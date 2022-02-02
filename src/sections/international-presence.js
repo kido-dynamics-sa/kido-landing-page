@@ -81,7 +81,7 @@ const countriesMapInfo = [
 const CountryCard = ({ country, onClose }) => (
   <div sx={styles.card}>
     <div
-      sx={{ alignSelf: "end", m: 0, mb: "-14px", cursor: "pointer" }}
+      sx={{ position: "absolute", py: 4, px: 5, top: 0, right: 0 }}
       onClick={onClose}
     >
       <FaTimes />

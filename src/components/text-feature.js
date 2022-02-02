@@ -43,7 +43,7 @@ export default function TextFeature({
       {btnName && (
         <a
           target="_blank"
-          href={"https://app.kido-es.kidodynamics.com"}
+          href={btnURL}
           rel="noopener noreferrer"
         >
           <Button
