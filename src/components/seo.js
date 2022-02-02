@@ -1,16 +1,31 @@
-import React from 'react';
-import Head from 'next/head';
+import React from "react";
+import Head from "next/head";
 
 export default function SEO({
-  description = 'startup product landing page',
-  author = 'JSM',
+  description = "Kido Dynamics leverages mobile phone data, the most massive and accurate proxy to understand people’s mobility.",
+  author = "Kido Dynamics",
   meta,
-  title = 'startup landing title',
+  title = "Kido Dynamics - Understanding People's Mobility Behaviour",
+  keywords = [],
+  url = "https://www.kidodynamics.com/",
+  image = "<%= require('./assets/metatag.png') %>",
 }) {
   const metaData = [
     {
       name: `description`,
       content: description,
+    },
+    {
+      name: `title`,
+      content: title,
+    },
+    {
+      property: `og:type`,
+      content: `website`,
+    },
+    {
+      property: `og:url`,
+      content: url,
     },
     {
       property: `og:title`,
@@ -21,33 +36,49 @@ export default function SEO({
       content: description,
     },
     {
-      property: `og:type`,
-      content: `website`,
+      property: `og:image`,
+      content: image,
     },
     {
-      name: `twitter:card`,
-      content: `summary`,
+      name: `keywords`,
+      content: keywords,
     },
     {
-      name: `twitter:creator`,
-      content: author,
+      property: `twitter:card`,
+      content: `summary_large_image`,
     },
     {
-      name: `twitter:title`,
+      property: `twitter:url`,
+      content: url,
+    },
+    {
+      property: `twitter:title`,
       content: title,
     },
     {
-      name: `twitter:description`,
+      property: `twitter:description`,
       content: description,
     },
+    {
+      property: `twitter:creator`,
+      content: author,
+    },
+    {
+      property: `twitter:image`,
+      content: image,
+    },
   ].concat(meta);
-  
+
   return (
     <Head>
       <title>{title}</title>
-      {metaData.map(({ name, content }, i) => (
-        <meta key={i} name={name} content={content} />
-      ))}
+      {metaData.map(({ property, name, content }, i) =>
+        property ? (
+          <meta property={property} content={content} key={name} />
+        ) : (
+          <meta name={name} content={content} key={name} />
+        )
+      )}
     </Head>
   );
 }
