@@ -8,7 +8,7 @@ export default function SEO({
   title = "Kido Dynamics - Understanding People's Mobility Behaviour",
   keywords = [],
   url = "https://www.kidodynamics.com/",
-  image = "<%= require('./assets/metatag.png') %>",
+  image = "%PUBLIC_URL%/assets/metatag.png",
 }) {
   const metaData = [
     {
