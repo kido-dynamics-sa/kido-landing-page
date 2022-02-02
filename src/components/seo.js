@@ -7,8 +7,8 @@ export default function SEO({
   meta,
   title = "Kido Dynamics - Understanding People's Mobility Behaviour",
   keywords = "mobility, big data, insights",
-  url = "https://www.kidodynamics.com/",
-  image = "/assets/metatag.png",
+  url = "https://kido-landing-page.vercel.app/",
+  image = "https://kido-landing-page.vercel.app/assets/metatag.png ",
 }) {
   const metaData = [
     {

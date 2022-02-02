@@ -13,8 +13,8 @@ const Home = ({
   return (
     <ThemeProvider theme={theme}>
       <Layout pageContext={pageContext} footer={footer[0]} categories={categories} onlyLogo isBlog>
-        {/* <Seo seo={homepage.attributes.seo} /> */}
-        <SEO title="Kido Dynamics Blog" />
+        <SEO title="Kido Dynamics - Blog"/>
+        <h1 style={{display: 'none'}}>Kido Dynamics - Blog</h1>
         <div>
             {/* <h1>{homepage.attributes.hero.title}</h1> */}
             <Articles articles={articles} />

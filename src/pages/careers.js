@@ -16,7 +16,8 @@ export default function IndexPage({ subscribeUsData,sections, footer, pageContex
   return (
     <ThemeProvider theme={theme}>
       <Layout pageContext={pageContext} footer={footer[0]} onlyLogo>
-        <SEO title="Kido Dynamics Landing Page" />
+        <SEO title="Kido Dynamics - Careers"/>
+        <h1 style={{display: 'none'}}>Kido Dynamics - Careers</h1>
         <Careers />
         <SubscribeUs
           subscribeUsData={subscribeUsData}

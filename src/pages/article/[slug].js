@@ -8,6 +8,7 @@ import Layout from "../../components/layout";
 import { ThemeProvider } from "theme-ui";
 import { fetchAPI, getFooter } from "utils/api";
 import theme from "theme";
+import SEO from "components/seo";
 import Link from "next/link";
 
 export default function Article({ article, pageContext, footer, categories }) {
@@ -27,7 +28,11 @@ export default function Article({ article, pageContext, footer, categories }) {
         onlyLogo
         isBlog
       >
-        {/* <Seo seo={seo} /> */}
+        <SEO
+          title={`Kido Dynamics - ${article["Title"].charAt(0).toUpperCase() + article["Title"].slice(1)}`}
+          description={article["Description"]}
+          image={article["Media"]}
+        />
         <div sx={styles.wrapper}>
           <div sx={styles.header}>
             <ul sx={styles.header.metadata}>

@@ -21,7 +21,8 @@ export default function IndexPage({
   return (
     <ThemeProvider theme={theme}>
       <Layout pageContext={pageContext} footer={footer[0]} onlyLogo>
-        <SEO title="Kido Dynamics Landing Page" />
+        <SEO title="Kido Dynamics - News"/>
+        <h1 style={{display: 'none'}}>Kido Dynamics - News</h1>
         <News mainNew={mainNew} news={news} />
         <SubscribeUs
           subscribeUsData={subscribeUsData}

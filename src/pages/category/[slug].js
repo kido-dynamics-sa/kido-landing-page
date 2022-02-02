@@ -7,10 +7,6 @@ import SEO from "components/seo";
 import { fetchAPI, getFooter } from "utils/api";
 
 const Category = ({ category, categories, footer, pageContext }) => {
-  // const seo = {
-  //   metaTitle: category.attributes.name,
-  //   metaDescription: `All ${category.attributes.name} articles`,
-  // }
 
   return (
     <ThemeProvider theme={theme}>
@@ -22,11 +18,13 @@ const Category = ({ category, categories, footer, pageContext }) => {
         onlyLogo
         isBlog
       >
-        {/* <Seo seo={homepage.attributes.seo} /> */}
-        <SEO title="Kido Dynamics Blog" />
+      <SEO
+        title={`Kido Dynamics - ${category["Name"].charAt(0).toUpperCase() + category["Name"].slice(1)}`}
+        description={`All ${category["Name"]} articles`}
+      />
+        <h1 style={{display: 'none'}}>{`Kido Dynamics - ${category["Name"].charAt(0).toUpperCase() + category["Name"].slice(1)}`}</h1>
         <div>
           <div>
-            {/* <h1>{homepage.attributes.hero.title}</h1> */}
             <Articles articles={category.articles} category={category}/>
           </div>
         </div>

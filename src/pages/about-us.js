@@ -20,7 +20,8 @@ export default function IndexPage({
   return (
     <ThemeProvider theme={theme}>
       <Layout pageContext={pageContext} footer={footer[0]} onlyLogo>
-        <SEO title="Kido Dynamics Landing Page" />
+        <SEO title="Kido Dynamics - About Us"/>
+        <h1 style={{display: 'none'}}>Kido Dynamics - About Us</h1>
         <AboutUs
           aboutUs={aboutUs}
           companyCulture={companyCulture}
