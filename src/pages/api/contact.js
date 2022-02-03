@@ -5,7 +5,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 export default async (req, res) => {
   const { email } = req.body;
   const msg = {
-    to: "web-team@kidodynamics.com", // Change to your recipient
+    to: "info@kidodynamics.com", // Change to your recipient
     from: "web-team@kidodynamics.com", // Change to your verified sender
     subject: "Quieren saber más acerca de Kido Dynamics",
     text: "Mensaje automático generado desde la landing page.",
