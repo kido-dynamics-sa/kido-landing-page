@@ -12,17 +12,17 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1619 },
     items: 4,
-    slidesToSlide: 4, // optional, default to 1.
+    slidesToSlide: 1, // optional, default to 1.
   },
   laptop: {
     breakpoint: { max: 1619, min: 1024 },
     items: 3,
-    slidesToSlide: 3, // optional, default to 1.
+    slidesToSlide: 1, // optional, default to 1.
   },
   tablet: {
     breakpoint: { max: 1024, min: 640 },
     items: 2,
-    slidesToSlide: 2, // optional, default to 1.
+    slidesToSlide: 1, // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 639, min: 0 },
@@ -65,7 +65,7 @@ export default function MainNews({ news, section }) {
         <Carousel {...carouselParams}>
           {news
             .sort((a, b) => new Date(b.date) - new Date(a.date))
-            .slice(0, 12)
+            .slice(0, 6)
             .map((item) => (
               <a
                 target="_blank"
@@ -123,24 +123,25 @@ const styles = {
     px: "15px",
     ".carousel-container": {
       width: "100%",
-      maxWidth: [
-        "100%",
-        null,
-        null,
-        "750px",
-        "1000px",
-        "1180px",
-        null,
-        "calc(50% + 865px)",
-      ],
-      mr: ["auto", null, null, null, null, null, null, "-220px"],
+      // maxWidth: [
+      //   "100%",
+      //   null,
+      //   null,
+      //   "750px",
+      //   "1000px",
+      //   "1180px",
+      //   null,
+      //   "1180px",
+      //   // "calc(50% + 865px)",
+      // ],
+      mr: ["auto", null, null, null, null, null, null, null],
       ml: "auto",
       ".react-multi-carousel-item": {
         transition: "all 0.25s",
       },
       ".react-multi-carousel-item--active:nth-of-type(4n)": {
-        opacity: "0.5",
-        "@media screen and (max-width: 1620px)": {
+        // opacity: 0.5,
+        "@media screen and (max-width: 1619px)": {
           opacity: 1,
         },
       },

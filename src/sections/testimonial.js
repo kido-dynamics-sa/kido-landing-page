@@ -11,17 +11,17 @@ const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1619 },
     items: 4,
-    slidesToSlide: 4, // optional, default to 1.
+    slidesToSlide: 1, // optional, default to 1.
   },
   laptop: {
     breakpoint: { max: 1619, min: 1024 },
     items: 3,
-    slidesToSlide: 3, // optional, default to 1.
+    slidesToSlide: 1, // optional, default to 1.
   },
   tablet: {
     breakpoint: { max: 1024, min: 640 },
     items: 2,
-    slidesToSlide: 2, // optional, default to 1.
+    slidesToSlide: 1, // optional, default to 1.
   },
   mobile: {
     breakpoint: { max: 639, min: 0 },
@@ -116,13 +116,13 @@ const styles = {
         null,
         "calc(50% + 865px)",
       ],
-      mr: ["auto", null, null, null, null, null, null, "-220px"],
+      mr: ["auto", null, null, null, null, null, null, null],
       ml: "auto",
       ".react-multi-carousel-item": {
         transition: "all 0.25s",
       },
       ".react-multi-carousel-item--active:nth-of-type(4n)": {
-        opacity: "0.5",
+        // opacity: "0.5",
         "@media screen and (max-width: 1620px)": {
           opacity: 1,
         },
