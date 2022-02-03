@@ -39,7 +39,7 @@ export default function Card({ article, category = null }) {
             </a>
           </Link>
           <span sx={{ color: "#5e709d", fontWeight: "600" }}>
-            {article.published_at.split("T")[0]}
+            {article["Date"] || article.published_at.split("T")[0]}
           </span>
         </div>
         <Heading as="h3" sx={styles.title}>

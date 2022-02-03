@@ -50,7 +50,7 @@ export default function Article({ article, pageContext, footer, categories }) {
               </li>
 
               <li>•</li>
-              <li>5 minutes read</li>
+              <li>{article["TimeToRead"] || 5} minutes read</li>
             </ul>
             <h1 sx={styles.header.title}>{article["Title"]}</h1>
             <div

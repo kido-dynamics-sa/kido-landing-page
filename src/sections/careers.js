@@ -9,6 +9,8 @@ import Link from "next/link";
 
 import { motion } from "framer-motion";
 
+import CompanyCulture from "./company-culture";
+
 let AnimatedBox = motion.custom(Box);
 
 const animationProps = {
@@ -16,7 +18,7 @@ const animationProps = {
   transition: { ease: "easeOut", duration: 0.75 },
 };
 
-export default function Careers({ section }) {
+export default function Careers({ companyCulture }) {
   return (
     <section id="careers" sx={styles.banner}>
       <Container>
@@ -43,94 +45,8 @@ export default function Careers({ section }) {
         >
           <img src={"/assets/team_countries.png"} alt="worlwilde presence map" sx={{maxWidth: '100%'}}/>
         </AnimatedBox>
-        <Box sx={{ position: "relative", mx: "auto", maxWidth: "1200px" }}>
-          <Container
-            sx={{
-              mt: 10,
-              mb: 10,
-              display: "grid",
-              gridTemplateColumns: [
-                "repeat(1, 1fr)",
-                "repeat(1, 1fr)",
-                "repeat(1, 1fr)",
-                "repeat(2, 1fr)",
-              ],
-              p: 7,
-              gap: 6,
-              backgroundColor: "#f6fafe",
-              border: "1px solid #eaf2fa",
-              borderRadius: "10px",
-              width: "100%",
-            }}
-          >
-            <Box>
-              <Text
-                as="p"
-                sx={{ ...styles.wrapper.subTitle, color: "primary" }}
-              >
-                Our culture
-              </Text>
-              <Text as="p" className="description" sx={styles.description}>
-                We are building a technology made to stay for years, defining
-                future standards and solving challenging problems. Please note
-                that what we do is not easy! We are goal-based, ambitious, and
-                open to creative solutions.
-              </Text>
-            </Box>
-            <Box>
-              <Text
-                as="p"
-                sx={{ ...styles.wrapper.subTitle, color: "primary" }}
-              >
-                Our values
-              </Text>
-              <Box
-                sx={{
-                  textAlign: "left",
-                  display: "grid",
-                  gridTemplateColumns: [
-                    "repeat(1, 1fr)",
-                    "repeat(1, 1fr)",
-                    "repeat(1, 1fr)",
-                    "repeat(2, 1fr)",
-                  ],
-                  gap: 4,
-                }}
-              >
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <img src={"/assets/check.svg"} alt="check_value" />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    Curiosity 🔎
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <img src={"/assets/check.svg"} alt="check_value" />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    Passion ❤️
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <img src={"/assets/check.svg"} alt="check_value" />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    Continuous Learning 👁
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <img src={"/assets/check.svg"} alt="check_value" />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    Responsability 🤝
-                  </Text>
-                </li>
-                <li sx={{ display: "flex", alignItems: "center" }}>
-                  <img src={"/assets/check.svg"} alt="check_value" />
-                  <Text as="p" sx={{ ml: 3 }}>
-                    Ownership 🚩
-                  </Text>
-                </li>
-              </Box>
-            </Box>
-          </Container>
-        </Box>
+
+        <CompanyCulture data={companyCulture} />
         <Box sx={{ position: "relative" }}>
           <div
             sx={{

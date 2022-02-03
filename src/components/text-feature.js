@@ -7,7 +7,7 @@ export default function TextFeature({
   title,
   description,
   btnName,
-  btnURL = "#",
+  btnURL = "",
   color = "primary",
   shadow = "rgb(57 118 239 / 57%) 0px 9px 20px -5px",
   shadowHover = "rgb(57 118 239 / 57%) 0px 9px 40px -5px",
@@ -40,12 +40,8 @@ export default function TextFeature({
           {description}
         </Text>
       )}
-      {btnName && (
-        <a
-          target="_blank"
-          href={btnURL}
-          rel="noopener noreferrer"
-        >
+      {btnName &&  (
+        btnURL[0] !== "#" ? (<a target="_blank" href={btnURL} rel="noopener noreferrer">
           <Button
             variant="primary"
             aria-label={btnName}
@@ -60,7 +56,23 @@ export default function TextFeature({
             {btnName}
           </Button>
         </a>
-      )}
+      ) : (
+        <a href={btnURL}>
+          <Button
+            variant="primary"
+            aria-label={btnName}
+            sx={{
+              bg: color,
+              boxShadow: shadow,
+              "&:hover": {
+                boxShadow: shadowHover,
+              },
+            }}
+          >
+            {btnName}
+          </Button>
+        </a>
+      ))}
     </Box>
   );
 }
