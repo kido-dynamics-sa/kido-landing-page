@@ -19,6 +19,10 @@ export default {
       path: 'https://app.kido-es.kidodynamics.com/retail',
       label: 'Retail',
     },
+    {
+      path: 'https://api.kido-es.kidodynamics.com/redoc',
+      label: 'API Docs',
+    },
   ],
   company: [
     {
@@ -26,11 +30,11 @@ export default {
       label: 'About Us',
     },
     {
-      path: '/',
+      path: 'https://app.kido-es.kidodynamics.com/PSI.pdf',
       label: 'Terms',
     },
     {
-      path: 'https://app.kido-es.kidodynamics.com/PSI.pdf',
+      path: 'https://res.cloudinary.com/kido-dynamics/raw/upload/v1644408758/Pol%C3%ADtica_de_Privacidad_R00_EN_003_sftw1y.docx',
       label: 'Privacy Policy',
     },
     {

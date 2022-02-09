@@ -33,12 +33,14 @@ export default function Footer({ footer }) {
             <Box sx={styles.footer.menus}>
               <nav>
                 {data.menuItem.map((item, i) => (
-                  <Link
-                    path={item.path}
-                    key={i}
-                    label={item.label}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={item.path}
                     sx={styles.footer.link}
-                  />
+                  >
+                    {item.label}
+                  </a>
                 ))}
               </nav>
             </Box>
@@ -50,14 +52,25 @@ export default function Footer({ footer }) {
             </Heading>
             <Box sx={styles.footer.menus}>
               <nav>
-                {data.company.map((item, i) => (
-                  <Link
-                    path={item.path}
-                    key={i}
-                    label={item.label}
-                    sx={styles.footer.link}
-                  />
-                ))}
+                {data.company.map((item, i) =>
+                  item.label === "Privacy Policy" || item.label === "Terms" ? (
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={item.path}
+                      sx={styles.footer.link}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      path={item.path}
+                      key={i}
+                      label={item.label}
+                      sx={styles.footer.link}
+                    />
+                  )
+                )}
               </nav>
             </Box>
           </Flex>
