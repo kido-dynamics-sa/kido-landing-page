@@ -4,7 +4,7 @@ import { jsx } from "theme-ui";
 import { Container, Grid } from "theme-ui";
 import SectionHeader from "components/section-header";
 import TeamCard from "components/team-card";
-import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import { FaLinkedin } from "react-icons/fa";
 
 const data = [
   {
@@ -15,22 +15,10 @@ const data = [
     designation: "CEO & Co-Founder",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -42,22 +30,10 @@ const data = [
     designation: "CTO & Co-Founder",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -69,22 +45,10 @@ const data = [
     designation: "VP Business Development",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -96,22 +60,10 @@ const data = [
     designation: "Spain Country Manager",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -123,22 +75,10 @@ const data = [
     designation: "Brazil Country Manager",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -150,22 +90,10 @@ const data = [
     designation: "Business Development US & LATAM",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -177,22 +105,10 @@ const data = [
     designation: "Mobility Analyst",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -204,22 +120,10 @@ const data = [
     designation: "Head of Product",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -231,22 +135,10 @@ const data = [
     designation: "Senior Software Developer",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -258,22 +150,10 @@ const data = [
     designation: "Full Stack Engineer",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -285,22 +165,10 @@ const data = [
     designation: "Data Scientist",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -312,22 +180,10 @@ const data = [
     designation: "Data Guy",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
@@ -339,46 +195,42 @@ const data = [
     designation: "Full Stack Engineer",
     socialProfile: [
       {
-        id: 1,
-        name: "facebook",
-        path: "#",
-        icon: <FaFacebookF />,
-      },
-      {
-        id: 2,
-        name: "twitter",
-        path: "#",
-        icon: <FaTwitter />,
-      },
-      {
         id: 3,
         name: "instagram",
         path: "#",
-        icon: <FaInstagram />,
+        icon: <FaLinkedin />,
       },
     ],
   },
 ];
 
-export default function TeamSection({ section }) {
+export default function TeamSection({ section, teamMembers }) {
+  console.log(teamMembers);
   return (
-    <section sx={{my: 8}}>
+    <section sx={{ my: 8 }}>
       <Container>
-        <SectionHeader
-          slogan={section.slogan}
-          title={section.title}
-        />
+        <SectionHeader slogan={section.slogan} title={section.title} />
         <Grid sx={styles.grid}>
-          {data.map((item) => (
-            <TeamCard
-              key={item.id}
-              src={item.imgSrc}
-              altText={item.altText}
-              title={item.title}
-              designation={item.designation}
-              social={item.socialProfile}
-            />
-          ))}
+          {teamMembers
+            .sort(function (a, b) {
+              if (parseInt(a.id) > parseInt(b.id)) {
+                return 1;
+              }
+              if (parseInt(a.id) < parseInt(b.id)) {
+                return -1;
+              }
+              return 0;
+            })
+            .map((item) => (
+              <TeamCard
+                key={item.id}
+                src={item.imgSrc}
+                altText={item.altText}
+                title={item.title}
+                designation={item.designation}
+                social={item.socialProfile}
+              />
+            ))}
         </Grid>
       </Container>
     </section>

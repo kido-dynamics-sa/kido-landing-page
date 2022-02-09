@@ -11,11 +11,12 @@ import { getFooter, fetchAPI } from "utils/api";
 
 export default function IndexPage({
   subscribeUsData,
+  sections,
   aboutUs,
   companyCulture,
   footer,
-  sections,
-  pageContext,
+  teamMembers,
+  pageContext
 }) {
   return (
     <ThemeProvider theme={theme}>
@@ -26,6 +27,7 @@ export default function IndexPage({
           aboutUs={aboutUs}
           companyCulture={companyCulture}
           teamSection={sections.find((a) => a.name === "TeamSection")}
+          teamMembers={teamMembers}
         />
 
         <SubscribeUs
@@ -46,6 +48,7 @@ export async function getStaticProps(context) {
   const aboutUs = await fetchAPI("/about-us");
   const companyCulture = await fetchAPI("/company-culture");
   const subscribeUsData = await fetchAPI("/suscribe-us");
+  const teamMembers = await fetchAPI("/team-members");
 
   // const pageContext = {
   //   locale,
@@ -60,6 +63,7 @@ export async function getStaticProps(context) {
       aboutUs,
       companyCulture,
       footer,
+      teamMembers
       // pageContext
     },
     revalidate: 1,
