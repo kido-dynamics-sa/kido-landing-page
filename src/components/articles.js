@@ -1,6 +1,6 @@
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { jsx, Heading, Text, Grid } from "theme-ui";
+import { jsx, Heading, Text, Grid, Flex } from "theme-ui";
 import Card from "./card";
 import Link from "next/link";
 
@@ -30,14 +30,14 @@ export default function Articles({ articles, ...rest }) {
                         overflow: "hidden",
                       }}
                     >
-                    <img
+                      <img
                         src={heroArticle["Media"]}
                         alt={`article ${heroArticle["Title"]} image`}
-                      sx={{
-                        width: "100%",
-                        maxHeight: "100%",
-                      }}
-                    />
+                        sx={{
+                          width: "100%",
+                          maxHeight: "100%",
+                        }}
+                      />
                     </div>
                   </div>
                   <svg
@@ -90,26 +90,67 @@ export default function Articles({ articles, ...rest }) {
                     <Heading sx={styles.title}>{heroArticle["Title"]}</Heading>
                   </Link>
                   <Text sx={styles.subTitle}>{heroArticle["Description"]}</Text>
+
+                  <Flex
+                    sx={{
+                      ...styles.category,
+                      textTransform: "none",
+                      alignItems: "center",
+                      gap: 2,
+                    }}
+                  >
+                    <div sx={styles.avatar}>
+                      {heroArticle.author["Picture"] && (
+                        <img
+                          src={heroArticle.author["Picture"]}
+                          alt={`heroArticle ${heroArticle["Title"]} image`}
+                          sx={{
+                            width: "100%",
+                            maxHeight: "100%",
+                          }}
+                        />
+                      )}
+                    </div>
+                    <Link
+                      href={
+                        category ? `/category/${category["Slug"]}` : "/blog"
+                      }
+                    >
+                      <a
+                        sx={{
+                          position: "relative",
+                          p: 0,
+                          m: 0,
+                          pr: "20px",
+                        }}
+                      >
+                        {heroArticle.author["Name"] || "Kido Dynamics"}
+                      </a>
+                    </Link>
+                  </Flex>
                 </div>
               </div>
             </Link>
           </div>
           <Grid sx={styles.articles.others}>
-            {articles.slice(1)
-              .sort((a, b) => new Date(b.published_at) - new Date(a.published_at))
+            {articles
+              .slice(1)
+              .sort(
+                (a, b) => new Date(b.published_at) - new Date(a.published_at)
+              )
               .map((article, i) => {
-              return (
-                <Card
-                  article={article}
-                  category={
-                    article.category && article.category["Slug"]
-                      ? article.category
-                      : category
-                  }
-                  key={`article__${article["Slug"]}`}
-                />
-              );
-            })}
+                return (
+                  <Card
+                    article={article}
+                    category={
+                      article.category && article.category["Slug"]
+                        ? article.category
+                        : category
+                    }
+                    key={`article__${article["Slug"]}`}
+                  />
+                );
+              })}
           </Grid>
         </div>
       </div>
@@ -170,6 +211,7 @@ const styles = {
     },
   },
   heroCard: {
+    cursor: "pointer",
     position: "relative",
     width: "100%",
     height: "100%",
@@ -239,5 +281,12 @@ const styles = {
     fontWeight: 400,
     lineHeight: "1.9",
     mb: 4,
+  },
+
+  avatar: {
+    width: "48px",
+    height: "48px",
+    borderRadius: "50%",
+    overflow: "hidden",
   },
 };

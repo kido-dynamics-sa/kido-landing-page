@@ -29,7 +29,9 @@ export default function Article({ article, pageContext, footer, categories }) {
         isBlog
       >
         <SEO
-          title={`Kido Dynamics - ${article["Title"].charAt(0).toUpperCase() + article["Title"].slice(1)}`}
+          title={`Kido Dynamics - ${
+            article["Title"].charAt(0).toUpperCase() + article["Title"].slice(1)
+          }`}
           description={article["Description"]}
           image={article["Media"]}
         />
@@ -50,7 +52,7 @@ export default function Article({ article, pageContext, footer, categories }) {
               </li>
 
               <li>•</li>
-              <li>{article["TimeToRead"] || 5} minutes read</li>
+              <li>{article["timeToRead"] || "5 min"} read</li>
             </ul>
             <h1 sx={styles.header.title}>{article["Title"]}</h1>
             <div
@@ -63,15 +65,16 @@ export default function Article({ article, pageContext, footer, categories }) {
               }}
             >
               <div sx={styles.avatar}>
-                {" "}
-                <img
-                  alt={"press logo"}
-                  src={article.author["Picture"]}
-                  sx={{
-                    width: "100%",
-                    maxHeight: "100%",
-                  }}
-                />
+                {article.author["Picture"] && (
+                  <img
+                    src={article.author["Picture"]}
+                    alt={`article ${article["Title"]} image`}
+                    sx={{
+                      width: "100%",
+                      maxHeight: "100%",
+                    }}
+                  />
+                )}
               </div>
               <div sx={{ display: "flex", flexDirection: "column", mt: 1 }}>
                 <p
@@ -82,7 +85,7 @@ export default function Article({ article, pageContext, footer, categories }) {
                     pr: "20px",
                   }}
                 >
-                  {article.author["Name"]}
+                  {article.author["Name"] || "Kido Dynamics"}
                 </p>
                 <p sx={{ color: "gray", m: 0 }}>
                   <Moment format="MMM Do YYYY">{article.published_at}</Moment>
