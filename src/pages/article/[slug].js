@@ -88,7 +88,8 @@ export default function Article({ article, pageContext, footer, categories }) {
                   {article.author["Name"] || "Kido Dynamics"}
                 </p>
                 <p sx={{ color: "gray", m: 0 }}>
-                  <Moment format="MMM Do YYYY">{article.published_at}</Moment>
+                  <p >
+                      {article["Date"] || article.published_at.split("T")[0]}</p>
                 </p>
               </div>
             </div>

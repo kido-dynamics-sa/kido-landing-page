@@ -7,17 +7,34 @@ import SEO from "components/seo";
 import SubscribeUs from "../sections/subscribe-us";
 import { fetchAPI, getFooter } from "utils/api";
 
-const Home = ({ 
+const Home = ({
   sections,
-  subscribeUsData, articles, categories, footer, pageContext }) => {
+  subscribeUsData,
+  articles,
+  categories,
+  footer,
+  pageContext,
+}) => {
   return (
     <ThemeProvider theme={theme}>
-      <Layout pageContext={pageContext} footer={footer[0]} categories={categories} onlyLogo isBlog>
-        <SEO title="Kido Dynamics - Blog"/>
-        <h1 style={{display: 'none'}}>Kido Dynamics - Blog</h1>
+      <Layout
+        pageContext={pageContext}
+        footer={footer[0]}
+        categories={categories}
+        onlyLogo
+        isBlog
+      >
+        <SEO title="Kido Dynamics - Blog" />
+        <h1 style={{ display: "none" }}>Kido Dynamics - Blog</h1>
         <div>
-            {/* <h1>{homepage.attributes.hero.title}</h1> */}
-            <Articles articles={articles} />
+          {/* <h1>{homepage.attributes.hero.title}</h1> */}
+          <Articles
+            articles={articles.sort(
+              (a, b) =>
+                new Date(b["Date"].replace(/(\d+[/])(\d+[/])/, "$2$1")) -
+                new Date(a["Date"].replace(/(\d+[/])(\d+[/])/, "$2$1"))
+            )}
+          />
         </div>
         <SubscribeUs
           subscribeUsData={subscribeUsData}
@@ -36,7 +53,7 @@ export async function getStaticProps(context) {
   //   locales,
   //   defaultLocale,
   // };
-  const pageContext = context
+  const pageContext = context;
 
   const footer = await getFooter();
   // Run API calls in parallel
@@ -59,7 +76,7 @@ export async function getStaticProps(context) {
       subscribeUsData,
       footer,
       // pageContext,
-      articles,
+      articles: articles,
       categories,
     },
     revalidate: 1,

@@ -82,7 +82,7 @@ export default function Articles({ articles, ...rest }) {
                       </a>
                     </Link>
                     <span sx={{ color: "#5e709d", fontWeight: "600" }}>
-                      {heroArticle.published_at.split("T")[0]}
+                      {heroArticle["Date"] || heroArticle.published_at.split("T")[0]}
                     </span>
                   </div>
 
@@ -135,9 +135,6 @@ export default function Articles({ articles, ...rest }) {
           <Grid sx={styles.articles.others}>
             {articles
               .slice(1)
-              .sort(
-                (a, b) => new Date(b.published_at) - new Date(a.published_at)
-              )
               .map((article, i) => {
                 return (
                   <Card
