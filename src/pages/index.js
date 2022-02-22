@@ -30,6 +30,7 @@ export default function IndexPage({
   subscribeUsData,
   news,
   pageContext,
+  hero
 }) {
   return (
     <ThemeProvider theme={theme}>
@@ -37,7 +38,7 @@ export default function IndexPage({
         <SEO />
         <h1 style={{display: 'none'}}>Kido Dynamics - Understanding People's Mobility Behaviour</h1>
         {/* <Banner banners={banners} /> */}
-        <Hero />
+        <Hero hero={hero}/>
         <Partners />
         <KeyFeature
           featureCardColumns={featureCardColumns}
@@ -95,7 +96,8 @@ export async function getStaticProps(context) {
     testimonialItems,
     footer,
     subscribeUsData,
-    news
+    news,
+    hero
   ] = await Promise.all([
     // fetchAPI(`/banners?_locale=${locale}`),
     fetchAPI(`/banners?_locale=en`),
@@ -106,7 +108,8 @@ export async function getStaticProps(context) {
     fetchAPI("/testimonial-items"),
     fetchAPI("/footers"),
     fetchAPI("/suscribe-us"),
-    fetchAPI(`/news`)
+    fetchAPI(`/news`),
+    fetchAPI("/hero"),
     // fetchAPIBlog("/homepage", {
     //   populate: {
     //     hero: "*",
@@ -126,6 +129,7 @@ export async function getStaticProps(context) {
       footer,
       subscribeUsData,
       news,
+      hero
       // pageContext,
     },
     revalidate: 1,

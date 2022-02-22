@@ -2,56 +2,11 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Container, Box, Heading, Text, Button } from "theme-ui";
-import Carousel from "react-multi-carousel";
 
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
-let AnimatedBox = motion.custom(Box);
-
-const animationProps = {
-  initial: { opacity: 0, x: 100 },
-  transition: { ease: "easeOut", duration: 0.75 },
-};
-
-const responsive = {
-  desktop: {
-    breakpoint: { max: 3000, min: 1619 },
-    items: 1,
-  },
-  laptop: {
-    breakpoint: { max: 1619, min: 1024 },
-    items: 1,
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 870 },
-    items: 1,
-  },
-  mobile: {
-    breakpoint: { max: 870, min: 0 },
-    items: 1,
-  },
-};
-
-const gradients = [
-  "radial-gradient(circle, rgba(233, 30, 99, 0.5) 20%, rgba(255,255,255,1) 35%)",
-  "radial-gradient(circle, rgba(28, 200, 238, 0.5) 20%, rgba(255,255,255,1) 35%)",
-  "radial-gradient(circle, rgba(13, 217, 164, 0.5) 20%, rgba(255,255,255,1) 35%)",
-];
-
-const shadows = [
-  "rgb(233 76 84 / 57%) 0px 9px 20px -5px",
-  "rgb(28 200 238 / 57%) 0px 9px 20px -5px",
-  "rgb(13 217 164 / 57%) 0px 9px 20px -5px",
-];
-
-const shadowsHover = [
-  "rgb(233 76 84 / 57%) 0px 9px 40px -5px",
-  "rgb(28 200 238 / 57%) 0px 9px 40px -5px",
-  "rgb(13 217 164 / 57%) 0px 9px 40px -5px",
-];
-
-const Hero = () => {
+const Hero = ({ hero }) => {
   const { ref, inView } = useInView({
     threshold: 0,
   });
@@ -84,26 +39,26 @@ const Hero = () => {
         <Container sx={styles.banner.container}>
           <Box sx={styles.banner.contentBox}>
             <Heading as="h1" variant="heroPrimary" sx={{ color: "white" }}>
-              Get the <i sx={{}}>wisdom of data</i> in a click
+              {/* Get the <i sx={{}}>wisdom of data</i> in a click */}
+              {hero.title}
             </Heading>
             {/* <Text as="p" variant="heroSecondary" sx={{ color: "white" }}>
               Deeply understand people's mobility
               patterns and make faster, better and more informed decision
             </Text> */}
-            <Text as="p" variant="heroTerciary" sx={{ color: "white", px: [5, 5, 5, 8, 8, 8, 8] }}>
-              Deeply understand people's mobility patterns and make faster,
-              better and more informed decision
-            </Text>
-            <a
-              target="_blank"
-              href={"https://app.kido-es.kidodynamics.com/"}
-              rel="noopener noreferrer"
+            <Text
+              as="p"
+              variant="heroTerciary"
+              sx={{ color: "white", px: [5, 5, 5, 8, 8, 8, 8] }}
             >
-              <Button
-                variant="hero"
-                aria-label="Discover our product"
-              >
-                Discover our product
+              {/* Deeply understand people's mobility patterns and make faster,
+              better and more informed decision */}
+              {hero.description}
+            </Text>
+            <a target="_blank" href={hero.buttonURL} rel="noopener noreferrer">
+              <Button variant="hero" aria-label="Discover our product">
+                {/* Discover our product */}
+                {hero.buttonText}
               </Button>
             </a>
           </Box>
