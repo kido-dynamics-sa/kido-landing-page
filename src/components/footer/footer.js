@@ -97,7 +97,7 @@ const styles = {
   footer: {
     background: "rgb(226,72,124)",
     background:
-      "linear-gradient(111deg, rgba(226,72,124,1) 0%, rgba(98,127,255,1) 61%, rgba(57,118,239,1) 100%)",
+      "linear-gradient(111deg, rgba(75,0,130,1) 0%, #700066 61%, #820046 100%)",
     color: "white",
     footerBottomArea: {
       borderTop: "1px solid",

@@ -26,6 +26,7 @@ export default function Card({ article, category = null }) {
                 p: 0,
                 m: 0,
                 pr: "20px",
+                color: 'secondary',
                 "&:after": {
                   content: '"•"',
                   position: "absolute",
@@ -75,6 +76,7 @@ export default function Card({ article, category = null }) {
                 p: 0,
                 m: 0,
                 pr: "20px",
+                color: 'secondary'
               }}
             >
               {article.author["Name"] || "Kido Dynamics"}

@@ -74,8 +74,8 @@ export default function Articles({ articles, ...rest }) {
                             position: "absolute",
                             right: "10px",
                             transform: "translateX(50%)",
-                            color: "#5e709d",
                           },
+                          color: "secondary",
                         }}
                       >
                         {category && category["Name"]}
@@ -122,6 +122,7 @@ export default function Articles({ articles, ...rest }) {
                           p: 0,
                           m: 0,
                           pr: "20px",
+                          color: "secondary"
                         }}
                       >
                         {heroArticle.author["Name"] || "Kido Dynamics"}
@@ -165,7 +166,7 @@ const styles = {
       content: '""',
       top: "67px",
       left: 0,
-      background: "linear-gradient(180deg,#d7e5ff,#fff 99.13%);",
+      background: "linear-gradient(180deg,#003FA1,#fff 99.13%);",
       position: "absolute",
       width: "100%",
       height: "100%",

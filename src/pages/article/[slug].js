@@ -40,7 +40,7 @@ export default function Article({ article, pageContext, footer, categories }) {
             <ul sx={styles.header.metadata}>
               <li
                 sx={{
-                  color: "primary",
+                  color: "secondary",
                 }}
               >
                 {article.category["Name"]}
@@ -83,6 +83,7 @@ export default function Article({ article, pageContext, footer, categories }) {
                     p: 0,
                     m: 0,
                     pr: "20px",
+                    color: 'secondary'
                   }}
                 >
                   {article.author["Name"] || "Kido Dynamics"}
