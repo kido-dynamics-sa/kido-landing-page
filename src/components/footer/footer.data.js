@@ -7,18 +7,18 @@ import {
 
 export default {
   menuItem: [
-    {
-      path: 'https://app.kido-es.kidodynamics.com/tourism',
-      label: 'Tourism',
-    },
-    {
-      path: 'https://app.kido-es.kidodynamics.com/mobility',
-      label: 'Mobility',
-    },
-    {
-      path: 'https://app.kido-es.kidodynamics.com/retail',
-      label: 'Retail',
-    },
+    // {
+    //   path: 'https://app.kido-es.kidodynamics.com/tourism',
+    //   label: 'Tourism',
+    // },
+    // {
+    //   path: 'https://app.kido-es.kidodynamics.com/mobility',
+    //   label: 'Mobility',
+    // },
+    // {
+    //   path: 'https://app.kido-es.kidodynamics.com/retail',
+    //   label: 'Retail',
+    // },
     {
       path: 'https://api.kido-es.kidodynamics.com/redoc',
       label: 'API Docs',

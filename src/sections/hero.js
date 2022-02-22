@@ -40,7 +40,9 @@ const Hero = ({ hero }) => {
           <Box sx={styles.banner.contentBox}>
             <Heading as="h1" variant="heroPrimary" sx={{ color: "white" }}>
               {/* Get the <i sx={{}}>wisdom of data</i> in a click */}
-              {hero.title}
+              {hero.title} {' '}
+              {/* <br /> */}
+              <i sx={{ bg: '#e4e4e4', color: 'primary', px: 1 }}>Simple</i>
             </Heading>
             {/* <Text as="p" variant="heroSecondary" sx={{ color: "white" }}>
               Deeply understand people's mobility

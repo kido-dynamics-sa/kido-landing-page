@@ -1,8 +1,8 @@
 export default [
-  {
-    path: '/',
-    label: 'Product',
-  },
+  // {
+  //   path: '/',
+  //   label: 'Product',
+  // },
   {
     path: '/about-us',
     label: 'Company',
