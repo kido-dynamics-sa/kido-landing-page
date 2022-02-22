@@ -5,6 +5,7 @@ import theme from "theme";
 import SEO from "components/seo";
 import Layout from "components/layout";
 import Banner from "../sections/banner";
+import Hero from "../sections/hero";
 import KeyFeature from "../sections/key-feature";
 import ServiceSection from "../sections/service-section";
 import ServiceSectionVideo from "../sections/service-section-video";
@@ -35,7 +36,8 @@ export default function IndexPage({
       <Layout pageContext={pageContext} footer={footer[0]}>
         <SEO />
         <h1 style={{display: 'none'}}>Kido Dynamics - Understanding People's Mobility Behaviour</h1>
-        <Banner banners={banners} />
+        {/* <Banner banners={banners} /> */}
+        <Hero />
         <Partners />
         <KeyFeature
           featureCardColumns={featureCardColumns}

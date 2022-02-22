@@ -10,7 +10,7 @@ export default {
     border_color: "#E5ECF4", // border color
     yellow: "#FFA740", // border color
     // primary: "#3976EF",// primary button and link color
-    primary: "#4B0082",// primary button and link color
+    primary: "#4B0082", // primary button and link color
     // secondary: "#2563FF", // secondary color - can be used for hover states
     secondary: "#002797", // secondary color - can be used for hover states
     muted: "#E4E4E4", // muted color
@@ -90,12 +90,12 @@ export default {
     keyFeature: {
       pt: [4, null, 4, null, null, 5],
       pb: ["90px", null, 9, null, null, 10, null, "165px"],
-      mt: [8, 8, '150px', 0, 0, 0, 0],
+      mt: [8, 8, "150px", 0, 0, 0, 0],
     },
     feature: {
       pt: [4, null, 4, null, null, 5],
       pb: ["45px", null, 4, null, null, 5, null, "85px"],
-      mt: [8, 8, '150px', 0, 0, 0, 0],
+      mt: [8, 8, "150px", 0, 0, 0, 0],
     },
     news: {
       pb: [8, null, 9, null, null, 10, null, "170px"],
@@ -103,7 +103,7 @@ export default {
     coreFeature: {
       pt: [4, null, 4, null, null, 5],
       pb: ["90px", null, 9, null, null, 10, null, "165px"],
-      mt: [8, 8, '150px', 0, 0, 0, 0],
+      mt: [8, 8, "150px", 0, 0, 0, 0],
     },
     testimonial: {
       pt: [8, null, 8, "70px", null, 8, null, "145px"],
@@ -113,7 +113,7 @@ export default {
     services: {
       pt: [4, null, 4, null, null, 5],
       pb: ["90px", null, 9, null, null, 10, null, "165px"],
-      mt: [8, 8, '150px', 0, 0, 0, 0],
+      mt: [8, 8, "150px", 0, 0, 0, 0],
     },
     pricing: {
       pt: [8, null, 9, null, null, 10, null, "180px"],
@@ -278,6 +278,19 @@ export default {
         outline: 0,
       },
     },
+    hero: {
+      variant: "buttons.defaultBtn",
+      transition: "0.5s",
+      backgroundImage:
+        "linear-gradient(to right, #609 0%, #002797 51%, #4b0082  100%)",
+      backgroundSize: "200% auto",
+      boxShadow: "#7b568e 0px 5px 30px -5px",
+      color: "white",
+      fontWeight: "bolder",
+      '&:hover': {
+        backgroundPosition: 'right center'
+      }
+    },
     primary: {
       variant: "buttons.defaultBtn",
       color: "white",
@@ -304,6 +317,18 @@ export default {
       "&:hover": {
         color: "white",
         bg: "primary",
+      },
+    },
+    secondaryWhite: {
+      variant: "buttons.defaultBtn",
+      border: "2px solid",
+      borderColor: "white",
+      color: "white",
+      bg: "transparent",
+      padding: ["10px 15px", null, "15px 30px"],
+      "&:hover": {
+        color: "primary",
+        bg: "white",
       },
     },
     textButton: {

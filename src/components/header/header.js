@@ -14,13 +14,27 @@ export default function Header({ className, onlyLogo }) {
   return (
     <header sx={styles.header} className={className} id="header">
       <Container sx={styles.container}>
-        <Logo src={"/assets/logo.svg"} />
+        {/* <Logo src={"/assets/logo.svg"} /> */}
+        <Link path="/">
+              <img
+                src={"/assets/logoWhite.svg"}
+                alt="logo"
+                sx={{
+                  maxWidth: "100%",
+                }}
+              />
+            </Link>
 
         <Fragment>
           <Flex as="nav" sx={styles.nav}>
             {menuItems.map((menuItem, i) =>
               menuItem.path === "contact" ? (
-                <ScrollLink key={i} path={menuItem.path} label={menuItem.label} i={i} />
+                <ScrollLink
+                  key={i}
+                  path={menuItem.path}
+                  label={menuItem.label}
+                  i={i}
+                />
               ) : (
                 <Link
                   path={menuItem.path}
@@ -44,13 +58,14 @@ export default function Header({ className, onlyLogo }) {
             href={"https://app.kido-es.kidodynamics.com"}
             rel="noopener noreferrer"
           >
-            <Button
+            {/* <Button
               className="donate__btn"
               variant="secondary"
               aria-label="Get started"
             >
               Get Started
-            </Button>
+            </Button> */}
+            <Button variant="secondaryWhite">Get Started</Button>
           </a>
           <MobileDrawer />
         </Fragment>
@@ -112,6 +127,7 @@ const styles = {
       display: "block",
     },
     a: {
+      color: 'white',
       fontSize: 2,
       fontWeight: "body",
       px: 5,
@@ -119,10 +135,10 @@ const styles = {
       lineHeight: "1.2",
       transition: "all 0.15s",
       "&:hover": {
-        color: "primary",
+        color: "#96a5b2",
       },
       "&.active": {
-        color: "primary",
+        color: "#96a5b2",
       },
     },
   },
