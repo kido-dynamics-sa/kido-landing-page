@@ -106,7 +106,7 @@ const styles = {
     },
     "&.sticky": {
       position: "fixed",
-      backgroundColor: "background",
+      backgroundColor: "#22242A",
       color: "#000000",
       boxShadow: "0 1px 2px rgba(0, 0, 0, 0.06)",
       py: 3,

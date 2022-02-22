@@ -140,7 +140,7 @@ const styles = {
       lineHeight: [1.5, null, 1.8],
       // px: [2, null, 4],
       ":hover": {
-        color: "text",
+        color: "#96a5b2",
       },
     },
     copyright: {

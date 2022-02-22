@@ -89,13 +89,13 @@ const styles = {
     position: "absolute",
     top: "80px",
     left: 0,
-    backgroundColor: "#003FA1",
+    backgroundColor: "#002797",
     transition: "all 0.4s ease",
     animation: `${positionAnim} 0.4s ease`,
     "&.sticky": {
       top: 0,
       position: "fixed",
-      backgroundColor: "#003FA1",
+      backgroundColor: "#002797",
       color: "#000000",
       boxShadow: "0 1px 2px rgba(0, 0, 0, 0.06)",
       "nev > a": {
@@ -106,13 +106,13 @@ const styles = {
   container: {
     width: "100%",
     height: "78px",
-    backgroundColor: "#003FA1",
+    backgroundColor: "#002797",
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     boxSizing: "border-box",
-    borderTop: "1px solid #003FA1",
-    borderBottom: "1px solid #003FA1",
+    borderTop: "1px solid #002797",
+    borderBottom: "1px solid #002797",
   },
   nav: {
     mx: "auto",

@@ -164,9 +164,9 @@ const styles = {
     transform: "translateZ(0)",
     "&:before": {
       content: '""',
-      top: "67px",
+      top: "90px",
       left: 0,
-      background: "linear-gradient(180deg,#003FA1,#fff 99.13%);",
+      background: "linear-gradient(180deg,#002797,#fff 99.13%);",
       position: "absolute",
       width: "100%",
       height: "100%",
