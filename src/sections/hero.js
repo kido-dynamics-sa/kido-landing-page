@@ -70,11 +70,11 @@ const Hero = () => {
             height: "100%",
             zIndex: -1,
             opacity: 0.4,
-            backgroundColor: "#4B0082",
+            backgroundColor: "#260142",
           },
           backgroundImage:
-            'url("https://images.unsplash.com/photo-1516319915504-015b432d407c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2342&q=80")',
-          backgroundColor: "#4B0082",
+            'url("https://images.pexels.com/photos/41949/earth-earth-at-night-night-lights-41949.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")',
+          backgroundColor: "#260142",
           backgroundPosition: "top",
           backgroundRepeat: "no-repeat",
           backgroundSize: "cover",
@@ -128,7 +128,7 @@ const Hero = () => {
 
 const styles = {
   banner: {
-    height: ["70vh", "70vh", "70vh", "80vh", "80vh", "80vh", "80vh"],
+    height: ["70vh", "70vh", "70vh", "70vh", "70vh", "80vh", "90vh"],
     overflow: "hidden",
     pt: ["140px", "145px", "155px", "170px", "80px", null, "60px", "170px"],
     pb: [2, null, 0, null, 2, 0, null, 2],
@@ -154,7 +154,7 @@ const styles = {
       // overflow: 'hidden'
     },
     hero: {
-      pt: [0, 0, 0, 0, 8, null, 11],
+      pt: [0, 0, 0, 0, 8, 11, 11],
       minHeight: "inherit",
       display: "flex",
       mr: -11,
@@ -164,13 +164,13 @@ const styles = {
       height: "100%",
     },
     contentBox: {
-      pt: [3, 3, 3, 3, 10, 10, 10, 5],
+      pt: [3, 3, 3, 3, 10, 10, 11, 10],
       width: ["100%", "90%", "535px", null, "57%", "60%", "60%", "60%"],
       mx: "auto",
       // textAlign: ["center", "center", "center", "center", "left", "left"],
       textAlign: ["center", "center", "center", "center", "center", "center"],
       // my: 3,
-      mb: ["40px", null, null, null, null, 7],
+      mb: ["40px", null, null, null, null, 4],
     },
     imageBox: {
       justifyContent: "center",
