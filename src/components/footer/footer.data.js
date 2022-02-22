@@ -20,8 +20,12 @@ export default {
     //   label: 'Retail',
     // },
     {
+      path: '',
+      label: 'Request a Demo',
+    },
+    {
       path: 'https://api.kido-es.kidodynamics.com/redoc',
-      label: 'API Docs',
+      label: 'API',
     },
   ],
   company: [

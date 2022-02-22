@@ -40,10 +40,10 @@ export default function IndexPage({
         {/* <Banner banners={banners} /> */}
         <Hero hero={hero}/>
         <Partners />
-        {/* <KeyFeature
+        <KeyFeature
           featureCardColumns={featureCardColumns}
           section={sections.find((a) => a.name === "FeatureCardsSection")}
-        /> */}
+        />
         <ServiceSectionVideo
           data={textFeatures.find((a) => a.name === "Tourism")}
         />

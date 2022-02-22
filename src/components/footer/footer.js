@@ -28,7 +28,7 @@ export default function Footer({ footer }) {
 
           <Flex sx={{ flexDirection: "column" }}>
             <Heading sx={{ color: "white", letterSpacing: "0.5px" }}>
-              Developer Tools
+              Get started with Kido
             </Heading>
             <Box sx={styles.footer.menus}>
               <nav>

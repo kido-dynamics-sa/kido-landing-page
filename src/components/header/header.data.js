@@ -17,6 +17,6 @@ export default [
   },
   {
     path: 'contact',
-    label: 'Contact Sales',
+    label: 'Contact Us',
   },
 ];

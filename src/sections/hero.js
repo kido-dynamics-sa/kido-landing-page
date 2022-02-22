@@ -38,11 +38,11 @@ const Hero = ({ hero }) => {
       >
         <Container sx={styles.banner.container}>
           <Box sx={styles.banner.contentBox}>
-            <Heading as="h1" variant="heroPrimary" sx={{ color: "white" }}>
+            <Heading as="h1" variant="heroPrimary" sx={{ color: "white", lineHeight: 1.5 }}>
               {/* Get the <i sx={{}}>wisdom of data</i> in a click */}
               {hero.title} {' '}
               {/* <br /> */}
-              <i sx={{ bg: '#e4e4e4', color: 'primary', px: 1 }}>Simple</i>
+              <i sx={{ bg: '#ffffff95', color: 'primary', px: 1 }}>Simple</i>
             </Heading>
             {/* <Text as="p" variant="heroSecondary" sx={{ color: "white" }}>
               Deeply understand people's mobility
@@ -85,49 +85,37 @@ const Hero = ({ hero }) => {
 
 const styles = {
   banner: {
-    height: ["70vh", "70vh", "70vh", "70vh", "70vh", "80vh", "90vh"],
+    height: ["80vh", "70vh", "70vh", "70vh", "70vh", "80vh", "80vh"],
     overflow: "hidden",
-    pt: ["140px", "145px", "155px", "170px", "80px", null, "60px", "170px"],
+    // pt: ["140px", "145px", "155px", "170px", "80px", null, "60px", "170px"],
+    pt: '90px',
     pb: [2, null, 0, null, 2, 0, null, 2],
     position: "relative",
     zIndex: 2,
-    ".custom-dot > li > button": {
-      border: "none",
-      margin: "10px",
-      outline: "none",
-    },
     container: {
       minHeight: "inherit",
-      display: "flex",
-      flexDirection: ["column", "column", "column", "column", "row", "row"],
-      justifyContent: [
-        "center",
-        "center",
-        "center",
-        "center",
-        "space-between",
-        "space-between",
-      ],
+      // display: "flex",
+      // flexDirection: 'column',
+      // justifyContent: [
+      //   "center",
+      //   "center",
+      //   "center",
+      //   "center",
+      //   "center",
+      //   "center",
+      //   "center",
+      // ],
       // overflow: 'hidden'
-    },
-    hero: {
-      pt: [0, 0, 0, 0, 8, 11, 11],
-      minHeight: "inherit",
-      display: "flex",
-      mr: -11,
-      mt: [0, 0, 0, 0, -9, null, -11],
-      maxWidth: "800px",
-      // width: "100%",
-      height: "100%",
+      height: '100%', 
+      display: 'grid',
+      placeItems: 'center'
     },
     contentBox: {
-      pt: [3, 3, 3, 3, 10, 10, 11, 10],
-      width: ["100%", "90%", "535px", null, "57%", "60%", "60%", "60%"],
+      width: ['80%','80%','80%','70%','70%','70%','70%'],
       mx: "auto",
       // textAlign: ["center", "center", "center", "center", "left", "left"],
-      textAlign: ["center", "center", "center", "center", "center", "center"],
+      textAlign: ["center", "center", "center", "center", "center", "center", "center"],
       // my: 3,
-      mb: ["40px", null, null, null, null, 4],
     },
     imageBox: {
       justifyContent: "center",

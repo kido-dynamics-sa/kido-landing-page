@@ -32,7 +32,13 @@ const SubscribeUs = ({ subscribeUsData, section }) => {
             title={section.title}
             isWhite={true}
           />
-          <Formik
+          <Button
+            variant="secondary"
+            sx={{ bg: "white", borderColor: "white", mt: [-2, -2,-2,-7,-7,-7,-7] }}
+          >
+            {subscribeUsData.button}
+          </Button>
+          {/* <Formik
             validateOnBlur={false}
             validateOnChange={false}
             initialValues={{ email: "" }}
@@ -111,7 +117,7 @@ const SubscribeUs = ({ subscribeUsData, section }) => {
                 </Box>
               );
             }}
-          </Formik>
+          </Formik> */}
         </Box>
       </Container>
     </Box>
@@ -122,34 +128,39 @@ export default SubscribeUs;
 
 const styles = {
   section: {
-    height: ["60vh", "50vh", "40vh", "40vh", "35vh", "35vh"],
+    height: ["35vh", "35vh", "35vh", "35vh", "35vh", "35vh"],
     // pb: 5,
+    mx: [6,4,4,5,10,10,10]
   },
   contentWrapper: {
     backgroundColor: "primary",
     // background:
     //   "linear-gradient(111deg, rgba(226,72,124,1) 0%, rgba(98,127,255,1) 61%, rgba(57,118,239,1) 100%)",
     borderRadius: "12px",
-    p: ["40px", "40px", "40px 110px 50px", "50px 50px", "40px"],
-    gap: ["25px", "25px", "50px", "50px", "50px"],
-    display: ["block", null, null, "block", "grid"],
+    // py: ["40px", "40px", "40px 110px 50px", "50px 50px", "40px"],
+    // gap: ["25px", "25px", "50px", "50px", "50px"],
+    // display: ["block", null, null, "block", "grid"],
     alignItems: "center",
-    gridTemplateColumns: ["repeat(2, 1fr)"],
+    // gridTemplateColumns: ["repeat(2, 1fr)"],
+    display: 'flex',
+    flexDirection: 'column',
+    px: [1, 1, 1, 6, 6, 6, 6],
+    py: 6
   },
   heading: {
-    textAlign: ["center", null, "left", "center", "left"],
-    mb: ["30px", null, null, null, 0],
-    ml: 0,
+    textAlign: "center",
+    // mb: ["30px", null, null, null, 0],
+    // ml: 0,
     h2: {
       fontSize: [6, null, null, null, null, 8, 9],
     },
-    p: {
-      lineHeight: 1.87,
-      marginTop: 1,
-      ml: ["auto", null, null, null, 0],
-      mr: ["auto", null, null, null, 0],
-      maxWidth: 420,
-    },
+    // p: {
+    //   lineHeight: 1.87,
+    //   marginTop: 1,
+    //   ml: ["auto", null, null, null, 0],
+    //   mr: ["auto", null, null, null, 0],
+    //   maxWidth: 420,
+    // },
   },
   subscribe: {
     ".email-input": {
