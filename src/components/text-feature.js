@@ -29,29 +29,38 @@ export default function TextFeature({
         </Heading>
       </Box>
 
-        {description &&
+      {description &&
         (description.includes("- ") ? (
           <ul
-          className="description"
-          sx={{
-            ...styles.description,
-            width: maxWidth ? ["100%", "100%", "100%", "750px"] : "100%",
-          }}
-        >
-            {description.split("-").map((d) => (
-              <li>
-                <Text as="p" sx={{ lineHeight: 1.8 }}>
-                  {d}
-                </Text>
-              </li>
-            ))}
-            </ul>) : (
-            <Text as="p" sx={styles.description} 
-            className="description">
-              {description}
-            </Text>
-          ))}
-     
+            className="description"
+            sx={{
+              ...styles.description,
+              width: maxWidth ? ["100%", "100%", "100%", "750px"] : "100%",
+            }}
+          >
+            {description.split("-").map((d, id) =>
+              id === 0 ? (
+                <p>
+                  <Text as="p" sx={{ lineHeight: 1 }}>
+                    <strong>{d}</strong>
+                  </Text>
+                </p>
+              ) : (
+                <li sx={{
+              ml: 5,}}>
+                  <Text as="p" sx={{ lineHeight: 1.8 }}>
+                    {d}
+                  </Text>
+                </li>
+              )
+            )}
+          </ul>
+        ) : (
+          <Text as="p" sx={styles.description} className="description">
+          {description}
+          </Text>
+        ))}
+
       {btnName &&
         (btnURL[0] !== "#" ? (
           <a target="_blank" href={btnURL} rel="noopener noreferrer">
@@ -115,7 +124,7 @@ const styles = {
       letterSpacing: ["1.5px", null, "2px"],
     },
     title: {
-      fontSize: ["24px", null, "28px", "30px", "36px", "42px", null, "48px"],
+      fontSize: ["24px", "28px", "30px", "36px", "36px", "36px", "36px"],
       color: "heading_secondary",
       lineHeight: [1.3, null, null, null, 1.2],
       fontWeight: "700",
@@ -126,7 +135,7 @@ const styles = {
   description: {
     m: 0,
     p: 0,
-    pl: 5,
+    pl: 1,
     fontSize: ["15px", 2, null, null, null, "17px", null, 3],
     fontWeight: 400,
     lineHeight: [1.85, null, null, 2, null, "2.2"],
