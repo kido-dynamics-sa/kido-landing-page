@@ -28,51 +28,64 @@ export default function TextFeature({
           {title}
         </Heading>
       </Box>
-      {description && (
-        <Text
-          as="p"
+
+        {description &&
+        (description.includes("- ") ? (
+          <ul
           className="description"
           sx={{
             ...styles.description,
             width: maxWidth ? ["100%", "100%", "100%", "750px"] : "100%",
           }}
         >
-          {description}
-        </Text>
-      )}
-      {btnName &&  (
-        btnURL[0] !== "#" ? (<a target="_blank" href={btnURL} rel="noopener noreferrer">
-          <Button
-            variant="primary"
-            aria-label={btnName}
-            sx={{
-              bg: color,
-              boxShadow: shadow,
-              "&:hover": {
-                boxShadow: shadowHover,
-              },
-            }}
-          >
-            {btnName}
-          </Button>
-        </a>
-      ) : (
-        <a href={btnURL}>
-          <Button
-            variant="primary"
-            aria-label={btnName}
-            sx={{
-              bg: color,
-              boxShadow: shadow,
-              "&:hover": {
-                boxShadow: shadowHover,
-              },
-            }}
-          >
-            {btnName}
-          </Button>
-        </a>
-      ))}
+            {description.split("-").map((d) => (
+              <li>
+                <Text as="p" sx={{ lineHeight: 1.8 }}>
+                  {d}
+                </Text>
+              </li>
+            ))}
+            </ul>) : (
+            <Text as="p" sx={styles.description} 
+            className="description">
+              {description}
+            </Text>
+          ))}
+     
+      {btnName &&
+        (btnURL[0] !== "#" ? (
+          <a target="_blank" href={btnURL} rel="noopener noreferrer">
+            <Button
+              variant="primary"
+              aria-label={btnName}
+              sx={{
+                bg: color,
+                boxShadow: shadow,
+                "&:hover": {
+                  boxShadow: shadowHover,
+                },
+              }}
+            >
+              {btnName}
+            </Button>
+          </a>
+        ) : (
+          <a href={btnURL}>
+            <Button
+              variant="primary"
+              aria-label={btnName}
+              sx={{
+                bg: color,
+                boxShadow: shadow,
+                "&:hover": {
+                  boxShadow: shadowHover,
+                },
+              }}
+            >
+              {btnName}
+            </Button>
+          </a>
+        ))}
     </Box>
   );
 }
@@ -111,6 +124,9 @@ const styles = {
     },
   },
   description: {
+    m: 0,
+    p: 0,
+    pl: 5,
     fontSize: ["15px", 2, null, null, null, "17px", null, 3],
     fontWeight: 400,
     lineHeight: [1.85, null, null, 2, null, "2.2"],
