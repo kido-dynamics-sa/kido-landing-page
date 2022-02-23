@@ -85,7 +85,7 @@ const Hero = ({ hero }) => {
 
 const styles = {
   banner: {
-    height: ["80vh", "70vh", "70vh", "70vh", "70vh", "80vh", "80vh"],
+    height: ["80vh", "70vh", "70vh", "70vh", "70vh", "80vh", "85vh"],
     overflow: "hidden",
     // pt: ["140px", "145px", "155px", "170px", "80px", null, "60px", "170px"],
     pt: '90px',

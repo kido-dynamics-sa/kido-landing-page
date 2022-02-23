@@ -1,23 +1,11 @@
 /** @jsxRuntime classic */
 /** @jsxRuntime classic */
 /** @jsx jsx */
-import { useState, useCallback, useEffect } from "react";
-import { jsx, Box, Container, Button, Flex, Text, Label } from "theme-ui";
+import { jsx, Box, Container, Button} from "theme-ui";
 import { rgba } from "polished";
 import SectionHeader from "components/section-header";
-import Input from "components/input";
-import { Formik, Form, Field } from "formik";
-import * as yup from "yup";
-import { fetchAPI } from "utils/api";
 
 const SubscribeUs = ({ subscribeUsData, section }) => {
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-
-  const LeadSchema = yup.object().shape({
-    email: yup.string().email().required(),
-  });
-
   return (
     <Box
       as="section"
@@ -38,86 +26,7 @@ const SubscribeUs = ({ subscribeUsData, section }) => {
           >
             {subscribeUsData.button}
           </Button>
-          {/* <Formik
-            validateOnBlur={false}
-            validateOnChange={false}
-            initialValues={{ email: "" }}
-            validationSchema={LeadSchema}
-            onSubmit={async (values, { setSubmitting, setErrors }) => {
-              setLoading(true);
-
-              try {
-                setErrors({ api: null });
-                // await fetchAPI("/lead-form-submissions", {
-                //   method: "POST",
-                //   body: JSON.stringify({
-                //     email: values.email,
-                //     location: "whatever",
-                //   }),
-                // });
-                await fetch("/api/contact", {
-                  method: "POST",
-                  headers: { "content-type": "application/json" },
-                  body: JSON.stringify({ email: values.email }),
-                });
-                setSuccess(true);
-              } catch (err) {
-                setErrors({ api: err.message });
-                setSuccess(false);
-              }
-
-              setLoading(false);
-              setSubmitting(false);
-            }}
-          >
-            {({ errors, touched, isSubmitting }) => {
-              if (errors.email && touched.email && errors.email) {
-                setSuccess(false);
-              }
-              return (
-                <Box sx={styles.subscribe}>
-                  <Form>
-                    <Flex sx={styles.inputGroup}>
-                      <Label htmlFor="email" variant="styles.srOnly">
-                        Email
-                      </Label>
-                      <Field type="email" name="email">
-                        {({ field, form }) => (
-                          <Input
-                            type="email"
-                            {...field}
-                            className="email-input"
-                            placeholder={subscribeUsData.placeholder}
-                          />
-                        )}
-                      </Field>
-
-                      <Button
-                        type="submit"
-                        variant="secondary"
-                        sx={{ bg: "white", borderColor: "white" }}
-                        disabled={isSubmitting}
-                        disabled={loading}
-                      >
-                        {subscribeUsData.button}
-                      </Button>
-                    </Flex>
-                  </Form>
-                  <Text sx={{ color: "white", height: "24px" }}>
-                    {(errors.email && touched.email && errors.email) ||
-                      errors.api}
-                  </Text>
-
-                  {success && (
-                    <Text sx={{ color: "white", height: "24px" }}>
-                      {" "}
-                      Thanks for contact us!
-                    </Text>
-                  )}
-                </Box>
-              );
-            }}
-          </Formik> */}
+          
         </Box>
       </Container>
     </Box>
