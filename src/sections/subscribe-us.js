@@ -4,8 +4,10 @@
 import { jsx, Box, Container, Button} from "theme-ui";
 import { rgba } from "polished";
 import SectionHeader from "components/section-header";
+import { useRouter } from "next/router";
 
 const SubscribeUs = ({ subscribeUsData, section }) => {
+  const router = useRouter()
   return (
     <Box
       as="section"
@@ -22,7 +24,8 @@ const SubscribeUs = ({ subscribeUsData, section }) => {
           />
           <Button
             variant="secondary"
-            sx={{ bg: "white", borderColor: "white", mt: [-2, -2,-2,-7,-7,-7,-7] }}
+            sx={{ bg: "white", borderColor: "white", mt: [-2, -2, -2, -7, -7, -7, -7] }}
+            onClick={() => router.push('/contact-us')}
           >
             {subscribeUsData.button}
           </Button>

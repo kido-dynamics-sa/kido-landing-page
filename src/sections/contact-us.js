@@ -51,6 +51,7 @@ export default function ContactUs({ subscribeUsData }) {
               <TextFeature
                 subTitle={"Contact Us"}
                 title={"Get in touch with us"}
+                description={"Fill in the form and we will contact you to show you how our product adapts to your needs"}
               />
               <Grid sx={styles.grid}>
                 <Formik
@@ -61,6 +62,7 @@ export default function ContactUs({ subscribeUsData }) {
                     name: "",
                     phone: "",
                     company: "",
+                    country: "",
                   }}
                   validationSchema={LeadSchema}
                   onSubmit={async (values, { setSubmitting, setErrors }) => {
@@ -72,6 +74,7 @@ export default function ContactUs({ subscribeUsData }) {
                         name: values.name,
                         phone: values.phone,
                         company: values.company,
+                        country: values.country
                       };
                       // await fetchAPI("/lead-form-submissions", {
                       //   method: "POST",
@@ -185,6 +188,25 @@ export default function ContactUs({ subscribeUsData }) {
                               </Text>
                             </Flex>
 
+                            <Flex sx={{ flexDirection: "column", gap: 1 }}>
+                              <Label htmlFor="text" variant="styles.srOnly">
+                                Country you are interested in
+                              </Label>
+                              <Field type="text" name="country">
+                                {({ field, form }) => (
+                                  <Input
+                                    type="text"
+                                    {...field}
+                                    className="contry-input"
+                                    placeholder={"Country you are interested in"}
+                                  />
+                                )}
+                              </Field>
+                              <Text sx={{ color: "red", m: 0, p: 0 }}>
+                                {errors.country}
+                              </Text>
+                            </Flex>
+
                             <Button
                               type="submit"
                               variant="primary"
@@ -217,16 +239,17 @@ export default function ContactUs({ subscribeUsData }) {
             >
               <img
                 alt={"Thumbnail"}
-                src={"/assets/mobilityApp.png"}
-                sx={{ maxWidth: "100%" }}
+                // src={"/assets/mobilityApp.png"}
+                src={"https://destinosinteligentes.app/assets/img/mac.png"}
+                sx={{ maxWidth: "100%", ml: [0,0,5,5,5,5,5] }}
               />
-              <Box sx={styles.shapeBox}>
+              {/* <Box sx={styles.shapeBox}>
                 <img
                   alt={"shape"}
                   src={"/assets/shapeMobilityPattern.png"}
                   sx={{ maxWidth: "100%" }}
                 />
-              </Box>
+              </Box> */}
             </AnimatedBox>
           </Container>
         </div>

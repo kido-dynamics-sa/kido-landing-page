@@ -10,7 +10,7 @@ import Carousel from "react-multi-carousel";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1619 },
-    items: 4,
+    items: 3,
     slidesToSlide: 1, // optional, default to 1.
   },
   laptop: {
@@ -79,7 +79,7 @@ export default function TestimonialCard({ testimonialItems, section }) {
                 <Text sx={styles.description}>{item.description}</Text>
                 <div className="card-footer">
                   <div className="image">
-                    <img alt={"Client image"} src={avatarDict[item.avatar]} />
+                    <img alt={"Client image"} src={'https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/User-avatar.svg/1024px-User-avatar.svg.png'} />
                   </div>
                   <div className="reviewer-info">
                     <Heading as="h4" sx={styles.heading}>
@@ -130,6 +130,10 @@ const styles = {
     },
   },
   reviewCard: {
+    display: "flex",
+    justifyContent: "space-between",
+    flexDirection: "column",
+    height: '90%',
     boxShadow: "0px 0px 1px rgba(38, 78, 118, 0.35)",
     transition: "all 0.3s",
     borderRadius: "6px",

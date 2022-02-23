@@ -20,7 +20,7 @@ export default {
     //   label: 'Retail',
     // },
     {
-      path: '',
+      path: '/contact-us',
       label: 'Request a Demo',
     },
     {
