@@ -24,16 +24,15 @@ export default function Header({ className, onlyLogo }) {
       }}
     >
       <Container sx={styles.container}>
-        {/* <Logo src={"/assets/logo.svg"} /> */}
-        <Link path="/">
-          <img
+          {/* <img
             src={"/assets/logoWhite.svg"}
             alt="logo"
             sx={{
               maxWidth: "100%",
             }}
-          />
-        </Link>
+          /> */}
+
+        <Logo src={"/assets/logoWhite.svg"} />
 
         <Fragment>
           <Flex as="nav" sx={styles.nav}>
@@ -67,19 +66,21 @@ export default function Header({ className, onlyLogo }) {
             href={"https://app.kido-es.kidodynamics.com"}
             rel="noopener noreferrer"
           > */}
-            {/* <Button
+          {/* <Button
               className="donate__btn"
               variant="secondary"
               aria-label="Get started"
             >
               Get Started
             </Button> */}
-            <Button
-              variant="secondaryWhite"
-              onClick={() => router.push("/contact-us")}
-            >
-              Get Started
-            </Button>
+          <Button
+            className="donate__btn"
+            aria-label="Get started"
+            variant="secondaryWhite"
+            onClick={() => router.push("/contact-us")}
+          >
+            Get Started
+          </Button>
           {/* </a> */}
           <MobileDrawer />
         </Fragment>
