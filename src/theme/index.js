@@ -9,8 +9,10 @@ export default {
     background_secondary: "#F9FBFD", // secondary background color
     border_color: "#E5ECF4", // border color
     yellow: "#FFA740", // border color
-    primary: "#3976EF",// primary button and link color
-    secondary: "#2563FF", // secondary color - can be used for hover states
+    // primary: "#3976EF",// primary button and link color
+    primary: "#4B0082", // primary button and link color
+    // secondary: "#2563FF", // secondary color - can be used for hover states
+    secondary: "#002797", // secondary color - can be used for hover states
     muted: "#E4E4E4", // muted color
     accent: "#609", // a contrast color for emphasizing UI
 
@@ -88,12 +90,12 @@ export default {
     keyFeature: {
       pt: [4, null, 4, null, null, 5],
       pb: ["90px", null, 9, null, null, 10, null, "165px"],
-      mt: [8, 8, '150px', 0, 0, 0, 0],
+      mt: [8, 8, "150px", 0, 0, 0, 0],
     },
     feature: {
       pt: [4, null, 4, null, null, 5],
       pb: ["45px", null, 4, null, null, 5, null, "85px"],
-      mt: [8, 8, '150px', 0, 0, 0, 0],
+      mt: [8, 8, "150px", 0, 0, 0, 0],
     },
     news: {
       pb: [8, null, 9, null, null, 10, null, "170px"],
@@ -101,7 +103,7 @@ export default {
     coreFeature: {
       pt: [4, null, 4, null, null, 5],
       pb: ["90px", null, 9, null, null, 10, null, "165px"],
-      mt: [8, 8, '150px', 0, 0, 0, 0],
+      mt: [8, 8, "150px", 0, 0, 0, 0],
     },
     testimonial: {
       pt: [8, null, 8, "70px", null, 8, null, "145px"],
@@ -111,7 +113,7 @@ export default {
     services: {
       pt: [4, null, 4, null, null, 5],
       pb: ["90px", null, 9, null, null, 10, null, "165px"],
-      mt: [8, 8, '150px', 0, 0, 0, 0],
+      mt: [8, 8, "150px", 0, 0, 0, 0],
     },
     pricing: {
       pt: [8, null, 9, null, null, 10, null, "180px"],
@@ -159,22 +161,22 @@ export default {
       fontFamily: "hero",
       color: "heading",
       fontSize: [
+        "20px",
+        "24px",
         "32px",
-        "36px",
-        "36px",
         "36px",
         "42px",
         "48px",
         "50px",
-        "58px",
+        "54px",
       ],
-      lineHeight: [1.3, null, null, null, null, "64px"],
+      lineHeight: [1.3, 1.3, 1.3, 1.3, 1.3, 1.3, "72px"],
       // letterSpacing: '0.25px',
       fontWeight: "bold",
       mb: [4, null, null, null, null, 6],
     },
     heroSecondary: {
-      fontSize: [2, null, "17px", null, null, "19px", 6],
+      fontSize: [1, 1, "17px", null, null, "19px", 6],
       lineHeight: [1.9, null, null, 2],
       fontWeight: 800,
       my: 2,
@@ -183,7 +185,7 @@ export default {
       color: "text",
     },
     heroTerciary: {
-      fontSize: [2, null, "17px", null, null, "19px", 3],
+      fontSize: [1, null, "17px", null, null, "19px", 3],
       lineHeight: [1.9, null, null, 2],
       fontWeight: "body",
       mb: 5,
@@ -266,7 +268,7 @@ export default {
       borderRadius: "45px",
       fontSize: ["14px", null, null, 2],
       letterSpacings: "-0.15px",
-      padding: ["12px 20px", null, "15px 30px"],
+      padding: ["12px 20px", null, "15px 50px"],
       fontFamily: "body",
       cursor: "pointer",
       lineHeight: 1.2,
@@ -275,6 +277,19 @@ export default {
       "&:focus": {
         outline: 0,
       },
+    },
+    hero: {
+      variant: "buttons.defaultBtn",
+      transition: "0.5s",
+      backgroundImage:
+        "linear-gradient(to right, #609 0%, #002797 51%, #4b0082  100%)",
+      backgroundSize: "200% auto",
+      boxShadow: "#7b568e 0px 5px 30px -5px",
+      color: "white",
+      fontWeight: "bolder",
+      '&:hover': {
+        backgroundPosition: 'right center'
+      }
     },
     primary: {
       variant: "buttons.defaultBtn",
@@ -302,6 +317,18 @@ export default {
       "&:hover": {
         color: "white",
         bg: "primary",
+      },
+    },
+    secondaryWhite: {
+      variant: "buttons.defaultBtn",
+      border: "2px solid",
+      borderColor: "white",
+      color: "white",
+      bg: "transparent",
+      padding: ["10px 15px", null, "15px 30px"],
+      "&:hover": {
+        color: "primary",
+        bg: "white",
       },
     },
     textButton: {

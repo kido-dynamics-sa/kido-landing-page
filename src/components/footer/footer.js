@@ -28,17 +28,19 @@ export default function Footer({ footer }) {
 
           <Flex sx={{ flexDirection: "column" }}>
             <Heading sx={{ color: "white", letterSpacing: "0.5px" }}>
-              Services
+              Get started with Kido
             </Heading>
             <Box sx={styles.footer.menus}>
               <nav>
                 {data.menuItem.map((item, i) => (
-                  <Link
-                    path={item.path}
-                    key={i}
-                    label={item.label}
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={item.path}
                     sx={styles.footer.link}
-                  />
+                  >
+                    {item.label}
+                  </a>
                 ))}
               </nav>
             </Box>
@@ -50,14 +52,25 @@ export default function Footer({ footer }) {
             </Heading>
             <Box sx={styles.footer.menus}>
               <nav>
-                {data.company.map((item, i) => (
-                  <Link
-                    path={item.path}
-                    key={i}
-                    label={item.label}
-                    sx={styles.footer.link}
-                  />
-                ))}
+                {data.company.map((item, i) =>
+                  item.label === "Privacy Policy" || item.label === "Terms" ? (
+                    <a
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href={item.path}
+                      sx={styles.footer.link}
+                    >
+                      {item.label}
+                    </a>
+                  ) : (
+                    <Link
+                      path={item.path}
+                      key={i}
+                      label={item.label}
+                      sx={styles.footer.link}
+                    />
+                  )
+                )}
               </nav>
             </Box>
           </Flex>
@@ -84,7 +97,7 @@ const styles = {
   footer: {
     background: "rgb(226,72,124)",
     background:
-      "linear-gradient(111deg, rgba(226,72,124,1) 0%, rgba(98,127,255,1) 61%, rgba(57,118,239,1) 100%)",
+      "linear-gradient(111deg, rgba(75,0,130,1) 0%, #700066 61%, #820046 100%)",
     color: "white",
     footerBottomArea: {
       borderTop: "1px solid",
@@ -127,7 +140,7 @@ const styles = {
       lineHeight: [1.5, null, 1.8],
       // px: [2, null, 4],
       ":hover": {
-        color: "text",
+        color: "#96a5b2",
       },
     },
     copyright: {

@@ -9,27 +9,50 @@ import menuItems from "./header.data";
 import { Fragment } from "react";
 import { Link } from "components/link";
 import ScrollLink from "./ScrollLink";
+import { useRouter } from "next/router";
 
 export default function Header({ className, onlyLogo }) {
+  const router = useRouter();
   return (
-    <header sx={styles.header} className={className} id="header">
+    <header
+      // sx={styles.header}
+      className={className}
+      id="header"
+      sx={{
+        ...styles.header,
+        backgroundColor: router.pathname === "/" ? "transparent" : "#22242A",
+      }}
+    >
       <Container sx={styles.container}>
-        <Logo src={"/assets/logo.svg"} />
+        {/* <Logo src={"/assets/logo.svg"} /> */}
+        <Link path="/">
+          <img
+            src={"/assets/logoWhite.svg"}
+            alt="logo"
+            sx={{
+              maxWidth: "100%",
+            }}
+          />
+        </Link>
 
         <Fragment>
           <Flex as="nav" sx={styles.nav}>
-            {menuItems.map((menuItem, i) =>
-              menuItem.path === "contact" ? (
-                <ScrollLink key={i} path={menuItem.path} label={menuItem.label} i={i} />
-              ) : (
-                <Link
-                  path={menuItem.path}
-                  key={i}
-                  label={menuItem.label}
-                  variant={"footer"}
-                />
-              )
-            )}
+            {menuItems.map((menuItem, i) => (
+              // menuItem.path === "contact" ? (
+              //   <ScrollLink
+              //     key={i}
+              //     path={menuItem.path}
+              //     label={menuItem.label}
+              //     i={i}
+              //   />
+              // ) :
+              <Link
+                path={menuItem.path}
+                key={i}
+                label={menuItem.label}
+                variant={"footer"}
+              />
+            ))}
           </Flex>
 
           {/* Locale Switch Desktop */}
@@ -39,19 +62,25 @@ export default function Header({ className, onlyLogo }) {
               </div>
             )} */}
 
-          <a
+          {/* <a
             target="_blank"
             href={"https://app.kido-es.kidodynamics.com"}
             rel="noopener noreferrer"
-          >
-            <Button
+          > */}
+            {/* <Button
               className="donate__btn"
               variant="secondary"
               aria-label="Get started"
             >
               Get Started
+            </Button> */}
+            <Button
+              variant="secondaryWhite"
+              onClick={() => router.push("/contact-us")}
+            >
+              Get Started
             </Button>
-          </a>
+          {/* </a> */}
           <MobileDrawer />
         </Fragment>
       </Container>
@@ -81,7 +110,7 @@ const styles = {
     position: "absolute",
     top: 0,
     left: 0,
-    backgroundColor: "transparent",
+    // backgroundColor: "transparent",
     transition: "all 0.4s ease",
     animation: `${positionAnim} 0.4s ease`,
     ".donate__btn": {
@@ -91,7 +120,7 @@ const styles = {
     },
     "&.sticky": {
       position: "fixed",
-      backgroundColor: "background",
+      backgroundColor: "#22242A",
       color: "#000000",
       boxShadow: "0 1px 2px rgba(0, 0, 0, 0.06)",
       py: 3,
@@ -112,6 +141,7 @@ const styles = {
       display: "block",
     },
     a: {
+      color: "white",
       fontSize: 2,
       fontWeight: "body",
       px: 5,
@@ -119,10 +149,10 @@ const styles = {
       lineHeight: "1.2",
       transition: "all 0.15s",
       "&:hover": {
-        color: "primary",
+        color: "#96a5b2",
       },
       "&.active": {
-        color: "primary",
+        color: "#96a5b2",
       },
     },
   },

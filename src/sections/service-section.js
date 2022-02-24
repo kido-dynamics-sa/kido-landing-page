@@ -29,7 +29,7 @@ export default function ServiceSection({ data }) {
         >
           <img alt={"Thumbnail"} src={"/assets/retailApp.png"} sx={{maxWidth: '100%'}} />
           <Box sx={styles.shapeBox}>
-            <img alt={"shape"} src={"/assets/retailApp.png"} sx={{maxWidth: '100%'}} />
+            <img alt={"shape"} src={"/assets/shapeRetailPattern.png"} sx={{maxWidth: '100%'}} />
           </Box>
         </AnimatedBox>
 

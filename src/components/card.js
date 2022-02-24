@@ -12,7 +12,7 @@ export default function Card({ article, category = null }) {
             alt={"press logo"}
             src={article["Media"]}
             sx={{
-              width: "100%",
+              maxWidth: "100%",
               maxHeight: "100%",
             }}
           />
@@ -26,6 +26,7 @@ export default function Card({ article, category = null }) {
                 p: 0,
                 m: 0,
                 pr: "20px",
+                color: 'secondary',
                 "&:after": {
                   content: '"•"',
                   position: "absolute",
@@ -39,7 +40,7 @@ export default function Card({ article, category = null }) {
             </a>
           </Link>
           <span sx={{ color: "#5e709d", fontWeight: "600" }}>
-            {article.published_at.split("T")[0]}
+            {article["Date"] || article.published_at.split("T")[0]}
           </span>
         </div>
         <Heading as="h3" sx={styles.title}>
@@ -75,9 +76,10 @@ export default function Card({ article, category = null }) {
                 p: 0,
                 m: 0,
                 pr: "20px",
+                color: 'secondary'
               }}
             >
-              {article.author["Name"]}
+              {article.author["Name"] || "Kido Dynamics"}
             </a>
           </Link>
         </Flex>
@@ -88,6 +90,9 @@ export default function Card({ article, category = null }) {
 
 const styles = {
   reviewCard: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
     cursor: "pointer",
     boxShadow: "0px 0px 1px rgba(38, 78, 118, 0.35)",
     transition: "all 0.3s",
@@ -152,7 +157,10 @@ const styles = {
     mx: "auto",
     ml: "auto",
     mb: 2,
-    // width: ['80px', null, null, '90px', null, 'auto'],
+    height: '200px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   avatar: {
     width: "48px",

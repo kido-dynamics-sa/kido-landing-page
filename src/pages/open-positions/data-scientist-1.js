@@ -52,7 +52,7 @@ export default function OpenPosition({ pageContext }) {
                 height: "100%",
                 width: "120%",
                 position: "absolute",
-                top: "30%",
+                top: "24%",
                 left: "-10%",
                 zIndex: -1,
               }}

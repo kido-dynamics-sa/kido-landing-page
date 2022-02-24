@@ -1,8 +1,8 @@
 export default [
-  {
-    path: '/',
-    label: 'Product',
-  },
+  // {
+  //   path: '/',
+  //   label: 'Product',
+  // },
   {
     path: '/about-us',
     label: 'Company',
@@ -16,7 +16,7 @@ export default [
     label: 'Blog',
   },
   {
-    path: 'contact',
-    label: 'Contact Sales',
+    path: '/contact-us',
+    label: 'Contact Us',
   },
 ];

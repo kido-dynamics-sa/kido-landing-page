@@ -81,7 +81,7 @@ const countriesMapInfo = [
 const CountryCard = ({ country, onClose }) => (
   <div sx={styles.card}>
     <div
-      sx={{ alignSelf: "end", m: 0, mb: "-14px", cursor: "pointer" }}
+      sx={{ position: "absolute", py: 4, px: 5, top: 0, right: 0 }}
       onClick={onClose}
     >
       <FaTimes />
@@ -238,7 +238,7 @@ const styles = {
   },
   card: {
     bg: "#fff",
-    borderRadius: "4px",
+    borderRadius: "16px",
     position: "relative",
     display: "flex",
     flexDirection: "column",
@@ -252,7 +252,6 @@ const styles = {
       overflow: "hidden",
       m: 0,
     },
-    gap: 0,
   },
 
   subtitle: {
@@ -265,7 +264,7 @@ const styles = {
   productSection: {
     display: "flex",
     justifyContent: "center",
-    gap: 5,
+    gap: 6,
     bg: "#edf1f9",
     fontSize: 7,
     fontWeight: 600,
@@ -273,7 +272,7 @@ const styles = {
     px: 4,
     my: 2,
     mb: 3,
-    borderRadius: "4px",
+    borderRadius: "12px",
     img: {
       maxWidth: "36px",
       fontSize: "10px",

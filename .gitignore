@@ -1,5 +1,9 @@
 node_modules
 .next
-package-lock.json
-out
+
+.env.local
+.env.prod
+
 .DS_Store
+
+out

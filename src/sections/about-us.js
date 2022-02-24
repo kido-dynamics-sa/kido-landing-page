@@ -18,7 +18,7 @@ const animationProps = {
   transition: { ease: "easeOut", duration: 0.75 },
 };
 
-export default function AboutUs({ aboutUs, companyCulture, teamSection }) {
+export default function AboutUs({ aboutUs, companyCulture, teamSection, teamMembers }) {
   return (
     <section id="careers" sx={styles.banner}>
       <Container>
@@ -41,7 +41,7 @@ export default function AboutUs({ aboutUs, companyCulture, teamSection }) {
 
         <CompanyCulture data={companyCulture} />
         
-        <TeamSection section={teamSection} />
+        <TeamSection section={teamSection} teamMembers={teamMembers} />
 
         <Partners />
 
@@ -69,6 +69,7 @@ const styles = {
     mx: "auto",
     textAlign: "center",
     zIndex: 3,
+    mb: 8
   },
 
   description: {

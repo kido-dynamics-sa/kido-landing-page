@@ -2,17 +2,21 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui";
 import { Text, Heading, Box, Link } from "theme-ui";
+import { FaLinkedin } from "react-icons/fa";
+
+const dictNameToIcon = { linkedin: <FaLinkedin /> };
 
 export default function TeamCard({ src, altText, title, designation, social }) {
   return (
     <Box sx={styles.card}>
       <div sx={styles.memberThumb}>
         <img
-          src={src}
+          src={src || 'https://res.cloudinary.com/kido-dynamics/image/upload/v1644416451/team-photos/images_smb5il.png'}
           alt={altText}
           sx={{
             width: "100%",
             maxHeight: "100%",
+            borderRadius: "50%",
           }}
         />
       </div>
@@ -25,11 +29,14 @@ export default function TeamCard({ src, altText, title, designation, social }) {
         </Text>
       </Box>
       <Box sx={styles.socialShare} className="social__share">
-        {social.map((item) => (
-          <Link key={item.id} href={item.path} className={item.name}>
-            {item.icon}
-          </Link>
-        ))}
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={social.path}
+          // sx={styles.footer.link}
+        >
+          {dictNameToIcon[social.name]}
+        </a>
       </Box>
     </Box>
   );

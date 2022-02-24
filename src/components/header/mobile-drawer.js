@@ -4,10 +4,8 @@ import { Scrollbars } from "react-custom-scrollbars";
 import Drawer from "components/drawer";
 import { IoMdClose, IoMdMenu } from "react-icons/io";
 import {
-  FaFacebookF,
   FaTwitter,
-  FaGithubAlt,
-  FaDribbble,
+  FaLinkedin,
 } from "react-icons/fa";
 import menuItems from "./header.data";
 import { Link } from "components/link";
@@ -15,20 +13,12 @@ import ScrollLink from "./ScrollLink";
 
 const social = [
   {
-    path: "/",
-    icon: <FaFacebookF />,
+    path: "https://www.linkedin.com/company/kido-dynamics/",
+    icon: <FaLinkedin />,
   },
   {
-    path: "/",
+    path: "https://twitter.com/kidodynamics",
     icon: <FaTwitter />,
-  },
-  {
-    path: "/",
-    icon: <FaGithubAlt />,
-  },
-  {
-    path: "/",
-    icon: <FaDribbble />,
   },
 ];
 
@@ -52,9 +42,11 @@ export default function MobileDrawer() {
         <Box sx={styles.content}>
           <Box sx={styles.menu}>
             {menuItems.map((menuItem, i) =>
-              menuItem.path === "contact" ? (
-                <ScrollLink key={i} path={menuItem.path} label={menuItem.label} i={i} />
-              ) : (
+              // menuItem.path === "contact" ?
+              //   (
+              //   <ScrollLink key={i} path={menuItem.path} label={menuItem.label} i={i} />
+              //   ) :
+                (
                 <Link
                   path={menuItem.path}
                   key={i}

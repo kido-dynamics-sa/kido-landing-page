@@ -6,12 +6,7 @@ import Layout from "components/layout";
 import SEO from "components/seo";
 import { fetchAPI, getFooter } from "utils/api";
 
-const Category = ({ category, categories, footer, pageContext }) => {
-  // const seo = {
-  //   metaTitle: category.attributes.name,
-  //   metaDescription: `All ${category.attributes.name} articles`,
-  // }
-
+const Category = ({ category, categories, footer, articles, pageContext }) => {
   return (
     <ThemeProvider theme={theme}>
       <Layout
@@ -22,12 +17,25 @@ const Category = ({ category, categories, footer, pageContext }) => {
         onlyLogo
         isBlog
       >
-        {/* <Seo seo={homepage.attributes.seo} /> */}
-        <SEO title="Kido Dynamics Blog" />
+        <SEO
+          title={`Kido Dynamics - ${
+            category["Name"].charAt(0).toUpperCase() + category["Name"].slice(1)
+          }`}
+          description={`All ${category["Name"]} articles`}
+        />
+        <h1 style={{ display: "none" }}>{`Kido Dynamics - ${
+          category["Name"].charAt(0).toUpperCase() + category["Name"].slice(1)
+        }`}</h1>
         <div>
           <div>
-            {/* <h1>{homepage.attributes.hero.title}</h1> */}
-            <Articles articles={category.articles} category={category}/>
+            <Articles
+              articles={articles.sort(
+                (a, b) =>
+                  new Date(b["Date"].replace(/(\d+[/])(\d+[/])/, "$2$1")) -
+                  new Date(a["Date"].replace(/(\d+[/])(\d+[/])/, "$2$1"))
+              )}
+              category={category}
+            />
           </div>
         </div>
       </Layout>
@@ -60,11 +68,15 @@ export async function getStaticProps(context) {
   const footer = await getFooter();
   const matchingCategories = await fetchAPI(`/categories?Slug=${params.slug}`);
   const allCategories = await fetchAPI("/categories");
+  const articles = await fetchAPI("/articles");
 
   return {
     props: {
       category: matchingCategories[0],
       categories: allCategories,
+      articles: articles.filter(
+        (ar) => ar.category.id === matchingCategories[0].id
+      ),
       footer,
       // pageContext,
     },

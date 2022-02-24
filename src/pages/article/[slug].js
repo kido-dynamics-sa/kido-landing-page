@@ -8,6 +8,7 @@ import Layout from "../../components/layout";
 import { ThemeProvider } from "theme-ui";
 import { fetchAPI, getFooter } from "utils/api";
 import theme from "theme";
+import SEO from "components/seo";
 import Link from "next/link";
 
 export default function Article({ article, pageContext, footer, categories }) {
@@ -27,13 +28,19 @@ export default function Article({ article, pageContext, footer, categories }) {
         onlyLogo
         isBlog
       >
-        {/* <Seo seo={seo} /> */}
+        <SEO
+          title={`Kido Dynamics - ${
+            article["Title"].charAt(0).toUpperCase() + article["Title"].slice(1)
+          }`}
+          description={article["Description"]}
+          image={article["Media"]}
+        />
         <div sx={styles.wrapper}>
           <div sx={styles.header}>
             <ul sx={styles.header.metadata}>
               <li
                 sx={{
-                  color: "primary",
+                  color: "secondary",
                 }}
               >
                 {article.category["Name"]}
@@ -45,7 +52,7 @@ export default function Article({ article, pageContext, footer, categories }) {
               </li>
 
               <li>•</li>
-              <li>15 minutes read</li>
+              <li>{article["timeToRead"] || "5 min"} read</li>
             </ul>
             <h1 sx={styles.header.title}>{article["Title"]}</h1>
             <div
@@ -58,15 +65,16 @@ export default function Article({ article, pageContext, footer, categories }) {
               }}
             >
               <div sx={styles.avatar}>
-                {" "}
-                <img
-                  alt={"press logo"}
-                  src={article.author["Picture"]}
-                  sx={{
-                    width: "100%",
-                    maxHeight: "100%",
-                  }}
-                />
+                {article.author["Picture"] && (
+                  <img
+                    src={article.author["Picture"]}
+                    alt={`article ${article["Title"]} image`}
+                    sx={{
+                      width: "100%",
+                      maxHeight: "100%",
+                    }}
+                  />
+                )}
               </div>
               <div sx={{ display: "flex", flexDirection: "column", mt: 1 }}>
                 <p
@@ -75,12 +83,14 @@ export default function Article({ article, pageContext, footer, categories }) {
                     p: 0,
                     m: 0,
                     pr: "20px",
+                    color: 'secondary'
                   }}
                 >
-                  {article.author["Name"]}
+                  {article.author["Name"] || "Kido Dynamics"}
                 </p>
                 <p sx={{ color: "gray", m: 0 }}>
-                  <Moment format="MMM Do YYYY">{article.published_at}</Moment>
+                  <p >
+                      {article["Date"] || article.published_at.split("T")[0]}</p>
                 </p>
               </div>
             </div>

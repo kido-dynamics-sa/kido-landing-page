@@ -35,9 +35,9 @@ export default function KeyFeature({ featureCardColumns, section }) {
   return (
     <section id="feature" sx={{ variant: "section.keyFeature" }}>
       <Container
-        sx={{
-          pb: [0, 7, 0, null, 7],
-        }}
+        // sx={{
+        //   pb: [0, 7, 0, null, 7],
+        // }}
       >
         <SectionHeader
           // slogan="What you can get"
@@ -45,7 +45,7 @@ export default function KeyFeature({ featureCardColumns, section }) {
           slogan={section.slogan}
           title={section.title}
         />
-
+{/* 
         <Grid sx={styles.grid}>
           {sortFeatures(featureCardColumns).map((item) => (
             <FeatureCardColumn
@@ -56,7 +56,7 @@ export default function KeyFeature({ featureCardColumns, section }) {
               text={item.text}
             />
           ))}
-        </Grid>
+        </Grid> */}
       </Container>
     </section>
   );
