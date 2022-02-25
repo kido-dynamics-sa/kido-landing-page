@@ -51,7 +51,7 @@ export default function ContactUs({ subscribeUsData }) {
               <TextFeature
                 subTitle={"Contact Us"}
                 title={"Get in touch with us"}
-                description={"Fill in the form and we will contact you to show you how our product adapts to your needs"}
+                description={"Fill out the form and we will contact you"}
               />
               <Grid sx={styles.grid}>
                 <Formik

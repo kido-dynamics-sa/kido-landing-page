@@ -27,9 +27,7 @@ export default function TextFeature({
         <Heading as="h2" sx={{ ...styles.wrapper.title }}>
           {title}
         </Heading>
-      </Box>
-
-      {description &&
+        {description &&
         (description.includes("- ") ? (
           <ul
             className="description"
@@ -60,6 +58,9 @@ export default function TextFeature({
           {description}
           </Text>
         ))}
+      </Box>
+
+
 
       {btnName &&
         (btnURL[0] !== "#" ? (
