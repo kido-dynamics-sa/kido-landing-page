@@ -19,6 +19,11 @@ export default {
     //   path: 'https://app.kido-es.kidodynamics.com/retail',
     //   label: 'Retail',
     // },
+
+    {
+      path: '/digital-kit',
+      label: 'Digital Kit',
+    },
     {
       path: '/contact-us',
       label: 'Request a Demo',
