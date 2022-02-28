@@ -19,8 +19,8 @@ export default function IndexPage({
   return (
     <ThemeProvider theme={theme}>
       <Layout pageContext={pageContext} footer={footer[0]} onlyLogo>
-        <SEO title="Kido Dynamics - About Us"/>
-        <h1 style={{display: 'none'}}>Kido Dynamics - About Us</h1>
+        <SEO title="Kido Dynamics - Digital Kit"/>
+        <h1 style={{display: 'none'}}>Kido Dynamics - Digital Kit</h1>
         <DigitalKit 
           featureCardColumns={featureCardColumns}/>
 

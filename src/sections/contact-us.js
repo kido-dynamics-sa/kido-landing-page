@@ -241,7 +241,7 @@ export default function ContactUs({ subscribeUsData }) {
                 alt={"Thumbnail"}
                 // src={"/assets/mobilityApp.png"}
                 src={"https://destinosinteligentes.app/assets/img/mac.png"}
-                sx={{ maxWidth: "100%", ml: [0,0,5,5,5,5,5] }}
+                sx={{ maxWidth: "100%", ml: [0,0,5,5,5,5,5], objectFit: 'contain' }}
               />
               {/* <Box sx={styles.shapeBox}>
                 <img
