@@ -56,9 +56,9 @@ export default function DigitalKit({ featureCardColumns }) {
           animate={{ opacity: 1, scale: 1 }}
         >
           <TextFeature
-            subTitle={"Digital Kit"}
-            title={"Business Intelligence and Analytics"}
-            description={"Category 5"}
+            subTitle={"Kit Digital"}
+            title={"Business Intelligence y Analítica"}
+            description={"Categoría 5"}
             maxWidth
           />
         </AnimatedBox>
@@ -70,7 +70,7 @@ export default function DigitalKit({ featureCardColumns }) {
         >
           <img
             src="https://res.cloudinary.com/kido-dynamics/image/upload/v1646060573/Logo-digitalizadores_hl2wcq.png"
-            alt={"Logos Digital Kit"}
+            alt={"Logos Kit Digital"}
             sx={{
               maxWidth: "100%",
               objectFit: "cover",
@@ -85,8 +85,8 @@ export default function DigitalKit({ featureCardColumns }) {
           }}
         >
           <SectionHeader
-            slogan="Intelligence Digital Platform"
-            title="Kido Dynamics Platform making your business smarter"
+            slogan="Panel de Control Digital"
+            title="Incorpore nuestra Plataforma en la toma de decisiones de su negocio"
           />
 
           <Grid sx={styles.grid}>

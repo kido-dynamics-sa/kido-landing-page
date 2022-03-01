@@ -9,9 +9,13 @@ import SubscribeUs from "../sections/subscribe-us";
 
 import { getFooter, fetchAPI } from "utils/api";
 
+const sectionSubscribeUs = {
+  slogan: "¿Quieres saber más?",
+  title: "Solicita tu bono Digital"
+}
+
 export default function IndexPage({
-  subscribeUsData,
-  sections,
+  // subscribeUsData,
   footer,
   featureCardColumns,
   pageContext
@@ -25,8 +29,8 @@ export default function IndexPage({
           featureCardColumns={featureCardColumns}/>
 
         <SubscribeUs
-          subscribeUsData={subscribeUsData}
-          section={sections.find((a) => a.name === "SubscribeUsSection")}
+          subscribeUsData={{button: 'Contáctanos'}}
+          section={sectionSubscribeUs}
         />
       </Layout>
     </ThemeProvider>
@@ -38,9 +42,9 @@ export async function getStaticProps(context) {
   const pageContext = context;
 
   const footer = await getFooter();
-  const sections = await fetchAPI("/sections");
-  const subscribeUsData = await fetchAPI("/suscribe-us");
-  const featureCardColumns = await fetchAPI("/feature-card-columns");
+  // const sections = await fetchAPI("/sections");
+  // const subscribeUsData = await fetchAPI("/suscribe-us");
+  const featureCardColumns = await fetchAPI("/feature-card-columns?_locale=es");
 
   // const pageContext = {
   //   locale,
@@ -50,8 +54,8 @@ export async function getStaticProps(context) {
 
   return {
     props: {
-      subscribeUsData,
-      sections,
+      // subscribeUsData,
+      // sections,
       footer,
       featureCardColumns,
       // pageContext

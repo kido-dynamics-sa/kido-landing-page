@@ -14,8 +14,8 @@ const packages = {
     {
       id: 1,
       // name: "Free Plan",
-      name: "Segment I",
-      description: "Small businesses between 10 and less than 50 employees",
+      name: "Segmento I",
+      description: "Pequeñas empresas entre 10 y menos de 50 empleados",
       buttonText: "Start free trail",
       priceWithUnit: "4000€",
       points: [
@@ -48,9 +48,9 @@ const packages = {
     {
       id: 2,
       // name: "Business king",
-      name: "Segment II",
+      name: "Segmento II",
       // description: "For Enterprise business",
-      description: "Small businesses or Micro-businesses between 3 and less than 10 employees",
+      description: "Pequeñas empresas o Microempresas entre 3 y menos de 10 empleados",
       priceWithUnit: "2000€",
       buttonText: "Create account",
       anotherOption: "Or Start 14 Days trail",
@@ -87,8 +87,8 @@ const packages = {
       // headerIcon: <IoIosCheckmarkCircle />,
       // name: "Pro Master",
       // description: "For pro level developers",
-      name: "Segment III",
-      description: "Small businesses or Micro-businesses between 0 and less than 3 employees",
+      name: "Segmento III",
+      description: "Pequeñas empresas o Microempresas de entre 0 y menos de 3 empleados",
       priceWithUnit: "1500€",
       buttonText: "Create account",
       anotherOption: "Or Start 14 Days trail",
@@ -292,8 +292,8 @@ export default function Package() {
     <section sx={{ variant: "section.pricing" }}>
       <Container>
         <SectionHeader
-          slogan="AVAILABLE FOR ALL SEGMENTS"
-          title="Use the API to easily integrate these insights into any solution"
+          slogan="Disponibles para todos los segmentos"
+          title="Proporcionamos una API para integrar fácilmente estos indicadores en cualquier solución"
         />
         {/* <Flex sx={styles.buttonGroup}>
           <Box sx={styles.buttonGroupInner}>

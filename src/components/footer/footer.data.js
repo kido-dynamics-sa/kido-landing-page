@@ -22,7 +22,7 @@ export default {
 
     {
       path: '/digital-kit',
-      label: 'Digital Kit',
+      label: 'Kit Digital',
     },
     {
       path: '/contact-us',

@@ -29,7 +29,7 @@ export default function PriceCard({
         {/* <List items={points} childStyle={styles.listItem} /> */}
         <Text className="package__price" sx={styles.price}>
           {/* {priceWithUnit} <span>/ Monthty</span> */}
-          <span sx={{mr: 5}}>Bono up to</span>
+          <span sx={{mr: 5}}>Bono de hasta </span>
           {priceWithUnit}
         </Text>
         {/* <Box sx={styles.buttonGroup}>
