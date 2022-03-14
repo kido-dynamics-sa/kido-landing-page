@@ -107,7 +107,7 @@ export default function Careers({ companyCulture }) {
                     cursor: "pointer",
                     "&:hover": {
                       div: {
-                        background: "#ED2E7E",
+                        background: "#002797",
                       },
                       p: {
                         color: "#fff",
@@ -121,6 +121,51 @@ export default function Careers({ companyCulture }) {
                     <a sx={styles.itemText}>
                       <p sx={{ fontWeight: 600, fontSize: 3 }}>
                         Senior Data Scientist/Engineer
+                      </p>
+                      <p>
+                        <span>Full-time</span>{" "}
+                        <span>📍 Remote | Spain, Portugal or LATAM</span>
+                      </p>
+                    </a>
+                  </Link>
+                </div>
+              </li>
+
+              <li
+                key={"data-scientist-1"}
+                sx={{
+                  opacity: 1,
+                  visibility: "inherit",
+                  display: "flex",
+                  alignItems: "center",
+                  flexWrap: "wrap",
+                  justifyContent: "center",
+                }}
+              >
+                <div
+                  sx={{
+                    position: "relative",
+                    display: "inline-block",
+                    backgroundColor: "#fff",
+                    maxWidth: "500px",
+                    width: "100%",
+                    cursor: "pointer",
+                    "&:hover": {
+                      div: {
+                        background: "#002797",
+                      },
+                      p: {
+                        color: "#fff",
+                      },
+                    },
+                  }}
+                >
+                  <div sx={styles.itemBackground}></div>
+
+                  <Link href="/open-positions/frontend-developer">
+                    <a sx={styles.itemText}>
+                      <p sx={{ fontWeight: 600, fontSize: 3 }}>
+                        Frontend Developer
                       </p>
                       <p>
                         <span>Full-time</span>{" "}
