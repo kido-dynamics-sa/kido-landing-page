@@ -30,6 +30,7 @@ export default function OpenPosition({ pageContext }) {
     <ThemeProvider theme={theme}>
       <React.Fragment>
         <Sticky innerZ={1001} top={0} onStateChange={handleStateChange}>
+        <SEO title="Kido Dynamics - Open position: Frontend Developer" />
           <Header
             className={`${isSticky ? "sticky" : "unSticky"}`}
             pageContext={pageContext}
