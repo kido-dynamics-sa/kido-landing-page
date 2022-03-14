@@ -15,6 +15,7 @@ import theme from "theme";
 import Sticky from "react-stickynode";
 
 import Header from "components/header/header";
+import SEO from "components/seo";
 
 export default function OpenPosition({ pageContext }) {
   const [isSticky, setIsSticky] = useState(false);
