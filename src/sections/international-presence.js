@@ -56,6 +56,13 @@ const countriesMapInfo = [
     path: "https://app.claro-cl.kidodynamics.com/",
   },
   {
+    name: "Mexico",
+    flag: "🇨🇱",
+    platformName: "Kido Platform",
+    products: ["mobility"],
+    path: "https://app.kido-mx.kidodynamics.com/",
+  },
+  {
     name: "Malaysia",
     flag: "",
     platformName: "",
