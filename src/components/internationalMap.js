@@ -14041,6 +14041,47 @@ export default function InternationalMap({ onOpen }) {
             fill="black"
           />
         </g>
+
+        <g filter="url(#filter1_f_443_4607)">
+          <circle
+            cx="250.031"
+            cy="270.031"
+            r="28.0306"
+            fill="#C4C4C4"
+            fill-opacity="0.8"
+          />
+        </g>
+        <g
+          clip-path="url(#clip2_443_4607)"
+          className="card"
+          onClick={() => onOpen("Mexico")}
+        >
+          <path
+            d="M249.9 294.8C263.652 294.8 274.8 283.652 274.8 269.9C274.8 256.148 263.652 245 249.9 245C236.148 245 225 256.148 225 269.9C225 283.652 236.148 294.8 249.9 294.8Z"
+            fill="#F0F0F0"
+          />
+          <path
+            d="M274.8 269.9C274.8 260.028 269.055 251.498 260.726 247.471V292.329C269.055 288.302 274.8 279.772 274.8 269.9V269.9Z"
+            fill="#D80027"
+          />
+          <path
+            d="M225 269.9C225 279.772 230.745 288.302 239.074 292.329V247.471C230.745 251.498 225 260.028 225 269.9Z"
+            fill="#6DA544"
+          />
+          <path
+            d="M243.404 269.9C243.404 273.487 246.313 276.396 249.9 276.396C253.487 276.396 256.396 273.487 256.396 269.9V267.735H243.404V269.9Z"
+            fill="#6DA544"
+          />
+          <path
+            d="M258.561 265.57H252.065C252.065 264.374 251.095 263.404 249.9 263.404C248.704 263.404 247.734 264.374 247.734 265.57H241.239C241.239 266.765 242.28 267.735 243.476 267.735H243.404C243.404 268.931 244.373 269.9 245.569 269.9C245.569 271.096 246.539 272.065 247.734 272.065H252.065C253.261 272.065 254.23 271.096 254.23 269.9C255.426 269.9 256.395 268.931 256.395 267.735H256.323C257.519 267.735 258.561 266.765 258.561 265.57Z"
+            fill="#FF9811"
+          />
+          <path
+            d="M274.446 270.03C274.446 283.514 263.515 294.446 250.031 294.446C236.546 294.446 225.615 283.514 225.615 270.03C225.615 256.546 236.546 245.615 250.031 245.615C263.515 245.615 274.446 256.546 274.446 270.03Z"
+            stroke="white"
+            stroke-width="1.00109"
+          />
+        </g>
         <g filter="url(#filter7_f_803_218)">
           <circle
             cx="1075"
@@ -14155,6 +14196,7 @@ export default function InternationalMap({ onOpen }) {
             result="effect1_foregroundBlur_803_218"
           />
         </filter>
+
         <filter
           id="filter3_f_803_218"
           x="645"
@@ -14260,6 +14302,27 @@ export default function InternationalMap({ onOpen }) {
             result="effect1_foregroundBlur_803_218"
           />
         </filter>
+        <filter
+          id="filter1_f_443_4607"
+          x="197.974"
+          y="217.974"
+          width="104.113"
+          height="104.114"
+          filterUnits="userSpaceOnUse"
+          color-interpolation-filters="sRGB"
+        >
+          <feFlood flood-opacity="0" result="BackgroundImageFix" />
+          <feBlend
+            mode="normal"
+            in="SourceGraphic"
+            in2="BackgroundImageFix"
+            result="shape"
+          />
+          <feGaussianBlur
+            stdDeviation="12.0131"
+            result="effect1_foregroundBlur_443_4607"
+          />
+        </filter>
         <clipPath id="clip0_803_218">
           <rect width="1324.44" height="525.593" fill="white" />
         </clipPath>
@@ -14325,6 +14388,14 @@ export default function InternationalMap({ onOpen }) {
             height="49.7778"
             fill="white"
             transform="translate(1050.11 273.927)"
+          />
+        </clipPath>
+        <clipPath id="clip2_443_4607">
+          <rect
+            width="49.8321"
+            height="49.8321"
+            fill="white"
+            transform="translate(225.115 245.114)"
           />
         </clipPath>
       </defs>
