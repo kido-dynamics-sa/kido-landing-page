@@ -57,7 +57,7 @@ const countriesMapInfo = [
   },
   {
     name: "Mexico",
-    flag: "🇨🇱",
+    flag: "🇲🇽",
     platformName: "Kido Platform",
     products: ["mobility"],
     path: "https://app.kido-mx.kidodynamics.com/",
