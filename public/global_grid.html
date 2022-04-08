@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
+    <script>
+      L_NO_TOUCH = false;
+      L_DISABLE_3D = false;
+    </script>
+
+    <script src="old/map_files/leaflet.js"></script>
+    <script src="old/map_files/jquery-1.js"></script>
+    <script src="old/map_files/bootstrap.js"></script>
+    <script src="old/map_files/leaflet_002.js"></script>
+    <link rel="stylesheet" href="old/map_files/leaflet_003.css" />
+    <link rel="stylesheet" href="old/map_files/bootstrap.css" />
+    <link rel="stylesheet" href="old/map_files/bootstrap-theme.css" />
+    <link rel="stylesheet" href="old/map_files/font-awesome.css" />
+    <link rel="stylesheet" href="old/map_files/leaflet_002.css" />
+    <link rel="stylesheet" href="old/map_files/leaflet.css" />
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <style>
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+      }
+    </style>
+
+    <meta
+      name="viewport"
+      content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <style>
+      #map_4662b34d19b34bea944d877f1874b998 {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        left: 0%;
+        top: 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="folium-map"
+      id="map_4662b34d19b34bea944d877f1874b998"
+      tabindex="0"
+      style="outline: currentcolor none medium"
+    >
+      <div
+        class="leaflet-pane leaflet-map-pane"
+        style="transform: translate3d(0px, 0px, 0px)"
+      >
+        <div class="leaflet-pane leaflet-tile-pane">
+          <div class="leaflet-layer" style="z-index: 1; opacity: 1">
+            <div
+              class="leaflet-tile-container leaflet-zoom-animated"
+              style="
+                z-index: 18;
+                transform: translate3d(0px, 0px, 0px) scale(1);
+              "
+            ></div>
+          </div>
+        </div>
+        <div class="leaflet-pane leaflet-shadow-pane"></div>
+        <div class="leaflet-pane leaflet-overlay-pane"></div>
+        <div class="leaflet-pane leaflet-marker-pane"></div>
+        <div class="leaflet-pane leaflet-tooltip-pane"></div>
+        <div class="leaflet-pane leaflet-popup-pane"></div>
+        <div class="leaflet-proxy leaflet-zoom-animated"></div>
+      </div>
+      <div class="leaflet-control-container">
+        <div class="leaflet-top leaflet-left">
+          <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+            <a
+              class="leaflet-control-zoom-in"
+              href="#"
+              title="Zoom in"
+              role="button"
+              aria-label="Zoom in"
+              >+</a
+            ><a
+              class="leaflet-control-zoom-out"
+              href="#"
+              title="Zoom out"
+              role="button"
+              aria-label="Zoom out"
+              >−</a
+            >
+          </div>
+        </div>
+        <div class="leaflet-top leaflet-right"></div>
+        <div class="leaflet-bottom leaflet-left"></div>
+        <div class="leaflet-bottom leaflet-right">
+          <div class="leaflet-control-attribution leaflet-control">
+            <a
+              href="https://leafletjs.com/"
+              title="A JS library for interactive maps"
+              >Leaflet</a
+            >
+            | cartodbpositron, KidoDynamics
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const longitude = urlParams.get("lng");
+      const latitude = urlParams.get("lat");
+
+      if (longitude != undefined && latitude != undefined) {
+        center = [longitude, latitude];
+      } else {
+        center = [35.779044, -5.83296]; // spain
+      }
+      zoom = urlParams.get("z") || 9;
+
+      var map_4662b34d19b34bea944d877f1874b998 = L.map(
+        "map_4662b34d19b34bea944d877f1874b998",
+        {
+          center: center,
+          crs: L.CRS.EPSG3857,
+          zoom: zoom,
+          zoomControl: true,
+          preferCanvas: false,
+        }
+      );
+
+      var tile_layer_3774197a9a68452dba3abe78a9546da90 = L.tileLayer(
+        "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+        {
+          attribution: "cartodbpositron",
+          detectRetina: false,
+          maxNativeZoom: 18,
+          maxZoom: 18,
+          minZoom: 0,
+          noWrap: false,
+          opacity: 1,
+          subdomains: "abc",
+          tms: false,
+        }
+      ).addTo(map_4662b34d19b34bea944d877f1874b998);
+
+      var tile_layer_3774197a9a68452dba3abe78a9546da91 = L.tileLayer(
+        //"http://localhost/tiles-server/tile/{z}/filename_{x}_{y}.png",
+        "http://tiles.odmatrix.app.s3-website.eu-central-1.amazonaws.com/{z}/filename_{x}_{y}.png",
+        {
+          attribution: "KidoDynamics",
+          detectRetina: false,
+          maxNativeZoom: 18,
+          maxZoom: 18,
+          minZoom: 0,
+          noWrap: false,
+          opacity: 0.5,
+          subdomains: "abc",
+          tms: false,
+        }
+      ).addTo(map_4662b34d19b34bea944d877f1874b998);
+    </script>
+  </body>
+</html>
