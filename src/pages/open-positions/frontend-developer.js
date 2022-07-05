@@ -130,6 +130,7 @@ export default function OpenPosition({ pageContext }) {
               <Text as="p">- Knowledge in TypeScript. </Text>
               <Text as="p">- Experienced with React monorepos (libraries like nx, lerna). </Text>
               <Text as="p">- Experienced with Next.js. </Text>
+              <Text as="p">- Experienced with Deck.gl, d3 or any data visualization react-friendly libraries. </Text>
             </Box>
 
             <Box sx={{ mt: 7 }}>
