@@ -105,7 +105,7 @@ export default function Articles({ articles, ...rest }) {
                           src={
                             !heroArticle.author["Name"] ||
                             heroArticle.author["Name"] === "Kido Dynamics"
-                              ? "assets/KIDO_AUTHOR.jpeg"
+                              ? "/assets/KIDO_AUTHOR.jpeg"
                               : heroArticle.author["Picture"]
                           }
                           alt={`heroArticle ${heroArticle["Title"]} image`}

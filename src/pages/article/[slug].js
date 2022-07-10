@@ -70,7 +70,7 @@ export default function Article({ article, pageContext, footer, categories }) {
                     src={
                       !article.author["Name"] ||
                       article.author["Name"] === "Kido Dynamics"
-                        ? "assets/KIDO_AUTHOR.jpeg"
+                        ? "/assets/KIDO_AUTHOR.jpeg"
                         : article.author["Picture"]
                     }
                     alt={`article ${article["Title"]} image`}
