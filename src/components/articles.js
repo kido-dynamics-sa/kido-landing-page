@@ -21,7 +21,6 @@ export default function Articles({ articles, ...rest }) {
                   <div sx={styles.heroCard.coverImage.image}>
                     <div
                       sx={{
-                        pb: "52.1053%",
                         height: "100%",
                         display: "flex",
                         justifyContent: "center",
@@ -82,7 +81,8 @@ export default function Articles({ articles, ...rest }) {
                       </a>
                     </Link>
                     <span sx={{ color: "#5e709d", fontWeight: "600" }}>
-                      {heroArticle["Date"] || heroArticle.published_at.split("T")[0]}
+                      {heroArticle["Date"] ||
+                        heroArticle.published_at.split("T")[0]}
                     </span>
                   </div>
 
@@ -102,7 +102,12 @@ export default function Articles({ articles, ...rest }) {
                     <div sx={styles.avatar}>
                       {heroArticle.author["Picture"] && (
                         <img
-                          src={heroArticle.author["Picture"]}
+                          src={
+                            !heroArticle.author["Name"] ||
+                            heroArticle.author["Name"] === "Kido Dynamics"
+                              ? "assets/KIDO_AUTHOR.jpeg"
+                              : heroArticle.author["Picture"]
+                          }
                           alt={`heroArticle ${heroArticle["Title"]} image`}
                           sx={{
                             width: "100%",
@@ -122,7 +127,7 @@ export default function Articles({ articles, ...rest }) {
                           p: 0,
                           m: 0,
                           pr: "20px",
-                          color: "secondary"
+                          color: "secondary",
                         }}
                       >
                         {heroArticle.author["Name"] || "Kido Dynamics"}
@@ -134,21 +139,19 @@ export default function Articles({ articles, ...rest }) {
             </Link>
           </div>
           <Grid sx={styles.articles.others}>
-            {articles
-              .slice(1)
-              .map((article, i) => {
-                return (
-                  <Card
-                    article={article}
-                    category={
-                      article.category && article.category["Slug"]
-                        ? article.category
-                        : category
-                    }
-                    key={`article__${article["Slug"]}`}
-                  />
-                );
-              })}
+            {articles.slice(1).map((article, i) => {
+              return (
+                <Card
+                  article={article}
+                  category={
+                    article.category && article.category["Slug"]
+                      ? article.category
+                      : category
+                  }
+                  key={`article__${article["Slug"]}`}
+                />
+              );
+            })}
           </Grid>
         </div>
       </div>
@@ -178,6 +181,7 @@ const styles = {
     width: "100%",
     maxWidth: "1440px",
     mx: "auto",
+    mt: [10, 10, 10, 8],
     grid: {
       position: "relative",
       mx: "auto",
@@ -230,7 +234,7 @@ const styles = {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      width: ["100%", "100%", "100%", "38%"],
+      width: ["100%", "100%", "100%", "45%"],
       image: {
         borderRadius: "8px",
         overflow: "hidden",
@@ -275,9 +279,9 @@ const styles = {
   },
 
   subTitle: {
-    fontSize: [2, 2, 2, 3],
+    fontSize: 1,
     fontWeight: 400,
-    lineHeight: "1.9",
+    lineHeight: "1",
     mb: 4,
   },
 
