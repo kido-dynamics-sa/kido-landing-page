@@ -68,10 +68,10 @@ export default function Article({ article, pageContext, footer, categories }) {
                 {article.author["Picture"] && (
                   <img
                     src={
-                      !heroArticle.author["Name"] ||
-                      heroArticle.author["Name"] === "Kido Dynamics"
+                      !article.author["Name"] ||
+                      article.author["Name"] === "Kido Dynamics"
                         ? "assets/KIDO_AUTHOR.jpeg"
-                        : heroArticle.author["Picture"]
+                        : article.author["Picture"]
                     }
                     alt={`article ${article["Title"]} image`}
                     sx={{
