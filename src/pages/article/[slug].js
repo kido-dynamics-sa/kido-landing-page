@@ -67,7 +67,12 @@ export default function Article({ article, pageContext, footer, categories }) {
               <div sx={styles.avatar}>
                 {article.author["Picture"] && (
                   <img
-                    src={article.author["Picture"]}
+                    src={
+                      !article.author["Name"] ||
+                      article.author["Name"] === "Kido Dynamics"
+                        ? "/assets/KIDO_AUTHOR.jpeg"
+                        : article.author["Picture"]
+                    }
                     alt={`article ${article["Title"]} image`}
                     sx={{
                       width: "100%",
@@ -83,14 +88,13 @@ export default function Article({ article, pageContext, footer, categories }) {
                     p: 0,
                     m: 0,
                     pr: "20px",
-                    color: 'secondary'
+                    color: "secondary",
                   }}
                 >
                   {article.author["Name"] || "Kido Dynamics"}
                 </p>
                 <p sx={{ color: "gray", m: 0 }}>
-                  <p >
-                      {article["Date"] || article.published_at.split("T")[0]}</p>
+                  <p>{article["Date"] || article.published_at.split("T")[0]}</p>
                 </p>
               </div>
             </div>
