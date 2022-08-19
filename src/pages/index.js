@@ -30,15 +30,17 @@ export default function IndexPage({
   subscribeUsData,
   news,
   pageContext,
-  hero
+  hero,
 }) {
   return (
     <ThemeProvider theme={theme}>
       <Layout pageContext={pageContext} footer={footer[0]}>
         <SEO />
-        <h1 style={{display: 'none'}}>Kido Dynamics - Understanding People's Mobility Behaviour</h1>
+        <h1 style={{ display: "none" }}>
+          Kido Dynamics - Understanding People's Mobility Behaviour
+        </h1>
         {/* <Banner banners={banners} /> */}
-        <Hero hero={hero}/>
+        <Hero hero={hero} />
         <Partners />
         <KeyFeature
           featureCardColumns={featureCardColumns}
@@ -82,9 +84,9 @@ export async function getStaticProps(context) {
   const { params, preview = null } = context;
 
   // const pageContext = {
-    // locale,
-    // locales,
-    // defaultLocale,
+  // locale,
+  // locales,
+  // defaultLocale,
   // };
 
   const [
@@ -97,7 +99,7 @@ export async function getStaticProps(context) {
     footer,
     subscribeUsData,
     news,
-    hero
+    hero,
   ] = await Promise.all([
     // fetchAPI(`/banners?_locale=${locale}`),
     fetchAPI(`/banners?_locale=en`),
@@ -129,7 +131,7 @@ export async function getStaticProps(context) {
       footer,
       subscribeUsData,
       news,
-      hero
+      hero,
       // pageContext,
     },
     revalidate: 1,
