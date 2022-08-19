@@ -5,7 +5,7 @@ node_modules
 .env.prod
 
 .DS_Store
-
+src/.DS_Store
 out
 
 yarn.lock
